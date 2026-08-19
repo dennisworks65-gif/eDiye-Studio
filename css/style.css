@@ -2302,115 +2302,152 @@ button, input, textarea, select {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* --- Section: FAQ Accordion --- */
+/* --- Section: FAQ Accordion (1-to-1 Framer Architecture) --- */
 .section-faq {
-  padding: 80px 0 140px;
+  padding: 160px 0 140px;
   background-color: var(--bg-page);
+  position: relative;
+  width: 100%;
 }
 
-.faq-grid-layout {
+.faq-2col-layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
+  width: 100%;
 }
 
-.faq-left-col {
-  position: sticky;
-  top: 120px;
+/* Left Box: Support CTA Column */
+.faq-left-box {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-.faq-title-main {
-  font-size: 48px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: #000000;
-  margin-bottom: 30px;
+.faq-left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.faq-title-main .bold {
-  font-weight: 800;
-}
-
-.faq-title-main .muted {
-  color: #999999;
-}
-
-.faq-subcard {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  border: 1px solid #ededed;
-  margin-bottom: 24px;
-}
-
-.faq-subcard-title {
-  font-size: 17px;
+.faq-left-title {
+  font-family: var(--font-main);
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: #000000;
-  margin-bottom: 8px;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
 }
 
-.faq-subcard-desc {
-  font-size: 14px;
-  color: #666666;
-  line-height: 1.45;
-  margin-bottom: 18px;
+.faq-left-desc {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  color: #888888;
+  line-height: 1.45em;
+  letter-spacing: -0.01em;
+  margin: 0 0 32px 0;
+  max-width: 320px;
 }
 
 .faq-author-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .faq-author-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-.faq-author-info .name {
-  font-size: 14px;
+.faq-author-info .faq-author-name, .faq-author-info .name {
+  font-family: var(--font-main);
+  font-size: 16px;
   font-weight: 700;
   color: #000000;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.faq-author-info .role {
-  font-size: 12px;
+.faq-author-info .faq-author-role, .faq-author-info .role {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
   color: #888888;
+  letter-spacing: -0.01em;
+  margin-top: 3px;
 }
 
-/* Accordion Component */
-.accordion-list {
+.faq-left-bottom {
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.faq-ask-link {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 220px;
+  transition: transform var(--transition-fast);
+}
+
+.faq-ask-link:hover {
+  transform: translateX(4px);
+}
+
+.faq-ask-link .arrow-symbol {
+  font-size: 20px;
+  transition: transform var(--transition-fast);
+}
+
+.faq-ask-link:hover .arrow-symbol {
+  transform: translateX(4px);
+}
+
+/* Right Box: Minimalist Open Accordion List */
+.section-faq .accordion-list {
+  grid-column: span 2;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
+  padding-left: 20px;
 }
 
-.accordion-item {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  border: 1px solid #eeeeee;
-  overflow: hidden;
-  transition: all var(--transition-normal);
-}
-
-.accordion-item:hover {
-  border-color: #dcdcdc;
-}
-
-.accordion-item.active {
-  box-shadow: var(--shadow-sm);
-  border-color: #e0e0e0;
-}
-
-.accordion-header {
+.accordion-item, .faq-accordion-item {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 24px 28px;
+}
+
+.accordion-item:hover, .faq-accordion-item:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-header, .faq-accordion-header {
+  width: 100%;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2419,14 +2456,18 @@ button, input, textarea, select {
   user-select: none;
 }
 
-.accordion-question {
-  font-size: 18px;
+.accordion-question, .faq-question {
+  font-family: var(--font-main);
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: #000000;
+  margin: 0;
+  padding-right: 20px;
+  line-height: 1.3;
 }
 
-.accordion-toggle-icon {
+.accordion-toggle-icon, .faq-toggle-circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -2437,29 +2478,31 @@ button, input, textarea, select {
   justify-content: center;
   font-size: 18px;
   font-weight: 400;
+  line-height: 1;
   flex-shrink: 0;
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
-.accordion-item.active .accordion-toggle-icon {
-  transform: rotate(45deg);
+.accordion-toggle-icon:hover, .faq-toggle-circle:hover {
+  background-color: #222222;
 }
 
-.accordion-content {
+.accordion-content, .faq-accordion-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
-  padding: 0 28px;
+  transition: max-height 0.35s ease;
+  padding: 0;
 }
 
-.accordion-item.active .accordion-content {
-  padding: 0 28px 28px;
-}
-
-.accordion-content p {
+.accordion-content p, .faq-answer {
+  font-family: var(--font-main);
   font-size: 15px;
-  line-height: 1.6;
-  color: #666666;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.55em;
+  color: #777777;
+  margin: 14px 0 0 0;
+  max-width: 680px;
 }
 
 /* --- Section: Dark Contact / Lead Capture --- */

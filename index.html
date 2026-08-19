@@ -698,51 +698,50 @@
     </div>
   </section>
 
-  <!-- FAQ Accordion Section -->
-  <section class="section-faq">
+  <!-- FAQ Accordion Section (1-to-1 Framer Architecture) -->
+  <section class="section-faq" id="faq">
     <div class="container">
-      <div class="faq-grid-layout">
+      <div class="faq-2col-layout">
         
-        <div class="faq-left-col">
-          <div class="badge-tag" style="margin-bottom: 20px;"><i class="ph-duotone ph-question"></i><span>FAQ</span>
-          </div>
-
-          <h2 class="faq-title-main">
-            <span class="bold">Before</span> you start, here are some of <span class="muted">the things most clients want to know.</span>
-          </h2>
-
-          <div class="faq-subcard">
-            <div class="faq-subcard-title">Not finding what you need?</div>
-            <p class="faq-subcard-desc">
+        <!-- Left Column: Support CTA Box -->
+        <div class="faq-left-box">
+          <div class="faq-left-top">
+            <h2 class="faq-left-title">Not finding what you need?</h2>
+            <p class="faq-left-desc">
               Reach out anytime. We're happy to answer any questions before you commit to working together.
             </p>
             <div class="faq-author-row">
-              <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="Sophie Turner" class="faq-author-avatar">
+              <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Sophie Turner" class="faq-author-avatar">
               <div class="faq-author-info">
-                <div class="name">Sophie Turner</div>
-                <div class="role">Brand Strategist at Noora</div>
+                <div class="faq-author-name">Sophie Turner</div>
+                <div class="faq-author-role">Brand Strategist at Noora</div>
               </div>
             </div>
           </div>
 
-          <a href="#contact" class="text-link-arrow">
-            <span>Ask a question</span>
-            <span>→</span>
-          </a>
+          <div class="faq-left-bottom">
+            <a href="#contact" class="faq-ask-link">
+              <span>Ask a question</span>
+              <span class="arrow-symbol">→</span>
+            </a>
+          </div>
         </div>
 
+        <!-- Right Column: Accordion Questions List -->
         <div class="accordion-list">
           
-          <div class="accordion-item">
+          <!-- Item 1 (Open by Default) -->
+          <div class="accordion-item active">
             <div class="accordion-header">
               <h3 class="accordion-question">How long does a project take?</h3>
-              <div class="accordion-toggle-icon">+</div>
+              <div class="accordion-toggle-icon">–</div>
             </div>
             <div class="accordion-content">
               <p>Most projects fall between 2 and 8 weeks, depending on complexity. A brand identity with a simple website might take closer to two weeks, while a larger project with UX, UI, and multiple page templates could take longer.</p>
             </div>
           </div>
 
+          <!-- Item 2 -->
           <div class="accordion-item">
             <div class="accordion-header">
               <h3 class="accordion-question">Can I update the site myself?</h3>
@@ -753,6 +752,7 @@
             </div>
           </div>
 
+          <!-- Item 3 -->
           <div class="accordion-item">
             <div class="accordion-header">
               <h3 class="accordion-question">Do I need to have a brand before starting?</h3>
@@ -763,6 +763,7 @@
             </div>
           </div>
 
+          <!-- Item 4 -->
           <div class="accordion-item">
             <div class="accordion-header">
               <h3 class="accordion-question">Do you offer support after launch?</h3>
@@ -773,6 +774,7 @@
             </div>
           </div>
 
+          <!-- Item 5 -->
           <div class="accordion-item">
             <div class="accordion-header">
               <h3 class="accordion-question">What's your typical process?</h3>
@@ -783,6 +785,7 @@
             </div>
           </div>
 
+          <!-- Item 6 -->
           <div class="accordion-item">
             <div class="accordion-header">
               <h3 class="accordion-question">How do payments work?</h3>
@@ -794,6 +797,7 @@
           </div>
 
         </div>
+
       </div>
     </div>
   </section>

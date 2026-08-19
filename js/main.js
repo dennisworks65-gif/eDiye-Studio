@@ -100,11 +100,12 @@ function initPricingSlider() {
 
 // --- 2. FAQ Accordion Functionality ---
 function initFaqAccordion() {
-  const accordionItems = document.querySelectorAll('.accordion-item');
+  const accordionItems = document.querySelectorAll('.accordion-item, .faq-accordion-item');
 
   accordionItems.forEach((item) => {
-    const header = item.querySelector('.accordion-header');
-    const content = item.querySelector('.accordion-content');
+    const header = item.querySelector('.accordion-header, .faq-accordion-header');
+    const content = item.querySelector('.accordion-content, .faq-accordion-body');
+    const toggleIcon = item.querySelector('.accordion-toggle-icon, .toggle-symbol');
 
     if (!header || !content) return;
 
@@ -115,8 +116,10 @@ function initFaqAccordion() {
       accordionItems.forEach((other) => {
         if (other !== item) {
           other.classList.remove('active');
-          const otherContent = other.querySelector('.accordion-content');
+          const otherContent = other.querySelector('.accordion-content, .faq-accordion-body');
           if (otherContent) otherContent.style.maxHeight = null;
+          const otherIcon = other.querySelector('.accordion-toggle-icon, .toggle-symbol');
+          if (otherIcon) otherIcon.textContent = '+';
         }
       });
 
@@ -124,9 +127,11 @@ function initFaqAccordion() {
       if (isActive) {
         item.classList.remove('active');
         content.style.maxHeight = null;
+        if (toggleIcon) toggleIcon.textContent = '+';
       } else {
         item.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 40 + 'px';
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+        if (toggleIcon) toggleIcon.textContent = '–';
       }
     });
   });
@@ -135,10 +140,12 @@ function initFaqAccordion() {
   if (accordionItems.length > 0) {
     const firstItem = accordionItems[0];
     firstItem.classList.add('active');
-    const firstContent = firstItem.querySelector('.accordion-content');
+    const firstContent = firstItem.querySelector('.accordion-content, .faq-accordion-body');
     if (firstContent) {
-      firstContent.style.maxHeight = firstContent.scrollHeight + 40 + 'px';
+      firstContent.style.maxHeight = firstContent.scrollHeight + 30 + 'px';
     }
+    const firstIcon = firstItem.querySelector('.accordion-toggle-icon, .toggle-symbol');
+    if (firstIcon) firstIcon.textContent = '–';
   }
 }
 
