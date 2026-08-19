@@ -431,8 +431,8 @@ function initTrueFocus() {
   containers.forEach(container => {
     const sentence = container.getAttribute('data-sentence') || 'Ask a question';
     const blurAmount = parseFloat(container.getAttribute('data-blur') || '2.5');
-    const borderColor = container.getAttribute('data-border-color') || '#000000';
-    const glowColor = container.getAttribute('data-glow-color') || 'rgba(0, 0, 0, 0.25)';
+    const borderColor = container.getAttribute('data-border-color') || '#0000FF';
+    const glowColor = container.getAttribute('data-glow-color') || 'rgba(0, 0, 255, 0.4)';
     const animationDuration = parseFloat(container.getAttribute('data-duration') || '0.45');
     const pauseBetweenAnimations = parseFloat(container.getAttribute('data-pause') || '1.4');
     const manualMode = container.getAttribute('data-manual') === 'true';
