@@ -1547,6 +1547,91 @@ button, input, textarea, select {
   color: var(--accent-blue);
 }
 
+/* --- Section: Showreel (Dark Mode Section) --- */
+.section-showreel-dark {
+  background-color: #000000;
+  padding: 100px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.showreel-card {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  height: 560px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.showreel-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.showreel-card:hover .showreel-bg-image {
+  transform: scale(1.03);
+}
+
+.showreel-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
+  pointer-events: none;
+}
+
+.showreel-center-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-showreel-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.btn-showreel-pill:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.showreel-subtitle {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 14px;
+}
+
 /* --- Section: Pricing Plans --- */
 .section-pricing {
   padding: 120px 0 100px;
@@ -2168,6 +2253,9 @@ button, input, textarea, select {
   .section-hero-title {
     font-size: 72px;
   }
+  .showreel-card {
+    height: 440px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2195,6 +2283,13 @@ button, input, textarea, select {
   }
   .process-heading {
     font-size: 34px;
+  }
+  .showreel-card {
+    height: 300px;
+    border-radius: 18px;
+  }
+  .section-showreel-dark {
+    padding: 60px 0;
   }
   .testimonial-banner-strip {
     grid-template-columns: 1fr;
