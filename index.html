@@ -897,45 +897,60 @@
     </div>
   </section>
 
-  <!-- Dark Lead Capture / Contact Section -->
+  <!-- Dark Lead Capture / Contact Section (1-to-1 Framer Architecture) -->
   <section class="section-contact-dark" id="contact">
-    <div class="contact-bg-glow"></div>
-    <div class="container">
-      <div class="contact-layout-grid">
-        <div>
-          <div class="badge-tag" style="color: #666; margin-bottom: 24px;"><i class="ph-duotone ph-paper-plane-tilt"></i><span>Contact</span>
-          </div>
+    <div class="contact-dark-bg">
+      <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="eDiye Studio Contact" class="contact-dark-img">
+      <div class="contact-dark-overlay"></div>
+    </div>
 
+    <div class="container">
+      
+      <!-- Top Row: Badge + Main Heading + Subtitle in 3-Column Grid -->
+      <div class="contact-header-3col-grid">
+        <div class="grid-col-1">
+          <div class="badge-tag contact-badge-blue">
+            <i class="ph-duotone ph-paper-plane-tilt"></i>
+            <span>Contact</span>
+          </div>
+        </div>
+
+        <div class="grid-col-span-2">
           <h2 class="contact-heading-main">
             If your brand feels outdated, your website isn’t pulling its weight, or you’re simply ready to look more professional, eDiye is here to help.
           </h2>
-
           <p class="contact-sub-text">
             Reach out today and you’ll get a clear plan, honest advice, and a team that cares about the outcome as much as you do. Whether you prefer a quick call or a simple email, getting started is easy.
           </p>
         </div>
+      </div>
 
-        <div>
-          <form class="contact-form" id="studio-contact-form">
-            <div class="form-group">
-              <label for="form-name" class="form-label">Name *</label>
-              <input type="text" id="form-name" class="form-input" placeholder="Jane Foster" required>
+      <!-- Bottom Row: Form Aligned with Right 2-Column Span -->
+      <div class="contact-form-3col-grid">
+        <div class="grid-col-1"></div>
+
+        <div class="grid-col-span-2">
+          <form class="contact-form-clean" id="studio-contact-form">
+            <div class="form-group-clean">
+              <label for="form-name" class="form-label-clean">Name *</label>
+              <input type="text" id="form-name" class="form-input-clean" placeholder="Jane Foster" required>
             </div>
 
-            <div class="form-group">
-              <label for="form-email" class="form-label">E-mail *</label>
-              <input type="email" id="form-email" class="form-input" placeholder="jane@framer.com" required>
+            <div class="form-group-clean">
+              <label for="form-email" class="form-label-clean">E-mail *</label>
+              <input type="email" id="form-email" class="form-input-clean" placeholder="jane@framer.com" required>
             </div>
 
-            <div class="form-group">
-              <label for="form-goals" class="form-label">Project and goals *</label>
-              <textarea id="form-goals" class="form-textarea" placeholder="Tell us more" required></textarea>
+            <div class="form-group-clean">
+              <label for="form-goals" class="form-label-clean">Project and goals *</label>
+              <textarea id="form-goals" class="form-textarea-clean" placeholder="Tell us more" required></textarea>
             </div>
 
-            <button type="submit" class="form-submit-btn">Send message</button>
+            <button type="submit" class="btn-send-message">Send message</button>
           </form>
         </div>
       </div>
+
     </div>
   </section>
 
