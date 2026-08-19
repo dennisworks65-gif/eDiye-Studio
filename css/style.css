@@ -1672,23 +1672,22 @@ button, input, textarea, select {
 
 .testimonials-main-grid {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   align-items: stretch;
   width: 100%;
 }
 
-/* Left Stats Card (Rating, Avatars, Leave a Review - 1-to-1 Replica) */
+/* Left Stats Card (Column 1 - 1-to-1 Replica) */
 .testimonials-stats-card {
   background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  padding: 10px 0;
+  padding: 0;
   box-sizing: border-box;
   width: 100%;
-  max-width: 360px;
 }
 
 .stats-rating-block {
@@ -1812,10 +1811,11 @@ button, input, textarea, select {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Right Testimonial Carousel Box (1-to-1 Replica) */
+/* Right Testimonial Carousel Box (Spanning Columns 2 & 3 - 1-to-1 Replica) */
 .testimonial-carousel-card {
+  grid-column: span 2;
   background: transparent;
-  padding: 10px 0 10px 48px;
+  padding: 0 0 0 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1885,11 +1885,26 @@ button, input, textarea, select {
 }
 
 .testimonial-carousel-footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
   align-items: center;
   width: 100%;
   margin-top: auto;
+}
+
+.footer-col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-col-3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .carousel-nav-buttons {
