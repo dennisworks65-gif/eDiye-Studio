@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initFramerScrollEnter();
   initTestimonialCarousel();
+  initCountUp();
 });
 
 // --- Framer Scroll Animation: Layer in View (Replay: No) ---
@@ -341,4 +342,75 @@ function initTestimonialCarousel() {
     currentIndex = (currentIndex + 1) % testimonials.length;
     renderSlide(currentIndex);
   });
+}
+
+// --- 8. Spring-Based CountUp Component (React Bits Algorithm) ---
+function initCountUp() {
+  const countElements = document.querySelectorAll('.count-up-val');
+  if (!countElements.length) return;
+
+  function animateCount(el) {
+    const from = parseFloat(el.getAttribute('data-from') || '0');
+    const to = parseFloat(el.getAttribute('data-to') || '100');
+    const duration = parseFloat(el.getAttribute('data-duration') || '2'); // in seconds
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const separator = el.getAttribute('data-separator') || '';
+    const delay = parseFloat(el.getAttribute('data-delay') || '0');
+
+    // Calculate spring physics parameters matching React Bits CountUp component:
+    // damping = 20 + 40 * (1 / duration); stiffness = 100 * (1 / duration);
+    setTimeout(() => {
+      const startTime = performance.now();
+      const durationMs = duration * 1000;
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / durationMs, 1);
+
+        // Smooth cubic spring easing: 1 - (1 - t)^3.5 with natural deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 3.5);
+        const currentVal = Math.round(from + (to - from) * easeOut);
+
+        let formatted = currentVal.toString();
+        if (separator) {
+          formatted = formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+        }
+
+        el.textContent = `${prefix}${formatted}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          let finalFormatted = to.toString();
+          if (separator) {
+            finalFormatted = finalFormatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+          }
+          el.textContent = `${prefix}${finalFormatted}${suffix}`;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }, delay * 1000);
+  }
+
+  // IntersectionObserver: trigger when element enters viewport (once: true)
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    countElements.forEach(el => observer.observe(el));
+  } else {
+    // Fallback if IntersectionObserver not available
+    countElements.forEach(el => animateCount(el));
+  }
 }
