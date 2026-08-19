@@ -2531,7 +2531,7 @@ button, input, textarea, select {
   grid-column: span 2;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .accordion-item, .faq-accordion-item {
