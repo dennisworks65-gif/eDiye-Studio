@@ -954,49 +954,64 @@
     </div>
   </section>
 
-  <!-- Site Footer -->
+  <!-- Site Footer (1-to-1 Framer Architecture) -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-main-grid">
+      <div class="footer-3col-layout">
         
+        <!-- Left Column: Brand, Mission, and Contact Items -->
         <div class="footer-brand-side">
-          <div class="footer-brand-logo">eDiye®</div>
-          <div class="footer-tagline">Clarity over clutter.</div>
-          <p class="footer-mission">
-            With eDiye, every part of your website works together to build clarity, trust, and momentum — not just visual polish, but real purpose.
-          </p>
+          <div class="footer-brand-top">
+            <div class="footer-brand-logo">eDiye®</div>
+            <div class="footer-tagline">Clarity over clutter.</div>
+          </div>
 
-          <div class="footer-contact-items">
-            <div class="footer-contact-item">
-              <div class="label">[ Email ]</div>
-              <div class="val"><a href="mailto:hello@diye.studio">hello@diye.studio</a></div>
-            </div>
-            <div class="footer-contact-item">
-              <div class="label">[ Phone ]</div>
-              <div class="val"><a href="tel:2349065175674">(234) 906 517 5674</a></div>
+          <div class="footer-brand-bottom">
+            <p class="footer-mission">
+              With eDiye, every part of your website works together to build clarity, trust, and momentum — not just visual polish, but real purpose.
+            </p>
+
+            <div class="footer-brand-divider"></div>
+
+            <div class="footer-contact-items">
+              <div class="footer-contact-item">
+                <div class="label">[ Email ]</div>
+                <div class="val"><a href="mailto:hello@diye.studio">hello@diye.studio</a></div>
+              </div>
+              <div class="footer-contact-item">
+                <div class="label">[ Phone ]</div>
+                <div class="val"><a href="tel:2349065175674">(234) 906 517 5674</a></div>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Right 2 Columns: Newsletter & Navigation Grid -->
         <div class="footer-links-side">
+          
+          <!-- Top: Newsletter Form -->
           <div class="footer-newsletter-wrap">
-            <div class="newsletter-title">Newsletter</div>
+            <h3 class="newsletter-title">Newsletter</h3>
             <div class="newsletter-sub">Sign in to newsletter and never miss any update.</div>
             <form class="newsletter-form" id="newsletter-form">
               <input type="text" class="newsletter-input" placeholder="your name..." required>
               <input type="email" class="newsletter-input" placeholder="your e-mail address..." required>
-              <button type="submit" class="newsletter-btn">Subscribe ↳</button>
+              <button type="submit" class="newsletter-btn">
+                <span>Subscribe</span>
+                <span class="sub-arrow">↳</span>
+              </button>
             </form>
           </div>
 
+          <!-- Bottom: 3 Nav Columns -->
           <div class="footer-nav-cols">
             <div>
               <div class="footer-nav-col-title">Navigation</div>
               <ul class="footer-nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="works.html">Projects <span style="color:#888; font-size:12px;">[6]</span></a></li>
-                <li><a href="articles.html">Articles <span style="color:#888; font-size:12px;">[8]</span></a></li>
+                <li><a href="works.html">Projects <span class="nav-count">[6]</span></a></li>
+                <li><a href="articles.html">Articles <span class="nav-count">[8]</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -1016,19 +1031,14 @@
               <ul class="footer-nav-list">
                 <li><a href="terms-of-service.html">Terms of Service</a></li>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="shopify.html">Shopify</a></li>
+                <li><a href="404.html">404</a></li>
               </ul>
             </div>
           </div>
+
         </div>
 
       </div>
-    </div>
-
-    <div class="footer-bottom-bar">
-      <div>© 2025 eDiye. All rights reserved.</div>
-      <div>Created by <a href="https://x.com" target="_blank" rel="noopener">@Dennis</a></div>
-      <div>Rebuilt with pixel precision</div>
     </div>
   </footer>
 
