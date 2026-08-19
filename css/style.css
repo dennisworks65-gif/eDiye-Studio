@@ -1632,18 +1632,33 @@ button, input, textarea, select {
   margin-top: 14px;
 }
 
-/* --- Section: Testimonials & Client Proof (Light Mode) --- */
+/* --- Section: Testimonials & Client Proof (Exact Framer Specs: Max-Width 1520, Gap 64, Padding 200 40 120 40) --- */
 .section-testimonials-proof {
   background-color: var(--bg-page);
-  padding: 120px 0 100px;
+  padding: 0;
   position: relative;
+  width: 100%;
+}
+
+.section-testimonials-proof .container {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 200px 40px 120px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 64px;
+  box-sizing: border-box;
 }
 
 .testimonials-header-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  margin-bottom: 64px;
+  width: 100%;
 }
 
 .testimonials-heading {
@@ -1660,7 +1675,7 @@ button, input, textarea, select {
   grid-template-columns: 360px 1fr;
   gap: 8px;
   align-items: stretch;
-  margin-bottom: 80px;
+  width: 100%;
 }
 
 /* Left Stats Card (Rating, Avatars, Leave a Review) */
@@ -1892,7 +1907,8 @@ button, input, textarea, select {
 .testimonials-divider {
   border: none;
   border-top: 1px solid #eaeaea;
-  margin: 80px 0;
+  width: 100%;
+  margin: 0;
 }
 
 /* 3-Column Metrics Row */
@@ -1900,6 +1916,7 @@ button, input, textarea, select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  width: 100%;
 }
 
 .metric-item {
