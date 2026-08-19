@@ -2385,33 +2385,33 @@ button, input, textarea, select {
 .faq-author-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .faq-author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .faq-author-info .faq-author-name, .faq-author-info .name {
   font-family: var(--font-main);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #000000;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .faq-author-info .faq-author-role, .faq-author-info .role {
   font-family: var(--font-main);
   font-size: 14px;
   font-weight: 500;
-  color: #888888;
+  color: #8c8c8c;
   letter-spacing: -0.01em;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .faq-left-bottom {
