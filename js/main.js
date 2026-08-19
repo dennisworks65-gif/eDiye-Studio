@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initScrollReveal();
   initFramerScrollEnter();
+  initTestimonialCarousel();
 });
 
 // --- Framer Scroll Animation: Layer in View (Replay: No) ---
@@ -275,4 +276,69 @@ function initScrollReveal() {
   window.addEventListener('scroll', updateReveal, { passive: true });
   window.addEventListener('resize', updateReveal, { passive: true });
   updateReveal(); // Trigger once on load
+}
+
+// --- 7. Interactive Testimonial Carousel ---
+function initTestimonialCarousel() {
+  const testimonials = [
+    {
+      quote: '"We worked with a few agencies before, but eDiye just got it. The brand finally feels aligned, sharper and way more us."',
+      name: 'Frankie Brooks',
+      role: 'Co-founder at Peni',
+      avatar: 'assets/images/k7KmzGiIv5imu1RceeORMjil5Q0.png'
+    },
+    {
+      quote: '"Working with the team at Diye felt effortless. The final result wasn’t just a website — it was a brand we’re proud to show off."',
+      name: 'Ayo Ogun',
+      role: 'CEO at Oni-ile',
+      avatar: 'assets/images/yHXd1YWnHqY9lUHubvUS7Yh3Exs.png'
+    },
+    {
+      quote: '"The speed and precision was unbelievable. Our new digital identity elevated our presence immediately across all markets."',
+      name: 'Elena Rostova',
+      role: 'Creative Lead at Everly',
+      avatar: 'assets/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png'
+    },
+    {
+      quote: '"eDiye took our complex legacy brand and distilled it into something modern, clean, and convert-ready. Exceptional work."',
+      name: 'Marcus Vance',
+      role: 'Founder at Korten',
+      avatar: 'assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg'
+    }
+  ];
+
+  let currentIndex = 0;
+  const quoteEl = document.getElementById('testimonial-quote-text');
+  const nameEl = document.getElementById('testimonial-author-name');
+  const roleEl = document.getElementById('testimonial-author-role');
+  const avatarEl = document.getElementById('testimonial-author-avatar');
+  const counterEl = document.getElementById('testimonial-counter');
+  const prevBtn = document.getElementById('testimonial-prev');
+  const nextBtn = document.getElementById('testimonial-next');
+
+  if (!quoteEl || !prevBtn || !nextBtn) return;
+
+  function renderSlide(index) {
+    const item = testimonials[index];
+    quoteEl.style.opacity = '0';
+    setTimeout(() => {
+      quoteEl.textContent = item.quote;
+      nameEl.textContent = item.name;
+      roleEl.textContent = item.role;
+      avatarEl.src = item.avatar;
+      avatarEl.alt = item.name;
+      counterEl.textContent = `0${index + 1} / 0${testimonials.length}`;
+      quoteEl.style.opacity = '1';
+    }, 200);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    renderSlide(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    renderSlide(currentIndex);
+  });
 }
