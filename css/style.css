@@ -2085,7 +2085,8 @@ button, input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 560px;
+  height: 548px;
+  min-height: 548px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
@@ -2215,7 +2216,8 @@ button, input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 560px;
+  height: 548px;
+  min-height: 548px;
   box-sizing: border-box;
   color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
