@@ -1855,31 +1855,33 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .testimonial-author-avatar {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .testimonial-author-name {
   font-family: var(--font-main);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #000000;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   margin-bottom: 3px;
 }
 
 .testimonial-author-role {
   font-family: var(--font-main);
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: #777777;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .testimonial-carousel-footer {
@@ -1897,9 +1899,9 @@ button, input, textarea, select {
 }
 
 .btn-carousel-nav {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 54px;
+  height: 38px;
+  border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1910,12 +1912,12 @@ button, input, textarea, select {
 }
 
 .btn-carousel-nav.prev {
-  background: var(--neutral-100);
+  background: #ececec;
   color: #000000;
 }
 
 .btn-carousel-nav.prev:hover {
-  background: #e5e5e5;
+  background: #dedede;
 }
 
 .btn-carousel-nav.next {

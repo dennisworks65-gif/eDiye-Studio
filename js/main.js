@@ -285,7 +285,7 @@ function initTestimonialCarousel() {
       quote: '"We worked with a few agencies before, but eDiye just got it. The brand finally feels aligned, sharper and way more us."',
       name: 'Frankie Brooks',
       role: 'Co-founder at Peni',
-      avatar: 'assets/images/k7KmzGiIv5imu1RceeORMjil5Q0.png'
+      avatar: 'assets/images/S7Ignt0wJYmWyuZXN39Yfz8s.jpeg'
     },
     {
       quote: '"Working with the team at Diye felt effortless. The final result wasn’t just a website — it was a brand we’re proud to show off."',
