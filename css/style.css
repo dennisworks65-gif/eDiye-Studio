@@ -1632,7 +1632,7 @@ button, input, textarea, select {
   margin-top: 14px;
 }
 
-/* --- Section: Testimonials & Client Proof (Exact Framer Specs: Max-Width 1520, Gap 64, Padding 200 40 120 40) --- */
+/* --- Section: Testimonials & Client Proof (Exact Framer Specs: Max-Width 1520, Stack Center Left, Gap 120, Padding 200 40 120 40) --- */
 .section-testimonials-proof {
   background-color: var(--bg-page);
   padding: 0;
@@ -1647,10 +1647,10 @@ button, input, textarea, select {
   padding: 200px 40px 120px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
-  gap: 64px;
+  gap: 120px;
   box-sizing: border-box;
 }
 
