@@ -1,0 +1,10 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Scratch and temp files
+scratch/
+.system_generated/
+
+# Local agent config
+.agents/

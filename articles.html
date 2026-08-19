@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — eDiye studio</title>
+  <link rel="icon" href="assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { padding: 140px 0 60px; }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin: 50px 0 100px;
+    }
+    .article-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid #ebebeb;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .article-img-wrap {
+      height: 260px;
+      overflow: hidden;
+    }
+    .article-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .article-card:hover .article-img-wrap img {
+      transform: scale(1.04);
+    }
+    .article-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <header class="announcement-bar">
+    <span class="announcement-dot"></span>
+    <a href="index.html#pricing"><span>NEW eDiye® PRICING</span><span>•</span><span>LEARN MORE</span></a>
+    <span class="announcement-dot"></span>
+  </header>
+
+  <div class="navbar-wrapper">
+    <nav class="navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-text" style="color: #000000;">eDiye<span class="reg">®</span></div>
+        <div class="logo-sub">Clarity over clutter.</div>
+      </a>
+      <div class="nav-pills-group">
+        <a href="about.html" class="nav-pill-btn">About</a>
+        <a href="works.html" class="nav-pill-btn">Projects</a>
+        <a href="shopify.html" class="nav-pill-btn">Shopify</a>
+        <a href="articles.html" class="nav-pill-btn active">Articles</a>
+        <a href="contact.html" class="nav-pill-btn">Contact</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Toggle Menu">Menu</button>
+    </nav>
+  </div>
+
+  <main class="page-hero">
+    <div class="container">
+      <div class="badge-tag" style="margin-bottom: 20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Journal & Insights</span>
+      </div>
+
+      <h1 class="section-hero-title">Studio Articles & Essays</h1>
+      <div class="section-hero-subtitle">Perspectives on design engineering, branding, and digital strategy.</div>
+
+      <div class="articles-grid">
+        
+        <!-- Article 1 -->
+        <a href="articles/the-power-of-storytelling-in-branding.html" class="article-card">
+          <div class="article-img-wrap">
+            <img src="assets/images/GsziVHwO9WqO73ygs6zszQUCgXo.jpg" alt="Storytelling in Branding">
+          </div>
+          <div class="article-content">
+            <div style="font-size: 13px; color: #888; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Branding • 5 min read</div>
+            <h2 style="font-size: 22px; font-weight: 700; color: #000; letter-spacing: -0.02em; margin-bottom: 12px;">The Power of Storytelling in Modern Branding</h2>
+            <p style="font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px;">How narrative architecture separates commodity services from legendary category leaders.</p>
+            <div style="margin-top: auto; color: var(--accent-blue); font-weight: 700; font-size: 15px;">Read article →</div>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="articles/why-your-brand-identity-matters-more-than-your-logo.html" class="article-card">
+          <div class="article-img-wrap">
+            <img src="assets/images/9V5ixTuiDzANQk7SBThLzYw5I.jpg" alt="Brand Identity Beyond Logos">
+          </div>
+          <div class="article-content">
+            <div style="font-size: 13px; color: #888; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Identity • 6 min read</div>
+            <h2 style="font-size: 22px; font-weight: 700; color: #000; letter-spacing: -0.02em; margin-bottom: 12px;">Why Your Brand Identity Matters Far More Than Your Logo</h2>
+            <p style="font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px;">A holistic brand is a living design ecosystem of typography, microcopy, interactions, and feel.</p>
+            <div style="margin-top: auto; color: var(--accent-blue); font-weight: 700; font-size: 15px;">Read article →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-side">
+          <div class="footer-brand-logo">eDiye®</div>
+          <div class="footer-tagline">Clarity over clutter.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <div>© 2025 eDiye. All rights reserved.</div>
+      <div>Created by @Dennis</div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <!-- Fixed Bottom Liquid Glass Blur Vignette -->
+  <div class="viewport-bottom-glass" aria-hidden="true"></div>
+</body>
+</html>

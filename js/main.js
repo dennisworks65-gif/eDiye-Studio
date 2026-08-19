@@ -1,0 +1,278 @@
+/**
+ * eDiye® Design Studio - Main Interactive Logic
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.add('js-enabled');
+  initPricingSlider();
+  initFaqAccordion();
+  initMobileNav();
+  initFormSubmissions();
+  initHeaderScroll();
+  initScrollReveal();
+  initFramerScrollEnter();
+});
+
+// --- Framer Scroll Animation: Layer in View (Replay: No) ---
+function initFramerScrollEnter() {
+  const elements = document.querySelectorAll('.framer-scroll-enter');
+  if (!elements.length) return;
+
+  function checkVisibility() {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // If element top is above 90% of screen height and bottom is below 0, mark in-view
+      if (rect.top <= window.innerHeight * 0.92 && rect.bottom >= 0) {
+        el.classList.add('in-view');
+      }
+    });
+  }
+
+  // Use IntersectionObserver with generous margins so cards enter smoothly before user reaches them
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target); // Replay: No
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: '100px 0px 50px 0px'
+    });
+
+    elements.forEach(el => observer.observe(el));
+  }
+
+  // Run immediate check and listen on scroll/resize as fallback
+  checkVisibility();
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  window.addEventListener('resize', checkVisibility, { passive: true });
+}
+
+// --- 1. Interactive Pricing Calculator Slider ---
+function initPricingSlider() {
+  const sliderInput = document.getElementById('pricing-slider');
+  const sliderFill = document.getElementById('slider-fill');
+  const sliderThumb = document.getElementById('slider-thumb');
+  const priceDisplay = document.getElementById('price-value');
+  const priceMainVal = document.getElementById('price-main-val');
+  const priceSubVal = document.getElementById('price-sub-val');
+
+  if (!sliderInput) return;
+
+  function updateSlider() {
+    const min = parseFloat(sliderInput.min) || 0;
+    const max = parseFloat(sliderInput.max) || 100;
+    const val = parseFloat(sliderInput.value) || 0;
+    const percent = ((val - min) / (max - min)) * 100;
+
+    if (sliderFill) sliderFill.style.width = `${percent}%`;
+    if (sliderThumb) sliderThumb.style.left = `${percent}%`;
+
+    // Calculate dynamic price based on scope slider ($2,500 to $8,500)
+    const basePrice = 2500;
+    const maxPrice = 8500;
+    const calculatedPrice = Math.round(basePrice + ((maxPrice - basePrice) * (percent / 100)) / 100) * 100;
+    const formatted = calculatedPrice.toLocaleString();
+    
+    if (priceDisplay) {
+      priceDisplay.textContent = formatted;
+    }
+    if (priceMainVal && priceSubVal) {
+      const parts = formatted.split(',');
+      if (parts.length > 1) {
+        priceMainVal.textContent = parts[0] + ',';
+        priceSubVal.textContent = parts[1];
+      } else {
+        priceMainVal.textContent = formatted;
+        priceSubVal.textContent = '';
+      }
+    }
+  }
+
+  sliderInput.addEventListener('input', updateSlider);
+  updateSlider();
+}
+
+// --- 2. FAQ Accordion Functionality ---
+function initFaqAccordion() {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach((item) => {
+    const header = item.querySelector('.accordion-header');
+    const content = item.querySelector('.accordion-content');
+
+    if (!header || !content) return;
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // Close all other items
+      accordionItems.forEach((other) => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherContent = other.querySelector('.accordion-content');
+          if (otherContent) otherContent.style.maxHeight = null;
+        }
+      });
+
+      // Toggle current
+      if (isActive) {
+        item.classList.remove('active');
+        content.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 40 + 'px';
+      }
+    });
+  });
+
+  // Open first item by default
+  if (accordionItems.length > 0) {
+    const firstItem = accordionItems[0];
+    firstItem.classList.add('active');
+    const firstContent = firstItem.querySelector('.accordion-content');
+    if (firstContent) {
+      firstContent.style.maxHeight = firstContent.scrollHeight + 40 + 'px';
+    }
+  }
+}
+
+// --- 3. Sticky Navbar & Header Scroll State ---
+function initHeaderScroll() {
+  const navbar = document.querySelector('.navbar-wrapper');
+  if (!navbar) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.style.paddingTop = '12px';
+      navbar.style.paddingBottom = '12px';
+    } else {
+      navbar.style.paddingTop = '20px';
+      navbar.style.paddingBottom = '20px';
+    }
+  });
+}
+
+// --- 4. Mobile Navigation Toggle ---
+function initMobileNav() {
+  const toggleBtn = document.querySelector('.nav-mobile-toggle');
+  const navLinks = document.querySelector('.nav-pills-group');
+
+  if (!toggleBtn || !navLinks) return;
+
+  toggleBtn.addEventListener('click', () => {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '70px';
+      navLinks.style.right = '20px';
+      navLinks.style.background = 'rgba(10, 10, 10, 0.95)';
+      navLinks.style.padding = '16px';
+      navLinks.style.borderRadius = '16px';
+      navLinks.style.gap = '8px';
+    }
+  });
+}
+
+// --- 5. Form Submissions ---
+function initFormSubmissions() {
+  const contactForm = document.getElementById('studio-contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      if (submitBtn) {
+        submitBtn.textContent = 'Message Sent! ✓';
+        submitBtn.style.backgroundColor = '#0000ff';
+        submitBtn.style.color = '#ffffff';
+        setTimeout(() => {
+          contactForm.reset();
+          submitBtn.textContent = 'Send message';
+          submitBtn.style.backgroundColor = '#ffffff';
+          submitBtn.style.color = '#000000';
+        }, 3000);
+      }
+    });
+  }
+
+  const newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = newsletterForm.querySelector('.newsletter-btn');
+      if (btn) {
+        btn.innerHTML = 'Subscribed ✓';
+        setTimeout(() => {
+          newsletterForm.reset();
+          btn.innerHTML = 'Subscribe ↳';
+        }, 3000);
+      }
+    });
+  }
+}
+
+// --- 6. Scroll-Driven Text Word Reveal ---
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.scroll-reveal-text');
+  if (!revealElements.length) return;
+
+  revealElements.forEach((el) => {
+    const rawText = el.textContent.trim();
+    const words = rawText.split(/\s+/);
+    
+    // Wrap each word in span
+    el.innerHTML = words.map((word, i) => {
+      return `<span class="reveal-word" data-index="${i}">${word}</span>`;
+    }).join(' ');
+  });
+
+  function updateReveal() {
+    revealElements.forEach((container) => {
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Reveal starts when top of container reaches 85% of screen height
+      // Reveal completes when bottom reaches 35% of screen height
+      const startTrigger = windowHeight * 0.85;
+      const endTrigger = windowHeight * 0.35;
+
+      let progress = (startTrigger - rect.top) / (startTrigger - endTrigger);
+      progress = Math.max(0, Math.min(1, progress));
+
+      const words = container.querySelectorAll('.reveal-word');
+      const totalWords = words.length;
+
+      words.forEach((word, index) => {
+        // Individual word threshold window
+        const wordStart = index / totalWords;
+        const wordEnd = (index + 1.25) / totalWords;
+
+        let wordProgress = (progress - wordStart) / (wordEnd - wordStart);
+        wordProgress = Math.max(0, Math.min(1, wordProgress));
+
+        // Smoothly interpolate opacity from muted (0.18) to full (1.0)
+        const opacity = 0.18 + (1 - 0.18) * wordProgress;
+        word.style.opacity = opacity.toFixed(3);
+
+        // Highlight with solid black when illuminated
+        if (wordProgress >= 0.7) {
+          word.style.color = '#000000';
+          word.style.fontWeight = '600';
+        } else {
+          word.style.color = '#999999';
+          word.style.fontWeight = '600';
+        }
+      });
+    });
+  }
+
+  window.addEventListener('scroll', updateReveal, { passive: true });
+  window.addEventListener('resize', updateReveal, { passive: true });
+  updateReveal(); // Trigger once on load
+}
