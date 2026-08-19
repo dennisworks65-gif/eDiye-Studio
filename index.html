@@ -701,12 +701,26 @@
   <!-- FAQ Accordion Section (1-to-1 Framer Architecture) -->
   <section class="section-faq" id="faq">
     <div class="container">
+      
+      <!-- Top Row: Badge + Huge Statement Heading in 3-Column Grid -->
+      <div class="faq-header-grid">
+        <div class="grid-col-1">
+          <div class="badge-tag"><i class="ph-duotone ph-question"></i><span>FAQ</span></div>
+        </div>
+
+        <div class="grid-col-span-2">
+          <h2 class="faq-main-heading">
+            Before you start, here are some of the things most clients want <span class="muted-light-gray">to know.</span>
+          </h2>
+        </div>
+      </div>
+
       <div class="faq-2col-layout">
         
         <!-- Left Column: Support CTA Box -->
         <div class="faq-left-box">
           <div class="faq-left-top">
-            <h2 class="faq-left-title">Not finding what you need?</h2>
+            <h3 class="faq-left-title">Not finding what you need?</h3>
             <p class="faq-left-desc">
               Reach out anytime. We're happy to answer any questions before you commit to working together.
             </p>
@@ -737,35 +751,35 @@
           </div>
         </div>
 
-        <!-- Right Column: Accordion Questions List -->
+        <!-- Right Column: Accordion Cards List -->
         <div class="accordion-list">
           
-          <!-- Item 1 (Open by Default) -->
-          <div class="accordion-item active">
+          <!-- Item 1 -->
+          <div class="accordion-item">
             <div class="accordion-header">
-              <h3 class="accordion-question">How long does a project take?</h3>
-              <div class="accordion-toggle-icon">–</div>
+              <h4 class="accordion-question">How long does a project take?</h4>
+              <div class="accordion-toggle-icon">+</div>
             </div>
             <div class="accordion-content">
               <p>Most projects fall between 2 and 8 weeks, depending on complexity. A brand identity with a simple website might take closer to two weeks, while a larger project with UX, UI, and multiple page templates could take longer.</p>
             </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="accordion-item">
+          <!-- Item 2 (Open in Reference) -->
+          <div class="accordion-item active">
             <div class="accordion-header">
-              <h3 class="accordion-question">Can I update the site myself?</h3>
-              <div class="accordion-toggle-icon">+</div>
+              <h4 class="accordion-question">Can I update the site myself?</h4>
+              <div class="accordion-toggle-icon">–</div>
             </div>
             <div class="accordion-content">
-              <p>Absolutely. We build clean, modern content architectures with easy-to-use CMS structures so your team can easily update copy, publish articles, add case studies, and modify assets without writing a single line of code.</p>
+              <p>Yes — that's part of our process. We design websites that don't require a developer for every small change. You'll be able to update content, add projects, write blog posts, and adjust visuals without technical stress. We also provide a short training session or handoff guide, so your team feels confident managing things internally. Think of it as future-proofing your investment.</p>
             </div>
           </div>
 
           <!-- Item 3 -->
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3 class="accordion-question">Do I need to have a brand before starting?</h3>
+              <h4 class="accordion-question">Do I need to have a brand before starting?</h4>
               <div class="accordion-toggle-icon">+</div>
             </div>
             <div class="accordion-content">
@@ -776,7 +790,7 @@
           <!-- Item 4 -->
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3 class="accordion-question">Do you offer support after launch?</h3>
+              <h4 class="accordion-question">Do you offer support after launch?</h4>
               <div class="accordion-toggle-icon">+</div>
             </div>
             <div class="accordion-content">
@@ -787,7 +801,7 @@
           <!-- Item 5 -->
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3 class="accordion-question">What's your typical process?</h3>
+              <h4 class="accordion-question">What's your typical process?</h4>
               <div class="accordion-toggle-icon">+</div>
             </div>
             <div class="accordion-content">
@@ -798,7 +812,7 @@
           <!-- Item 6 -->
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3 class="accordion-question">How do payments work?</h3>
+              <h4 class="accordion-question">How do payments work?</h4>
               <div class="accordion-toggle-icon">+</div>
             </div>
             <div class="accordion-content">

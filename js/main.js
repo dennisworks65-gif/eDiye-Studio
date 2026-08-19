@@ -137,17 +137,17 @@ function initFaqAccordion() {
     });
   });
 
-  // Open first item by default
-  if (accordionItems.length > 0) {
-    const firstItem = accordionItems[0];
-    firstItem.classList.add('active');
-    const firstContent = firstItem.querySelector('.accordion-content, .faq-accordion-body');
-    if (firstContent) {
-      firstContent.style.maxHeight = firstContent.scrollHeight + 30 + 'px';
+  // Open active item(s) by default
+  accordionItems.forEach(item => {
+    if (item.classList.contains('active')) {
+      const content = item.querySelector('.accordion-content, .faq-accordion-body');
+      if (content) {
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+      }
+      const icon = item.querySelector('.accordion-toggle-icon, .toggle-symbol');
+      if (icon) icon.textContent = '–';
     }
-    const firstIcon = firstItem.querySelector('.accordion-toggle-icon, .toggle-symbol');
-    if (firstIcon) firstIcon.textContent = '–';
-  }
+  });
 }
 
 // --- 3. Sticky Navbar & Header Scroll State ---
