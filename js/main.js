@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFramerScrollEnter();
   initTestimonialCarousel();
   initCountUp();
+  initTrueFocus();
 });
 
 // --- Framer Scroll Animation: Layer in View (Replay: No) ---
@@ -420,4 +421,110 @@ function initCountUp() {
     // Fallback if IntersectionObserver not available
     countElements.forEach(el => animateCount(el));
   }
+}
+
+// --- 9. TrueFocus Component (React Bits Algorithm) ---
+function initTrueFocus() {
+  const containers = document.querySelectorAll('.true-focus-container');
+  if (!containers.length) return;
+
+  containers.forEach(container => {
+    const sentence = container.getAttribute('data-sentence') || 'Ask a question';
+    const blurAmount = parseFloat(container.getAttribute('data-blur') || '2.5');
+    const borderColor = container.getAttribute('data-border-color') || '#000000';
+    const glowColor = container.getAttribute('data-glow-color') || 'rgba(0, 0, 0, 0.25)';
+    const animationDuration = parseFloat(container.getAttribute('data-duration') || '0.45');
+    const pauseBetweenAnimations = parseFloat(container.getAttribute('data-pause') || '1.4');
+    const manualMode = container.getAttribute('data-manual') === 'true';
+
+    container.style.setProperty('--border-color', borderColor);
+    container.style.setProperty('--glow-color', glowColor);
+
+    const words = sentence.split(' ');
+    container.innerHTML = '';
+
+    const wordEls = words.map((word, index) => {
+      const span = document.createElement('span');
+      span.className = `true-focus-word ${index === 0 ? 'active' : ''}`;
+      span.textContent = word;
+      span.style.transition = `filter ${animationDuration}s ease, opacity ${animationDuration}s ease`;
+      span.style.filter = index === 0 ? 'blur(0px)' : `blur(${blurAmount}px)`;
+      span.style.opacity = index === 0 ? '1' : '0.4';
+      container.appendChild(span);
+      return span;
+    });
+
+    const frame = document.createElement('div');
+    frame.className = 'true-focus-frame';
+    frame.style.transition = `transform ${animationDuration}s cubic-bezier(0.25, 1, 0.5, 1), width ${animationDuration}s cubic-bezier(0.25, 1, 0.5, 1), height ${animationDuration}s cubic-bezier(0.25, 1, 0.5, 1), opacity ${animationDuration}s ease`;
+    frame.innerHTML = `
+      <span class="corner top-left"></span>
+      <span class="corner top-right"></span>
+      <span class="corner bottom-left"></span>
+      <span class="corner bottom-right"></span>
+    `;
+    container.appendChild(frame);
+
+    let currentIndex = 0;
+    let timer = null;
+
+    function updateFrame(index) {
+      if (index < 0 || index >= wordEls.length) return;
+      const targetEl = wordEls[index];
+      const parentRect = container.getBoundingClientRect();
+      const activeRect = targetEl.getBoundingClientRect();
+
+      const x = activeRect.left - parentRect.left;
+      const y = activeRect.top - parentRect.top;
+      const width = activeRect.width;
+      const height = activeRect.height;
+
+      frame.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      frame.style.width = `${width}px`;
+      frame.style.height = `${height}px`;
+      frame.style.opacity = '1';
+
+      wordEls.forEach((el, i) => {
+        if (i === index) {
+          el.classList.add('active');
+          el.style.filter = 'blur(0px)';
+          el.style.opacity = '1';
+        } else {
+          el.classList.remove('active');
+          el.style.filter = `blur(${blurAmount}px)`;
+          el.style.opacity = '0.4';
+        }
+      });
+    }
+
+    // Initial position on load
+    setTimeout(() => {
+      updateFrame(0);
+    }, 60);
+
+    window.addEventListener('resize', () => updateFrame(currentIndex));
+
+    if (!manualMode) {
+      function startCycle() {
+        timer = setInterval(() => {
+          currentIndex = (currentIndex + 1) % words.length;
+          updateFrame(currentIndex);
+        }, (animationDuration + pauseBetweenAnimations) * 1000);
+      }
+      startCycle();
+
+      container.addEventListener('mouseenter', () => clearInterval(timer));
+      container.addEventListener('mouseleave', () => {
+        clearInterval(timer);
+        startCycle();
+      });
+    }
+
+    wordEls.forEach((el, i) => {
+      el.addEventListener('mouseenter', () => {
+        currentIndex = i;
+        updateFrame(i);
+      });
+    });
+  });
 }
