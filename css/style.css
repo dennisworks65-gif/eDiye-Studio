@@ -1494,11 +1494,25 @@ button, input, textarea, select {
   max-width: 580px;
 }
 
+/* --- Bottom Capabilities Breakdown (Exact Framer Specs: Width 1fr Fill, Height Fit 419, Stack Start Left, Gap 80, Padding 0) --- */
 .capabilities-3col-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+.capabilities-col {
+  width: 100%;
+  height: auto;
+  min-height: 419px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .capabilities-col-title {
@@ -1516,6 +1530,7 @@ button, input, textarea, select {
   flex-direction: column;
   gap: 12px;
   padding: 0;
+  margin: 0;
 }
 
 .capabilities-list li {
@@ -1530,11 +1545,6 @@ button, input, textarea, select {
 
 .capabilities-list li:hover {
   color: var(--accent-blue);
-}
-
-.capabilities-list li:hover {
-  color: #ffffff;
-  transform: translateX(4px);
 }
 
 /* --- Section: Pricing Plans --- */
