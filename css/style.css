@@ -2610,6 +2610,164 @@ button, input, textarea, select {
   max-width: 680px;
 }
 
+/* --- Section: Insights / Blog (1-to-1 Framer Architecture) --- */
+.section-insights {
+  padding: 140px 0 160px;
+  background-color: var(--bg-page);
+  position: relative;
+  width: 100%;
+}
+
+.insights-3col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Left Column */
+.insights-col-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.insights-left-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.insights-crosshairs-mid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.insights-left-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.insights-left-desc {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  color: #777777;
+  line-height: 1.45em;
+  letter-spacing: -0.015em;
+  margin: 0 0 24px 0;
+  max-width: 280px;
+}
+
+.btn-discover-articles {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-discover-articles:hover {
+  background-color: #222222;
+  transform: translateY(-1px);
+}
+
+/* Right 2 Columns */
+.insights-col-right-span2 {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.insights-main-heading {
+  font-family: var(--font-main);
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #000000;
+  margin: 0 0 48px 0;
+  max-width: 760px;
+}
+
+.insights-articles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.blog-article-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-img-link {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.blog-img-wrap {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f0f0f0;
+  transition: transform var(--transition-normal);
+}
+
+.blog-img-wrap.tall-card {
+  height: 440px;
+}
+
+.blog-img-wrap.square-card {
+  height: 350px;
+}
+
+.blog-img-wrap:hover {
+  transform: scale(1.02);
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card-title {
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35em;
+  letter-spacing: -0.02em;
+  margin: 18px 0 0 0;
+}
+
+.blog-card-title a {
+  color: #000000;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.blog-card-title a:hover {
+  color: #555555;
+}
+
 /* --- Section: Dark Contact / Lead Capture --- */
 .section-contact-dark {
   background-color: #000000;
