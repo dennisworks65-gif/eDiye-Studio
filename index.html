@@ -1042,65 +1042,6 @@
     </div>
   </footer>
 
-  <!-- Apple Liquid Glass Bottom Floating Dock (ybouane/liquidglass) -->
-  <div id="liquid-glass-root" class="liquid-glass-dock-wrapper">
-    <div class="apple-liquid-glass-dock" data-config='{"refraction":0.72,"chromAberration":0.06,"edgeHighlight":0.12,"blurAmount":0.25,"cornerRadius":36,"zRadius":24,"specular":0.35,"fresnel":1.0,"shadowOpacity":0.25,"shadowSpread":16,"shadowOffsetY":4}'>
-      <a href="#hero" class="dock-item" title="Home">
-        <i class="ph-duotone ph-house"></i>
-        <span>Home</span>
-      </a>
-      <a href="#about" class="dock-item" title="About">
-        <i class="ph-duotone ph-sparkle"></i>
-        <span>About</span>
-      </a>
-      <a href="#services" class="dock-item" title="Services">
-        <i class="ph-duotone ph-circles-three-plus"></i>
-        <span>Services</span>
-      </a>
-      <a href="#pricing" class="dock-item" title="Pricing">
-        <i class="ph-duotone ph-tag"></i>
-        <span>Pricing</span>
-      </a>
-      <a href="#insights" class="dock-item" title="Insights">
-        <i class="ph-duotone ph-book-open"></i>
-        <span>Insights</span>
-      </a>
-      <div class="dock-divider"></div>
-      <a href="#contact" class="dock-item dock-btn-cta" title="Contact">
-        <span>Get in touch</span>
-        <i class="ph-bold ph-arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-
   <script src="js/main.js"></script>
-  <script type="module">
-    import { LiquidGlass } from './js/liquidglass.js';
-    
-    document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        const rootEl = document.querySelector('#liquid-glass-root');
-        const glassEl = document.querySelector('.apple-liquid-glass-dock');
-        if (rootEl && glassEl && window.WebGLRenderingContext) {
-          await LiquidGlass.init({
-            root: rootEl,
-            glassElements: [glassEl],
-            defaults: {
-              cornerRadius: 36,
-              refraction: 0.72,
-              chromAberration: 0.06,
-              edgeHighlight: 0.12,
-              blurAmount: 0.25,
-              specular: 0.35,
-              fresnel: 1.0,
-              shadowOpacity: 0.25
-            }
-          });
-        }
-      } catch (err) {
-        console.warn('LiquidGlass WebGL init fallback:', err);
-      }
-    });
-  </script>
 </body>
 </html>
