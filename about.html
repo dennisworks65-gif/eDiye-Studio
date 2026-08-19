@@ -46,22 +46,25 @@
   </div>
 
   <main>
-    <!-- Section 1: Hero -->
+    <!-- Section 1: Hero (Centered 1-to-1 Framer Architecture) -->
     <section class="section-about-hero">
       <div class="container">
         
-        <div class="about-hero-text-grid">
-          <div class="about-col-left">
-            <h1 class="about-hero-title">About us</h1>
-            <div class="about-hero-subtitle">Independent design and digital direction studio.</div>
-          </div>
+        <!-- Top 3 Crosshairs Row -->
+        <div class="about-hero-crosshairs">
+          <span class="grid-crosshair-sm">+</span>
+          <span class="grid-crosshair-sm">+</span>
+          <span class="grid-crosshair-sm">+</span>
+        </div>
 
-          <div class="about-col-span2">
-            <p class="about-hero-desc">
-              We help founders, scale-ups, and ambitious companies build clarity, trust, and momentum through strategic branding and high-performance digital experiences.
-            </p>
-            <a href="#overview" class="btn-primary" style="background-color: #000000; color: #ffffff; width: fit-content;">Read our story</a>
-          </div>
+        <!-- Centered Headline & Intro -->
+        <div class="about-hero-center-box">
+          <h1 class="about-hero-title">About us</h1>
+          <div class="about-hero-tagline">Design with clarity, always.</div>
+          <p class="about-hero-desc">
+            eDiye is a design and branding agency built to help businesses stand out, communicate with confidence, and grow with purpose.
+          </p>
+          <a href="#who-we-are" class="btn-discover-more">Discover more</a>
         </div>
 
         <!-- Full-Width Architectural Studio Image -->
@@ -72,46 +75,57 @@
       </div>
     </section>
 
-    <!-- Section 2: Overview & Team -->
-    <section class="section-about-block" id="overview">
+    <!-- Section 2: Who we are & Team (1-to-1 Framer Architecture) -->
+    <section class="section-about-block" id="who-we-are">
       <div class="container">
         <div class="about-3col-grid">
           
           <div class="about-col-left">
             <div class="badge-tag">
-              <i class="ph-duotone ph-sparkle"></i>
-              <span>Overview</span>
+              <i class="ph-duotone ph-users"></i>
+              <span>Who we are</span>
+            </div>
+
+            <div class="about-left-crosshair">
+              <span class="grid-crosshair-sm">+</span>
             </div>
           </div>
 
           <div class="about-col-span2">
             <h2 class="about-statement-heading">
-              At eDiye, we work with founders, scale-ups, and established companies across industries. From fashion and lifestyle to SaaS and tech, we help businesses look sharper, sound clearer, and perform better. Every project starts with questions, strategy, and research and ends with branding, websites, and design systems that actually make an impact.
+              At eDiye, we work with startups, scale-ups, and established companies across industries. From fashion and lifestyle to SaaS and tech, we help businesses look sharper, sound clearer, and perform better. Every project starts with questions, strategy, and research and ends with branding, websites, and design systems that actually make an impact.
             </h2>
-            <p class="about-statement-desc">
-              Our small, multidisciplinary team combines brand strategy, product design, creative engineering, and UX direction to build timeless digital identities.
+            
+            <p class="about-statement-subtext">
+              We’re more than a design agency. We’re a team of thinkers, makers, and problem-solvers who believe in building brands that last.
             </p>
 
             <!-- 2x2 Team Portraits Grid -->
             <div class="about-team-grid">
               
+              <!-- Dennis Essien -->
               <div class="team-member-card">
-                <img src="assets/images/Gqd3ghxdhpcNO24uclWDcRMAAI.png" alt="Marcus Vance" class="team-member-img">
+                <span class="team-card-crosshair">+</span>
+                <img src="assets/images/Gqd3ghxdhpcNO24uclWDcRMAAI.png" alt="Dennis Essien" class="team-member-img">
                 <div class="team-member-overlay">
-                  <div class="team-member-name">Marcus Vance</div>
-                  <div class="team-member-role">Creative Director</div>
+                  <div class="team-member-name">Dennis Essien</div>
+                  <div class="team-member-role">Founder & Creative Director</div>
                 </div>
               </div>
 
+              <!-- Bobby Salau -->
               <div class="team-member-card">
-                <img src="assets/images/NZlfs6TfLN8vS5DijKdJOBhaYU.png" alt="David Miller" class="team-member-img">
+                <span class="team-card-crosshair">+</span>
+                <img src="assets/images/NZlfs6TfLN8vS5DijKdJOBhaYU.png" alt="Bobby Salau" class="team-member-img">
                 <div class="team-member-overlay">
-                  <div class="team-member-name">David Miller</div>
-                  <div class="team-member-role">Lead Developer</div>
+                  <div class="team-member-name">Bobby Salau</div>
+                  <div class="team-member-role">Lead Designer & Partner</div>
                 </div>
               </div>
 
+              <!-- Elena Rostova -->
               <div class="team-member-card">
+                <span class="team-card-crosshair">+</span>
                 <img src="assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png" alt="Elena Rostova" class="team-member-img">
                 <div class="team-member-overlay">
                   <div class="team-member-name">Elena Rostova</div>
@@ -119,7 +133,9 @@
                 </div>
               </div>
 
+              <!-- Liam Thorne -->
               <div class="team-member-card">
+                <span class="team-card-crosshair">+</span>
                 <img src="assets/images/d7YSi8Bz8xr3cJPA5GyP05NV7Y.webp" alt="Liam Thorne" class="team-member-img">
                 <div class="team-member-overlay">
                   <div class="team-member-name">Liam Thorne</div>
