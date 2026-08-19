@@ -2338,7 +2338,7 @@ button, input, textarea, select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -2348,11 +2348,9 @@ button, input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 480px;
+  height: 100%;
   box-sizing: border-box;
   padding: 0;
-  position: sticky;
-  top: 120px;
 }
 
 .faq-left-top {
