@@ -3592,13 +3592,13 @@ button, input, textarea, select {
 
 .about-testimonial-quote {
   font-family: var(--font-main);
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  font-size: var(--font-body-48-size, 48px);
+  font-weight: var(--font-body-48-weight, 600);
+  line-height: 1.18;
+  letter-spacing: var(--font-body-48-letter, -0.05em);
+  color: var(--neutral-0, #ffffff);
   margin: 0 0 36px 0;
-  color: #ffffff;
-  max-width: 580px;
+  max-width: 660px;
 }
 
 .about-testimonial-author {
