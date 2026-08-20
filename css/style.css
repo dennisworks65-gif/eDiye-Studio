@@ -3519,18 +3519,25 @@ button, input, textarea, select {
   margin: 0;
 }
 
-/* Testimonial Feature Card */
+/* Full-Bleed Testimonial Feature Card Banner */
+.about-testimonial-fullbleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  margin: 60px 0 100px;
+}
+
 .about-testimonial-banner {
   position: relative;
   width: 100%;
-  min-height: 480px;
-  border-radius: 28px;
-  overflow: hidden;
+  min-height: 560px;
   display: flex;
   align-items: flex-end;
-  padding: 60px;
   box-sizing: border-box;
-  margin: 40px 0 100px;
 }
 
 .about-testimonial-bg {
@@ -3549,20 +3556,29 @@ button, input, textarea, select {
   z-index: 2;
 }
 
-.about-testimonial-content {
+.about-testimonial-inner-container {
   position: relative;
   z-index: 3;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  box-sizing: border-box;
+}
+
+.about-testimonial-content {
   color: #ffffff;
-  max-width: 720px;
+  max-width: 800px;
 }
 
 .about-testimonial-quote {
   font-family: var(--font-main);
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
   margin: 0 0 24px 0;
+  color: #ffffff;
 }
 
 .about-testimonial-author {
