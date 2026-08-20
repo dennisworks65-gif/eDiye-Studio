@@ -3609,16 +3609,20 @@ button, input, textarea, select {
 
 .testimonial-author-name {
   font-family: var(--font-main);
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: var(--font-body-24-size, 24px);
+  font-weight: var(--font-body-24-weight, 500);
+  letter-spacing: var(--font-body-24-letter, -0.04em);
+  line-height: var(--font-body-24-line, 1.3em);
+  color: var(--neutral-0, #ffffff);
 }
 
 .testimonial-author-role {
   font-family: var(--font-main);
-  font-weight: 400;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.4em;
+  color: var(--neutral-300, #d4d4d4);
 }
 
 /* Team Subtext & Carousel Controls Row */
