@@ -3344,11 +3344,12 @@ button, input, textarea, select {
 
 .about-statement-heading {
   font-family: var(--font-main);
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: #000000;
+  font-size: var(--font-h2-size, 56px);
+  font-weight: var(--font-h2-weight, 600);
+  line-height: var(--font-h2-line, 1.1);
+  letter-spacing: var(--font-h2-letter, -0.06em);
+  color: var(--neutral-600, #000000);
+  text-align: left;
   margin: 0 0 24px 0;
 }
 
