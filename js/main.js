@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialCarousel();
   initCountUp();
   initTrueFocus();
+  initTeamCarousel();
 });
 
 // --- Framer Scroll Animation: Layer in View (Replay: No) ---
@@ -528,3 +529,20 @@ function initTrueFocus() {
     });
   });
 }
+
+// --- 10. Team Photos Carousel ---
+function initTeamCarousel() {
+  const prevBtn = document.getElementById('team-carousel-prev');
+  const nextBtn = document.getElementById('team-carousel-next');
+  const track = document.getElementById('team-carousel-track');
+  if (!prevBtn || !nextBtn || !track) return;
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: 380, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -380, behavior: 'smooth' });
+  });
+}
+

@@ -3621,6 +3621,87 @@ button, input, textarea, select {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* Team Subtext & Carousel Controls Row */
+.team-subtext-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin: 24px 0 40px;
+}
+
+.about-team-subtext {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55em;
+  color: var(--neutral-500, #777777);
+  max-width: 500px;
+  margin: 0;
+}
+
+.team-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #555555;
+  font-size: 16px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.team-nav-btn:hover {
+  background-color: #d4d4d4;
+  transform: scale(1.05);
+}
+
+/* Team Photo Carousel Grid (1-to-1 Framer Reference) */
+.team-carousel-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.team-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.team-carousel-track {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.team-carousel-card {
+  width: 100%;
+  height: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.team-carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* Values Grid */
 .about-values-grid {
   display: grid;
