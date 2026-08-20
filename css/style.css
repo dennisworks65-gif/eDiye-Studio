@@ -3562,32 +3562,51 @@ button, input, textarea, select {
   box-sizing: border-box;
 }
 
-.about-testimonial-content {
-  color: #ffffff;
-  max-width: 800px;
+.about-testimonial-3col {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.testimonial-tag-blue {
+  color: #2b59ff;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.testimonial-logo-wrap {
+  margin-bottom: 24px;
 }
 
 .about-testimonial-quote {
   font-family: var(--font-main);
-  font-size: 34px;
+  font-size: 38px;
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
-  margin: 0 0 24px 0;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px 0;
   color: #ffffff;
+  max-width: 860px;
 }
 
 .about-testimonial-author {
   font-family: var(--font-main);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .about-testimonial-author span {
+  display: block;
   font-weight: 400;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
-  margin-left: 6px;
+  margin-top: 4px;
 }
 
 /* Values Grid */
