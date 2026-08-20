@@ -3293,17 +3293,10 @@ button, input, textarea, select {
 }
 
 .about-hero-fullwidth-image {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
   line-height: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -3311,8 +3304,6 @@ button, input, textarea, select {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  object-position: center center;
 }
 
 /* About 3-Column Content Block Layout */
@@ -3527,12 +3518,9 @@ button, input, textarea, select {
 
 /* Full-Bleed Testimonial Feature Card Banner */
 .about-testimonial-fullbleed {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   overflow: hidden;
   margin: 60px 0 100px;
 }
