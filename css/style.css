@@ -3164,23 +3164,37 @@ button, input, textarea, select {
    ========================================================================== */
 
 .section-about-hero {
-  padding: 80px 0 60px;
+  padding: 0;
   background-color: var(--bg-page);
+  width: 100%;
+}
+
+.about-hero-container {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 260px 40px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 64px;
+  box-sizing: border-box;
 }
 
 .about-hero-crosshairs {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  margin-bottom: 60px;
 }
 
-.about-hero-center-box {
+.about-hero-title-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 64px;
+  gap: 14px;
 }
 
 .about-hero-title {
@@ -3199,8 +3213,17 @@ button, input, textarea, select {
   font-weight: 500;
   color: #777777;
   letter-spacing: -0.02em;
-  margin-top: 14px;
-  margin-bottom: 24px;
+  margin: 0;
+}
+
+.about-hero-body-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  max-width: 580px;
+  width: 100%;
 }
 
 .about-hero-desc {
@@ -3210,8 +3233,8 @@ button, input, textarea, select {
   line-height: 1.55em;
   color: #666666;
   letter-spacing: -0.01em;
-  max-width: 520px;
-  margin: 0 auto 32px auto;
+  margin: 0;
+  text-align: center;
 }
 
 .btn-discover-more {
@@ -3233,6 +3256,19 @@ button, input, textarea, select {
 .btn-discover-more:hover {
   background-color: #222222;
   transform: translateY(-1px);
+}
+
+.about-panoramic-wrap {
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.about-panoramic-container {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .about-hero-img-wrap {
