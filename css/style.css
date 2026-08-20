@@ -3355,10 +3355,11 @@ button, input, textarea, select {
 
 .about-statement-subtext {
   font-family: var(--font-main);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.55em;
-  color: #777777;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: -0.02em;
+  color: var(--neutral-500, #737373);
   max-width: 540px;
   margin: 0 0 48px 0;
 }
