@@ -3432,33 +3432,91 @@ button, input, textarea, select {
   margin-top: 2px;
 }
 
-/* Impact Metrics Grid */
-.about-metrics-row {
+/* About Metric Cards Grid (1-to-1 Framer Reference) */
+.about-metric-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  gap: 24px;
+  width: 100%;
+  margin-top: 60px;
 }
 
-.metric-item-val {
+.about-metric-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.about-metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.metric-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.metric-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #cccccc;
+}
+
+.metric-dots .dot.active {
+  background-color: #000000;
+}
+
+.metric-card-crosshair {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.metric-card-number {
   font-family: var(--font-main);
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: #000000;
   line-height: 1;
-  margin-bottom: 14px;
+  color: #000000;
+  margin: 32px 0 auto 0;
 }
 
-.metric-item-label {
+.metric-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.metric-card-label {
   font-family: var(--font-main);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.45em;
   color: #777777;
-  max-width: 240px;
+  max-width: 200px;
+  margin: 0;
 }
 
 /* Testimonial Feature Card */
