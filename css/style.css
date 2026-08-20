@@ -3517,22 +3517,19 @@ button, input, textarea, select {
 }
 
 /* Full-Bleed Testimonial Feature Card Banner */
-.about-testimonial-fullbleed {
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  margin: 60px 0 100px;
-}
-
+/* Testimonial Feature Card Banner (1-to-1 Framer Architecture) */
 .about-testimonial-banner {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 640px;
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 560px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
   box-sizing: border-box;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
 }
 
 .about-testimonial-bg {
@@ -3548,27 +3545,28 @@ button, input, textarea, select {
 .about-testimonial-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.75) 100%),
-              radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%),
+              radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.85) 100%);
   z-index: 2;
 }
 
-.about-testimonial-inner-container {
+.about-testimonial-inner {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1520px;
-  margin: 0 auto;
-  padding: 100px 40px;
-  box-sizing: border-box;
 }
 
-.about-testimonial-3col {
+.about-testimonial-top-row {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
   align-items: start;
   width: 100%;
+}
+
+.testimonial-tag-col {
+  display: flex;
+  align-items: flex-start;
 }
 
 .testimonial-tag-blue {
@@ -3580,6 +3578,12 @@ button, input, textarea, select {
   text-transform: uppercase;
   display: inline-block;
   margin-top: 4px;
+}
+
+.testimonial-quote-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .testimonial-logo-wrap {
@@ -3598,18 +3602,23 @@ button, input, textarea, select {
 }
 
 .about-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial-author-name {
   font-family: var(--font-main);
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 }
 
-.about-testimonial-author span {
-  display: block;
+.testimonial-author-role {
+  font-family: var(--font-main);
   font-weight: 400;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
-  margin-top: 4px;
 }
 
 /* Values Grid */
