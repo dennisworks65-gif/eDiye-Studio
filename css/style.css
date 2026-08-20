@@ -3528,7 +3528,8 @@ button, input, textarea, select {
 .about-testimonial-banner {
   position: relative;
   width: 100%;
-  min-height: 560px;
+  aspect-ratio: 1024 / 771;
+  min-height: 700px;
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
