@@ -3677,6 +3677,7 @@ button, input, textarea, select {
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
 
 .team-carousel-container::-webkit-scrollbar {
@@ -3684,14 +3685,15 @@ button, input, textarea, select {
 }
 
 .team-carousel-track {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 24px;
-  width: 100%;
+  width: max-content;
+  padding: 4px 0 12px;
 }
 
 .team-carousel-card {
-  width: 100%;
+  flex: 0 0 460px;
+  width: 460px;
   height: 480px;
   border-radius: 28px;
   overflow: hidden;
@@ -3705,6 +3707,11 @@ button, input, textarea, select {
   object-fit: cover;
   object-position: center;
   display: block;
+  transition: transform var(--transition-normal);
+}
+
+.team-carousel-card:hover .team-carousel-img {
+  transform: scale(1.03);
 }
 
 /* Values Grid */

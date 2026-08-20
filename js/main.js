@@ -534,15 +534,17 @@ function initTrueFocus() {
 function initTeamCarousel() {
   const prevBtn = document.getElementById('team-carousel-prev');
   const nextBtn = document.getElementById('team-carousel-next');
-  const track = document.getElementById('team-carousel-track');
-  if (!prevBtn || !nextBtn || !track) return;
+  const container = document.querySelector('.team-carousel-container');
+  if (!prevBtn || !nextBtn || !container) return;
+
+  const scrollAmount = 484; // 460px card + 24px gap
 
   nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: 380, behavior: 'smooth' });
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
 
   prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -380, behavior: 'smooth' });
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
 }
 
