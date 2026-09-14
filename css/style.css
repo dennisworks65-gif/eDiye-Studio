@@ -4502,52 +4502,50 @@ button, input, textarea, select {
   transform: scale(1.08);
 }
 /* ==========================================================================
-   Works Page Curtain Reveal Architecture (1-to-1 Framer Architecture)
+   Works Page Curtain Reveal Architecture: Contact on Top, Newsletter Revealed
    ========================================================================== */
-.projects-hero-section {
+
+.works-canvas-top {
   position: relative;
   z-index: 10;
-  background-color: var(--bg-page);
-  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.45);
+  background-color: var(--bg-page, #f5f5f5);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.65);
 }
 
-.works-reveal-underlay {
+.works-canvas-top .projects-hero-section {
   position: relative;
-  width: 100%;
+  background-color: var(--bg-page, #f5f5f5);
+}
+
+.works-canvas-top .section-contact-dark {
+  position: relative;
+  z-index: 10;
   background-color: #000000;
-  z-index: 1;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.7);
 }
-
-.curtain-contact-section {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media (min-width: 810px) {
-  .works-reveal-underlay {
-    position: fixed;
-    top: 0;
+@media (min-width: 811px) {
+  .works-footer-reveal-wrapper {
+    position: sticky;
+    bottom: 0;
     left: 0;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
     z-index: 1;
+    overflow: hidden;
   }
-
-  .curtain-contact-section {
-    min-height: 100vh;
-    padding: 80px 0;
-  }
-
-  .site-footer {
-    position: relative;
-    z-index: 10;
+  .works-footer-reveal-wrapper .site-footer {
     background-color: #ffffff;
   }
 }
 
+@media (max-width: 810px) {
+  .works-canvas-top {
+    box-shadow: none;
+  }
+  .works-footer-reveal-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+}
 
 /* ==========================================================================
    Case Study 1-to-1 Reference Layout

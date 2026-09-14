@@ -14,8 +14,9 @@
 </head>
 <body>
 
-  <!-- Navigation Bar Matching Framer 1-to-1 Reference -->
-  <header class="works-navbar-wrapper">
+  <!-- Upper Canvas (Navbar + Projects Grid + Dark Contact Section on Top) -->
+  <div class="works-canvas-top">
+    <header class="works-navbar-wrapper">
     <a href="index.html" class="works-page-logo">eDiye<span class="reg">®</span></a>
 
     <nav class="works-nav-pills">
@@ -176,9 +177,8 @@
     </div>
   </main>
 
-  <!-- Dark Lead Capture / Contact Section (1-to-1 Framer Architecture Curtain Reveal) -->
-  <div class="works-reveal-underlay" id="works-reveal-underlay">
-    <section class="section-contact-dark curtain-contact-section" id="contact">
+      <!-- Dark Lead Capture / Contact Section (On Top of Revealed Footer) -->
+      <section class="section-contact-dark" id="contact">
       <div class="contact-dark-bg">
         <img src="assets/images/2QwXSHgmouhAG707Aj6Ue0D7ZBg.png" alt="eDiye Studio Contact" class="contact-dark-img">
         <div class="contact-dark-overlay"></div>
@@ -233,10 +233,11 @@
 
       </div>
     </section>
-  </div>
+    </div> <!-- End .works-canvas-top -->
 
-  <!-- Site Footer (1-to-1 Framer Architecture) -->
-  <footer class="site-footer">
+    <!-- Revealed Underlay: Footer with Newsletter & Links -->
+    <div class="works-footer-reveal-wrapper">
+      <footer class="site-footer">
     <div class="container">
       <div class="footer-3col-layout">
         
@@ -322,45 +323,27 @@
       </div>
     </div>
   </footer>
+      <!-- Dark Full-Bleed Footer Bottom Bar -->
+      <section class="footer-bottom-bar">
+        <div class="left-stack">
+          © 2025 eDiye. All rights reserved.
+        </div>
+        <div class="right-stack">
+          <a href="https://x.com/jakke_dea" target="_blank" rel="noopener" class="creator-link">
+            <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="@Dennis" class="creator-avatar">
+            <span>Created by <span class="highlight">@Dennis</span></span>
+          </a>
+          <a href="https://framer.link/jakke-dea" target="_blank" rel="noopener" class="framer-link">
+            <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Framer" class="creator-avatar">
+            <span>Made in <span class="highlight">Framer</span></span>
+          </a>
+        </div>
+      </section>
+    </div> <!-- End .works-footer-reveal-wrapper -->
 
   <!-- Progressive Liquid Glass Bottom Blur Overlay -->
   <div class="viewport-liquid-glass" aria-hidden="true"></div>
 
   <script src="js/main.js"></script>
-  <script>
-    // Curtain Reveal Engine for Works Page
-    (function() {
-      const canvas = document.querySelector('.projects-hero-section');
-      const underlay = document.getElementById('works-reveal-underlay');
-      const footer = document.querySelector('.site-footer');
-      if (!canvas || !underlay) return;
-
-      function updateCurtain() {
-        if (window.innerWidth < 810) {
-          canvas.style.marginBottom = '0px';
-          underlay.style.position = 'relative';
-          underlay.style.height = 'auto';
-          underlay.style.visibility = 'visible';
-          underlay.style.pointerEvents = 'auto';
-          return;
-        }
-
-        underlay.style.position = 'fixed';
-        underlay.style.height = '100vh';
-        canvas.style.marginBottom = '100vh';
-
-        const canvasRect = canvas.getBoundingClientRect();
-        // Underlay is revealed as canvas bottom scrolls up from window.innerHeight to 0
-        const isRevealing = canvasRect.bottom <= window.innerHeight + 50;
-        underlay.style.visibility = isRevealing ? 'visible' : 'hidden';
-        underlay.style.pointerEvents = canvasRect.bottom <= 50 ? 'auto' : 'none';
-      }
-
-      window.addEventListener('scroll', updateCurtain, { passive: true });
-      window.addEventListener('resize', updateCurtain, { passive: true });
-      window.addEventListener('DOMContentLoaded', updateCurtain);
-      updateCurtain();
-    })();
-  </script>
 </body>
 </html>
