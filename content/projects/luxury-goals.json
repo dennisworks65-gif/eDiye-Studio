@@ -1,0 +1,56 @@
+{
+  "slug": "luxury-goals",
+  "title": "A brand identity for modern luxury",
+  "client": "Luxury Goals",
+  "duration": "5 Weeks",
+  "date": "Nov 22, 2024",
+  "tags": [
+    "Design"
+  ],
+  "hero_desc": "Crafting a refined identity and digital presence for a high-end clothing brand, designed to balance timeless elegance with contemporary appeal.",
+  "hero_banner": "assets/images/QcRjYq2q5Qgsa7NIv4d3QAijeRA.png",
+  "about_label": "About the project",
+  "about_headline": "Luxury Goals had the product quality, but not the brand presence to match. Their clothing was built with craftsmanship and attention to detail, yet their identity felt underdeveloped and their digital presence lacked the sense of exclusivity that defines luxury.",
+  "about_desc": "We elevated Luxury Goals with a complete rebrand centered on elegance, simplicity, and timeless appeal. The new identity embraced refined typography, a restrained color palette, and a visual language inspired by high fashion editorials. The website was rebuilt to feel immersive and cinematic — more like a gallery than a shop — with storytelling and imagery that positioned Luxury Goals as a true luxury label.",
+  "showcase_img_1": "assets/images/PFVYBLspq8tPAwvcGFmcXqzcU.png",
+  "challenges_label": "Challanges",
+  "challenges_headline": "The challenge was transforming a clothing brand into a luxury brand without losing its accessibility or authenticity.",
+  "challenges_desc": "Luxury markets are defined by perception. The old Luxury Goals brand felt too generic, with visuals that lacked refinement and a website that was functional but not inspiring. To compete with established fashion houses, the brand needed more than good photography — it needed a complete identity system that conveyed exclusivity, craftsmanship, and aspiration. The task was to elevate the brand while ensuring it remained relatable to its core audience.",
+  "gallery_img_left": "assets/images/NZlfs6TfLN8vS5DijKdJOBhaYU.png",
+  "gallery_img_right": "assets/images/H7pmHxrsHkVjHKJY8oD7Oy6ck.png",
+  "gallery_img_bottom": "assets/images/ClJhI5CfRjNjvsijQgsTJq8cXws.png",
+  "summary_label": "Summary",
+  "summary_headline": "Luxury Goals now presents itself as a fashion brand built on sophistication and cultural relevance.",
+  "summary_desc": "With a new identity, refined messaging, and an elevated e-commerce experience, Luxury Goals speaks the language of modern luxury. The brand now reflects the quality of its products, communicates exclusivity, and delivers a digital experience that feels seamless and inspiring. Today, Luxury Goals is positioned as more than a clothing label — it’s a lifestyle statement for those who value design, detail, and distinction.",
+  "related": [
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    },
+    {
+      "slug": "korten",
+      "client": "Korten",
+      "title": "Turning tradition into a modern brand",
+      "tags": [
+        "Design"
+      ],
+      "image": "assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png"
+    },
+    {
+      "slug": "everly",
+      "client": "Everly",
+      "title": "A lifestyle brand with a sporting edge",
+      "tags": [
+        "Branding",
+        "Developement"
+      ],
+      "image": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png"
+    }
+  ]
+}

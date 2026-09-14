@@ -1,0 +1,57 @@
+{
+  "slug": "parla-porte",
+  "title": "Redefining sport for the digital age",
+  "client": "Parla Porte",
+  "duration": "4 Weeks",
+  "date": "Mar 12, 2024",
+  "tags": [
+    "Design",
+    "Branding"
+  ],
+  "hero_desc": "Creating a bold identity and e-commerce experience for a performance-driven sports brand, built to inspire athletes and everyday movers alike.",
+  "hero_banner": "assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png",
+  "about_label": "About the project",
+  "about_headline": "Parla Porte had a strong product line but a weak brand presence. Their existing identity lacked personality, their e-commerce site felt dated, and their digital experience didn’t match the energy of their products.",
+  "about_desc": "We reimagined Parla Porte’s brand from top to bottom, building a visual system that communicates energy, power, and modernity. The new identity uses bold typography, motion-driven graphics, and a color palette that reflects performance and intensity. The e-commerce platform was rebuilt around clean navigation, sharp product storytelling, and high-impact visuals, creating a shopping experience that feels as dynamic as the brand itself.",
+  "showcase_img_1": "assets/images/b67WRyYxN5EBZWX5uNZLHhK7p0.png",
+  "challenges_label": "Challanges",
+  "challenges_headline": "The challenge was building a sports identity that could compete with established giants while feeling authentic and scalable for a growing brand.",
+  "challenges_desc": "Parla Porte needed to move beyond “just another e-commerce shop” and become a recognizable name in the sportswear world. Their old platform lacked visual impact, their brand didn’t have a distinct voice, and their products were getting lost in a crowded market. We had to create a brand system that combined aspirational lifestyle elements with functional product design, and an online store that worked as seamlessly on mobile as it did on desktop.",
+  "gallery_img_left": "assets/images/bPl38c8zBT1avFuZK6zWt7A8x8.png",
+  "gallery_img_right": "assets/images/DnDPhom637FU8YzDRG93GyfjA.png",
+  "gallery_img_bottom": "assets/images/9su6uumd2A2YljUXe8F0eAcZ7uA.png",
+  "summary_label": "Summary",
+  "summary_headline": "Parla Porte emerged with a brand and e-commerce experience that rivals the best in the industry.",
+  "summary_desc": "With a bold identity, high-performance design system, and an e-commerce platform tailored for conversions, Parla Porte now has the tools to grow into a globally recognized sports brand. The new presence inspires confidence, drives sales, and builds loyalty among athletes and everyday customers alike. It’s not just about selling products — it’s about creating a movement around performance and style.",
+  "related": [
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    },
+    {
+      "slug": "korten",
+      "client": "Korten",
+      "title": "Turning tradition into a modern brand",
+      "tags": [
+        "Design"
+      ],
+      "image": "assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png"
+    },
+    {
+      "slug": "everly",
+      "client": "Everly",
+      "title": "A lifestyle brand with a sporting edge",
+      "tags": [
+        "Branding",
+        "Developement"
+      ],
+      "image": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png"
+    }
+  ]
+}

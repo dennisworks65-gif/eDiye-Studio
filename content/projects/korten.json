@@ -1,0 +1,57 @@
+{
+  "slug": "korten",
+  "title": "Turning tradition into a modern brand",
+  "client": "Korten",
+  "duration": "6 Weeks",
+  "date": "Jul 18, 2025",
+  "tags": [
+    "Design"
+  ],
+  "hero_desc": "Repositioning a heritage-driven company with a bold new identity and digital presence that connects with today’s audience while respecting its roots.",
+  "hero_banner": "assets/images/GKaLBLFAXQvBLnfF8r3xQ7AvA.png",
+  "about_label": "About the project",
+  "about_headline": "Korten had history, but the brand felt stuck in the past. Their identity lacked relevance, and their website wasn’t attracting the new generation of customers.",
+  "about_desc": "Our mission was to refresh Korten’s brand while honoring its legacy. We created a modern identity system that stayed true to their story but looked sharp, relevant, and scalable. The website was rebuilt with a focus on storytelling, visuals, and user experience, ensuring it resonated with both long-time customers and new audiences. The result was a digital-first brand that balanced heritage with modernity, giving Korten a presence that feels timeless yet contemporary.",
+  "showcase_img_1": "assets/images/18LsyCMm0yx3lZQtiDaOWlt0rwY.png",
+  "challenges_label": "Challanges",
+  "challenges_headline": "Balancing legacy with innovation is never easy. Korten’s old brand leaned too heavily on tradition and failed to engage a new market.",
+  "challenges_desc": "Korten risked being overlooked by younger customers who saw the brand as outdated. The identity was dated, with visuals that lacked clarity and cohesion. Their website was not only visually weak but also hard to navigate, creating friction instead of connection. The challenge was to build a refreshed identity that respected the brand’s history while presenting it in a way that felt dynamic, trustworthy, and forward-looking.",
+  "gallery_img_left": "assets/images/McbiACRpZuBnudTpFcsvIbgvYNE.png",
+  "gallery_img_right": "assets/images/n2s3d8Y9i9RSjMRopuSjoJ9um4.png",
+  "gallery_img_bottom": "assets/images/qURccGcpdNKG5QZO2sSAiB7Wo.png",
+  "summary_label": "Summary",
+  "summary_headline": "Korten emerged with a renewed identity that respects its roots and embraces the future.",
+  "summary_desc": "The rebrand provided Korten with a versatile design system, bold visuals, and a website that tells their story with confidence. Messaging was updated to resonate with modern audiences without alienating existing customers. The new presence positioned Korten as a heritage brand with contemporary relevance, helping it strengthen loyalty and expand its market reach. The transformation proved that honoring the past and embracing the future can go hand in hand.",
+  "related": [
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    },
+    {
+      "slug": "everly",
+      "client": "Everly",
+      "title": "A lifestyle brand with a sporting edge",
+      "tags": [
+        "Branding",
+        "Developement"
+      ],
+      "image": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png"
+    },
+    {
+      "slug": "peni",
+      "client": "Peni",
+      "title": "A travel brand built to inspire",
+      "tags": [
+        "Design",
+        "Developement"
+      ],
+      "image": "assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png"
+    }
+  ]
+}

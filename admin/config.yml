@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: dennisworks65-gif/eDiye-Studio
+  branch: main
+
+# Local development proxy toggle (enables editing offline without OAuth)
+local_backend: true
+
+media_folder: "assets/images"
+public_folder: "../assets/images"
+
+collections:
+  - name: "projects"
+    label: "Projects & Case Studies"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{client}} — {{title}}"
+    fields:
+      - { label: "Slug / File Name", name: "slug", widget: "string", hint: "Identifier for URL, e.g. hectic, korten" }
+      - { label: "Client Name", name: "client", widget: "string" }
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Timeline / Duration", name: "duration", widget: "string", default: "3 Weeks" }
+      - { label: "Date", name: "date", widget: "string", default: "Aug 14, 2025" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["Design", "Branding"] }
+      - { label: "Hero Description", name: "hero_desc", widget: "text" }
+      - { label: "Hero Showcase Banner", name: "hero_banner", widget: "image" }
+
+      - { label: "About Section Label", name: "about_label", widget: "string", default: "About the project" }
+      - { label: "About Headline", name: "about_headline", widget: "string" }
+      - { label: "About Description", name: "about_desc", widget: "text" }
+      - { label: "Showcase Image 1", name: "showcase_img_1", widget: "image" }
+
+      - { label: "Challenges Section Label", name: "challenges_label", widget: "string", default: "Challanges" }
+      - { label: "Challenges Headline", name: "challenges_headline", widget: "string" }
+      - { label: "Challenges Description", name: "challenges_desc", widget: "text" }
+
+      - { label: "Gallery Left Image", name: "gallery_img_left", widget: "image" }
+      - { label: "Gallery Right Image", name: "gallery_img_right", widget: "image" }
+      - { label: "Gallery Bottom Full-Width Image", name: "gallery_img_bottom", widget: "image" }
+
+      - { label: "Summary Section Label", name: "summary_label", widget: "string", default: "Summary" }
+      - { label: "Summary Headline", name: "summary_headline", widget: "string" }
+      - { label: "Summary Description", name: "summary_desc", widget: "text" }

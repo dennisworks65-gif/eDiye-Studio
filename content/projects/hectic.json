@@ -1,0 +1,57 @@
+{
+  "slug": "hectic",
+  "title": "A brand built to grow",
+  "client": "Hectic",
+  "duration": "3 Weeks",
+  "date": "Aug 14, 2025",
+  "tags": [
+    "Design",
+    "Branding"
+  ],
+  "hero_desc": "Rebranding a fast-moving SaaS platform with a stronger identity, sharper visuals, and a high-performing website designed to convert leads into loyal customers.",
+  "hero_banner": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg",
+  "about_label": "About the project",
+  "about_headline": "Hectic was scaling fast, but their brand couldn’t keep up. The identity lacked consistency, and the website wasn’t telling the story of a company ready to lead.",
+  "about_desc": "We rebuilt Hectic’s brand into something modern, confident, and trustworthy. The new design system brought consistency across every channel, while the website was restructured around clarity and conversion. Messaging was redefined to speak directly to their users, reinforcing trust at every step. The outcome was more than a facelift — it was a complete rethinking of how Hectic presents itself to the world, aligning their presence with the quality of their product.",
+  "showcase_img_1": "assets/images/PWP3NjfP6HBbzdSs53EA1XbjreY.png",
+  "challenges_label": "Challanges",
+  "challenges_headline": "The product was strong, but the brand made it look weak. Their visuals were generic, and the website failed to inspire trust.",
+  "challenges_desc": "Hectic’s old identity was fragmented and lacked direction. Without consistency or a strong voice, it didn’t build the credibility needed in a competitive SaaS landscape. The website was cluttered, with no clear user journey, and failed to communicate the value of the product. While the platform itself was powerful, the brand created hesitation for potential clients. The challenge was not just about creating new visuals, but about reshaping perception — turning a weak identity into one that conveyed strength, clarity, and professionalism.",
+  "gallery_img_left": "assets/images/NqkxjDlGVuKwywbrBdpMjo5ATQ.png",
+  "gallery_img_right": "assets/images/izd9wkgBvGYOnwCx6GQJ0oXpLQ.png",
+  "gallery_img_bottom": "assets/images/00q6Mf60dQ92OC36PL7TzWMuPD4.png",
+  "summary_label": "Summary",
+  "summary_headline": "The rebrand gave Hectic a voice and presence worthy of their product.",
+  "summary_desc": "The final result was a unified identity, a conversion-focused website, and messaging that clearly articulated Hectic’s value. The new brand elevated trust, made the platform easier to understand, and gave the company a sharper edge in the SaaS market. Today, Hectic’s brand reflects the ambition of its team and the strength of its product, ensuring they are not only seen but remembered in a crowded space. What once held them back now drives their growth.",
+  "related": [
+    {
+      "slug": "korten",
+      "client": "Korten",
+      "title": "Turning tradition into a modern brand",
+      "tags": [
+        "Design"
+      ],
+      "image": "assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png"
+    },
+    {
+      "slug": "everly",
+      "client": "Everly",
+      "title": "A lifestyle brand with a sporting edge",
+      "tags": [
+        "Branding",
+        "Developement"
+      ],
+      "image": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png"
+    },
+    {
+      "slug": "peni",
+      "client": "Peni",
+      "title": "A travel brand built to inspire",
+      "tags": [
+        "Design",
+        "Developement"
+      ],
+      "image": "assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png"
+    }
+  ]
+}

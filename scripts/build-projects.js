@@ -1,9 +1,56 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+const ROOT_DIR = path.resolve(__dirname, '..');
+const PROJECTS_DIR = path.join(ROOT_DIR, 'content', 'projects');
+const WORKS_DIR = path.join(ROOT_DIR, 'works');
+
+if (!fs.existsSync(PROJECTS_DIR)) {
+  console.error('Projects directory not found:', PROJECTS_DIR);
+  process.exit(1);
+}
+
+const files = fs.readdirSync(PROJECTS_DIR).filter(f => f.endsWith('.json'));
+console.log(`Found ${files.length} projects in ${PROJECTS_DIR}`);
+
+const projects = files.map(file => {
+  const data = JSON.parse(fs.readFileSync(path.join(PROJECTS_DIR, file), 'utf8'));
+  return data;
+});
+
+function renderTemplate(p) {
+  const tagsHtml = (p.tags || []).map(t => `<span class="cs-tag"># ${t.replace(/^#\s*/, '')}</span>`).join('\n            ');
+  
+  // Format image paths for works/ folder (needs ../ prefix if starts with assets/)
+  const rel = (img) => {
+    if (!img) return '';
+    if (img.startsWith('http') || img.startsWith('../')) return img;
+    return '../' + img.replace(/^\//, '');
+  };
+
+  const relatedCardsHtml = (p.related || []).map(r => {
+    const rTags = (r.tags || []).map(t => `<span class="projects-tag-pill">${t.replace(/^#\s*/, '')}</span>`).join('\n                ');
+    return `          <!-- Card: ${r.client || r.slug} -->
+          <a href="${r.slug}.html" class="projects-card-link">
+            <div class="projects-card-visual visual-medium">
+              <div class="projects-card-tags">
+                ${rTags}
+              </div>
+              <img src="${rel(r.image)}" alt="${r.client || r.title}" loading="lazy">
+            </div>
+            <div class="projects-card-info">
+              <h3 class="projects-card-title">${r.client || r.slug}</h3>
+              <div class="projects-card-desc">${r.title || ''}</div>
+            </div>
+          </a>`;
+  }).join('\n\n');
+
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peni - A travel brand built to inspire — eDiye®</title>
+  <title>${p.client || 'Project'} - ${p.title} — eDiye®</title>
   <meta name="description" content="We build brands, design interfaces, and develop fast, functional websites that help growing teams stand out and convert. No fluff. Just work that works.">
   <link rel="icon" href="../assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
   <link rel="stylesheet" href="../css/tokens.css">
@@ -57,27 +104,26 @@
         <aside class="cs-meta-col">
           <div class="cs-meta-item">
             <span class="cs-meta-label">Client</span>
-            <span class="cs-meta-val">Peni</span>
+            <span class="cs-meta-val">${p.client || ''}</span>
           </div>
           <div class="cs-meta-item">
             <span class="cs-meta-label">Duration</span>
-            <span class="cs-meta-val">5 Weeks</span>
+            <span class="cs-meta-val">${p.duration || ''}</span>
           </div>
           <div class="cs-meta-item">
             <span class="cs-meta-label">Date</span>
-            <span class="cs-meta-val">Mar 22, 2025</span>
+            <span class="cs-meta-val">${p.date || ''}</span>
           </div>
         </aside>
 
         <!-- Right: Content -->
         <div class="cs-content-col">
           <div class="cs-tags-row">
-            <span class="cs-tag"># Design</span>
-            <span class="cs-tag"># Developement</span>
+            ${tagsHtml}
           </div>
-          <h1 class="cs-hero-title">A travel brand built to inspire</h1>
+          <h1 class="cs-hero-title">${p.title || ''}</h1>
           <p class="cs-hero-desc">
-            Redefining a travel company with a modern identity and digital platform designed to spark curiosity, build trust, and guide customers from exploration to booking.
+            ${p.hero_desc || ''}
           </p>
           <a href="#about-the-project" class="cs-explore-btn">Scroll to explore</a>
         </div>
@@ -85,7 +131,7 @@
 
       <!-- Full-Width Hero Media Showcase -->
       <div class="cs-hero-banner">
-        <img src="../assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png" alt="Peni - A travel brand built to inspire" loading="eager">
+        <img src="${rel(p.hero_banner)}" alt="${p.client} - ${p.title}" loading="eager">
       </div>
     </section>
 
@@ -94,31 +140,31 @@
       
       <!-- Block 1: About the project -->
       <div class="cs-content-block">
-        <div class="cs-block-label">About the project</div>
+        <div class="cs-block-label">${p.about_label || 'About the project'}</div>
         <div class="cs-block-content">
           <h2 class="cs-block-headline">
-            Peni had a clear mission: to make travel easier, more personal, and more inspiring. But their brand and digital presence didn’t reflect that.
+            ${p.about_headline || ''}
           </h2>
           <p class="cs-block-desc">
-            We worked with Peni to reimagine their brand from the ground up. The new identity focused on clean design, evocative imagery, and a flexible system that could work across campaigns, destinations, and digital tools. The website was redesigned as a true travel companion — easy to navigate, visually inspiring, and built to convert inspiration into action. The result was a brand experience that feels adventurous yet trustworthy, aspirational yet functional.
+            ${p.about_desc || ''}
           </p>
         </div>
       </div>
 
       <!-- Full-Width Project Image 1 -->
       <div class="cs-content-img-full">
-        <img src="../assets/images/iEanAxUvTIM5BjMrUxUomwmXQ.png" alt="Peni Showcase" loading="lazy">
+        <img src="${rel(p.showcase_img_1)}" alt="${p.client} Showcase" loading="lazy">
       </div>
 
       <!-- Block 2: Challanges -->
       <div class="cs-content-block">
-        <div class="cs-block-label">Challanges</div>
+        <div class="cs-block-label">${p.challenges_label || 'Challanges'}</div>
         <div class="cs-block-content">
           <h2 class="cs-block-headline">
-            The challenge was blending wanderlust-driven storytelling with a functional, reliable travel platform. Peni needed to inspire emotion while ensuring users trusted them to plan their journeys.
+            ${p.challenges_headline || ''}
           </h2>
           <p class="cs-block-desc">
-            Travel brands often lean too heavily on visuals — beautiful images without clear journeys. Peni’s old design suffered from this imbalance. It was pretty but confusing, with scattered information and no clear calls to action. We needed to create a system that paired storytelling with usability: inspiring customers to dream while giving them a frictionless path to book. The brand had to convey trust, excitement, and ease all at once.
+            ${p.challenges_desc || ''}
           </p>
         </div>
       </div>
@@ -126,21 +172,21 @@
       <!-- 3-Image Gallery (2 Columns + 1 Full Width) -->
       <div class="cs-gallery-wrapper">
         <div class="cs-gallery-row-2col">
-          <img src="../assets/images/Qtecu7YXmo7SKdcZBlMLNtSFfuM.png" alt="Peni Detail 1" loading="lazy">
-          <img src="../assets/images/KXsbg3UsKmfAU2rTZCH1RRHT3w.png" alt="Peni Detail 2" loading="lazy">
+          <img src="${rel(p.gallery_img_left)}" alt="${p.client} Detail 1" loading="lazy">
+          <img src="${rel(p.gallery_img_right)}" alt="${p.client} Detail 2" loading="lazy">
         </div>
-        <img src="../assets/images/6AuO2VxB23UZBZkmU3CQM7mpaU.png" alt="Peni Detail 3" class="cs-gallery-img-bottom" loading="lazy">
+        <img src="${rel(p.gallery_img_bottom)}" alt="${p.client} Detail 3" class="cs-gallery-img-bottom" loading="lazy">
       </div>
 
       <!-- Block 3: Summary -->
       <div class="cs-content-block" style="padding-bottom: 80px;">
-        <div class="cs-block-label">Summary</div>
+        <div class="cs-block-label">${p.summary_label || 'Summary'}</div>
         <div class="cs-block-content">
           <h2 class="cs-block-headline">
-            The rebrand gave Peni a clear identity and a digital platform that connects inspiration with action.
+            ${p.summary_headline || ''}
           </h2>
           <p class="cs-block-desc">
-            With a new visual system, stronger messaging, and a redesigned website, Peni now inspires travelers while guiding them seamlessly toward booking decisions. The brand balances emotion and function, turning the idea of travel into a journey that feels both exciting and attainable. Peni now stands as a modern travel brand ready to grow, resonate, and build long-term loyalty.
+            ${p.summary_desc || ''}
           </p>
         </div>
       </div>
@@ -162,49 +208,7 @@
         </h2>
 
         <div class="cs-discover-grid">
-          <!-- Card: Hectic -->
-          <a href="hectic.html" class="projects-card-link">
-            <div class="projects-card-visual visual-medium">
-              <div class="projects-card-tags">
-                <span class="projects-tag-pill">Design</span>
-                <span class="projects-tag-pill">Branding</span>
-              </div>
-              <img src="../assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg" alt="Hectic" loading="lazy">
-            </div>
-            <div class="projects-card-info">
-              <h3 class="projects-card-title">Hectic</h3>
-              <div class="projects-card-desc">A brand built to grow</div>
-            </div>
-          </a>
-
-          <!-- Card: Korten -->
-          <a href="korten.html" class="projects-card-link">
-            <div class="projects-card-visual visual-medium">
-              <div class="projects-card-tags">
-                <span class="projects-tag-pill">Design</span>
-              </div>
-              <img src="../assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png" alt="Korten" loading="lazy">
-            </div>
-            <div class="projects-card-info">
-              <h3 class="projects-card-title">Korten</h3>
-              <div class="projects-card-desc">Turning tradition into a modern brand</div>
-            </div>
-          </a>
-
-          <!-- Card: Everly -->
-          <a href="everly.html" class="projects-card-link">
-            <div class="projects-card-visual visual-medium">
-              <div class="projects-card-tags">
-                <span class="projects-tag-pill">Branding</span>
-                <span class="projects-tag-pill">Developement</span>
-              </div>
-              <img src="../assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png" alt="Everly" loading="lazy">
-            </div>
-            <div class="projects-card-info">
-              <h3 class="projects-card-title">Everly</h3>
-              <div class="projects-card-desc">A lifestyle brand with a sporting edge</div>
-            </div>
-          </a>
+${relatedCardsHtml}
         </div>
 
       </div>
@@ -376,4 +380,15 @@
 
   <script src="../js/main.js"></script>
 </body>
-</html>
+</html>`;
+}
+
+// Generate each HTML file
+projects.forEach(p => {
+  const outputPath = path.join(WORKS_DIR, `${p.slug}.html`);
+  const html = renderTemplate(p);
+  fs.writeFileSync(outputPath, html, 'utf8');
+  console.log(`Generated: works/${p.slug}.html`);
+});
+
+console.log('Project HTML generation completed successfully!');

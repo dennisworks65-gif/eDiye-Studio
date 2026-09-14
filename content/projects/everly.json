@@ -1,0 +1,57 @@
+{
+  "slug": "everly",
+  "title": "A lifestyle brand with a sporting edge",
+  "client": "Everly",
+  "duration": "5 Weeks",
+  "date": "Jun 25, 2025",
+  "tags": [
+    "Branding",
+    "Developement"
+  ],
+  "hero_desc": "Transforming a tennis-inspired lifestyle company with a sharp identity and digital presence that blends sport, design, and culture.",
+  "hero_banner": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png",
+  "about_label": "About the project",
+  "about_headline": "Everly came to us with a vision: to create a lifestyle brand rooted in the culture of tennis. The problem? Their existing identity was flat, their visuals lacked movement, and their digital touchpoints didn’t reflect the energy or precision the sport represents.",
+  "about_desc": "We set out to capture the rhythm and spirit of tennis in design form. The identity was rebuilt with bold typography, structured layouts, and a color palette inspired by the court. Photography and motion design reinforced the sense of athletic energy, while the website was redesigned as a sleek digital storefront — balancing lifestyle aesthetics with high-performance usability. Everly’s new brand is as much about sport as it is about style.",
+  "showcase_img_1": "assets/images/cnkyDU27h2kKxxGAqnJGdJFsiE.png",
+  "challenges_label": "Challanges",
+  "challenges_headline": "The challenge was to translate the elegance and energy of tennis into a brand system that felt authentic and scalable.",
+  "challenges_desc": "Everly’s previous identity didn’t resonate with athletes or lifestyle customers. The visuals lacked personality, the website created friction, and the brand risked blending in with competitors. We needed to create a system that balanced heritage with modern culture, allowing Everly to stand out as both a product-driven and lifestyle-oriented brand.",
+  "gallery_img_left": "assets/images/RUDw9SSf9slmrmzcy6NwE5jZi9U.png",
+  "gallery_img_right": "assets/images/Yb8nDxvwZAN07pPgqJS26suXipM.jpg",
+  "gallery_img_bottom": "assets/images/Gqd3ghxdhpcNO24uclWDcRMAAI.png",
+  "summary_label": "Summary",
+  "summary_headline": "The transformation gave Everly more than just a new look — it gave them a clear, confident identity that merges sport, culture, and lifestyle into a brand with real staying power.",
+  "summary_desc": "With a refreshed brand system and a high-performing website, Everly now connects with customers in a way that feels both authentic and aspirational. The brand reflects the elegance of tennis while embracing the speed and edge of modern design. Today, Everly stands as a lifestyle brand built for loyalty, growth, and cultural impact.",
+  "related": [
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    },
+    {
+      "slug": "korten",
+      "client": "Korten",
+      "title": "Turning tradition into a modern brand",
+      "tags": [
+        "Design"
+      ],
+      "image": "assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png"
+    },
+    {
+      "slug": "peni",
+      "client": "Peni",
+      "title": "A travel brand built to inspire",
+      "tags": [
+        "Design",
+        "Developement"
+      ],
+      "image": "assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png"
+    }
+  ]
+}
