@@ -2813,6 +2813,20 @@ button, input, textarea, select {
   color: #555555;
 }
 
+.shopify-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.shopify-feature-card {
+  background: #ffffff;
+  padding: 36px 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #eaeaea;
+}
+
 /* --- Section: Dark Contact / Lead Capture (1-to-1 Framer Architecture) --- */
 .section-contact-dark {
   background-color: #000000;
@@ -3271,21 +3285,22 @@ button, input, textarea, select {
 
 .about-hero-title {
   font-family: var(--font-main);
-  font-size: var(--font-h1-size, 120px);
+  font-size: clamp(38px, 8vw, 120px);
   font-weight: var(--font-h1-weight, 600);
   letter-spacing: var(--font-h1-letter, -0.04em);
-  line-height: var(--font-h1-line, 1.05);
+  line-height: 1.05;
   color: var(--neutral-600, #000000);
   margin: 0;
   text-align: left;
+  word-break: break-word;
 }
 
 .about-hero-tagline {
   font-family: var(--font-main);
-  font-size: var(--font-body-28-size, 28px);
+  font-size: clamp(18px, 3vw, 28px);
   font-weight: var(--font-body-28-weight, 500);
   letter-spacing: var(--font-body-28-letter, -0.04em);
-  line-height: var(--font-body-28-line, 1.3em);
+  line-height: 1.3em;
   color: var(--neutral-500, #737373);
   margin: 0;
   text-align: left;
@@ -3846,9 +3861,44 @@ button, input, textarea, select {
     width: 100%;
     max-width: 360px;
   }
-  .statement-3col-grid, .statement-cards-3col-grid, .benefits-3col-grid, .process-3col-grid, .services-3col-grid, .capabilities-3col-grid, .case-studies-3col-grid, .testimonials-header-grid, .testimonials-main-grid, .metrics-3col-grid, .pricing-header-grid, .faq-grid-layout, .contact-layout-grid, .footer-main-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .statement-3col-grid,
+  .statement-cards-3col-grid,
+  .benefits-3col-grid,
+  .process-3col-grid,
+  .services-3col-grid,
+  .capabilities-3col-grid,
+  .case-studies-3col-grid,
+  .testimonials-header-grid,
+  .testimonials-main-grid,
+  .metrics-3col-grid,
+  .pricing-header-grid,
+  .pricing-cards-3col-grid,
+  .faq-grid-layout,
+  .faq-header-grid,
+  .insights-3col-grid,
+  .contact-header-3col-grid,
+  .contact-form-3col-grid,
+  .footer-3col-layout,
+  .footer-main-grid,
+  .about-3col-grid,
+  .shopify-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+  .contact-form-3col-grid .grid-col-1 {
+    display: none;
+  }
+  .about-metric-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .about-team-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .insights-articles-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   .grid-col-span-2 {
     grid-column: span 1;
@@ -3870,11 +3920,8 @@ button, input, textarea, select {
   .case-studies-masonry {
     grid-template-columns: 1fr;
   }
-  .pricing-cards-grid {
-    grid-template-columns: 1fr;
-  }
   .section-hero-title {
-    font-size: 72px;
+    font-size: clamp(48px, 6vw, 76px);
   }
   .showreel-card {
     height: 440px;
@@ -3895,17 +3942,22 @@ button, input, textarea, select {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .about-hero-container {
+    padding: 120px 20px 60px;
+    gap: 36px;
+  }
   .hero-content {
-    padding: 0 20px;
+    padding: 0;
   }
   .section-hero-title {
-    font-size: 44px;
+    font-size: clamp(36px, 5.5vw, 48px);
+    line-height: 1.05;
   }
   .statement-heading {
-    font-size: 32px;
+    font-size: clamp(24px, 4vw, 32px);
   }
   .process-heading {
-    font-size: 34px;
+    font-size: clamp(26px, 4vw, 34px);
   }
   .showreel-card {
     height: 300px;
@@ -3918,10 +3970,10 @@ button, input, textarea, select {
     padding: 28px 20px;
   }
   .testimonial-main-quote {
-    font-size: 22px;
+    font-size: 20px;
   }
   .metric-big-number {
-    font-size: 44px;
+    font-size: 40px;
   }
   .testimonial-banner-strip {
     grid-template-columns: 1fr;
@@ -3929,14 +3981,50 @@ button, input, textarea, select {
   .capabilities-dual-grid {
     grid-template-columns: 1fr;
   }
+  .about-metric-cards-grid,
+  .about-team-grid,
+  .shopify-features-grid,
+  .insights-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .footer-3col-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .footer-brand-bottom {
+    margin-top: 40px;
+  }
   .footer-nav-cols {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
   }
   .footer-bottom-bar {
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     text-align: center;
     padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav-cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-brand-logo {
+    font-size: 48px;
+  }
+  .pricing-card-clean,
+  .pricing-card-photo {
+    padding: 32px 20px;
+  }
+  .pricing-price-row .price-number {
+    font-size: 32px;
+  }
+  .section-hero-title {
+    font-size: 34px;
   }
 }
 
