@@ -30,24 +30,35 @@ export default async function handler(req, res) {
     const accessToken = data.access_token;
 
     if (!accessToken) {
-      return res.status(400).send(`Failed to obtain access token: ${JSON.stringify(data)}`);
+      return res.status(400).send(`Failed to obtain access token from GitHub: ${JSON.stringify(data)}`);
     }
 
     // Decap CMS postMessage protocol
     const content = `<!doctype html>
 <html>
+<head><title>Authenticating...</title></head>
 <body>
+<p style="font-family: sans-serif; text-align: center; margin-top: 40px;">Authorizing GitHub with eDiye CMS...</p>
 <script>
   (function() {
+    const payload = 'authorization:github:success:${JSON.stringify({ token: accessToken, provider: 'github' })}';
+    function send(origin) {
+      try {
+        if (window.opener) {
+          window.opener.postMessage(payload, origin || '*');
+        }
+      } catch (err) {}
+    }
     function receiveMessage(e) {
-      window.opener.postMessage(
-        'authorization:github:success:${JSON.stringify({ token: accessToken, provider: 'github' })}',
-        e.origin
-      );
+      send(e.origin);
       window.removeEventListener('message', receiveMessage, false);
+      setTimeout(function() { window.close(); }, 500);
     }
     window.addEventListener('message', receiveMessage, false);
-    window.opener.postMessage('authorizing:github', '*');
+    send('*');
+    if (window.opener) {
+      window.opener.postMessage('authorizing:github', '*');
+    }
   })();
 </script>
 </body>
@@ -57,6 +68,6 @@ export default async function handler(req, res) {
     return res.status(200).send(content);
   } catch (error) {
     console.error(error);
-    return res.status(500).send('Authentication error');
+    return res.status(500).send('Authentication error during OAuth token exchange');
   }
 }
