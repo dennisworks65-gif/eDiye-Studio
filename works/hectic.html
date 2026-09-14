@@ -10,114 +10,81 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .case-study-hero {
-      padding: 140px 0 60px;
-    }
-    .case-hero-img {
-      width: 100%;
-      border-radius: var(--radius-xl);
-      margin: 40px 0 60px;
-      box-shadow: var(--shadow-lg);
-    }
-    .meta-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      padding: 30px 0;
-      border-top: 1px solid var(--border-divider);
-      border-bottom: 1px solid var(--border-divider);
-      margin-bottom: 60px;
-    }
-    .meta-label {
-      font-size: 12px;
-      color: #888;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .meta-val {
-      font-size: 16px;
-      font-weight: 700;
-      color: #000;
-    }
-  </style>
 </head>
-<body>
+<body class="case-study-page">
 
-  <!-- Announcement -->
-  <header class="announcement-bar">
-    <span class="announcement-dot"></span>
-    <a href="../index.html#pricing">
-      <span>NEW eDiye® PRICING</span>
-      <span>•</span>
-      <span>LEARN MORE</span>
-    </a>
-    <span class="announcement-dot"></span>
+  <!-- 1-to-1 Minimal Navigation Header -->
+  <header class="case-study-navbar">
+    <a href="../index.html" class="cs-brand-logo">eDiye<span class="reg">®</span></a>
+    <nav class="cs-nav-links">
+      <a href="../about.html" class="cs-nav-link">About</a>
+      <a href="../works.html" class="cs-nav-link active">Projects</a>
+      <a href="../shopify.html" class="cs-nav-link">Shopify</a>
+      <a href="../articles.html" class="cs-nav-link">Articles</a>
+      <a href="../contact.html" class="cs-nav-link">Contact</a>
+    </nav>
   </header>
 
-  <!-- Navigation Bar -->
-  <div class="navbar-wrapper">
-    <nav class="navbar-inner">
-      <a href="../index.html" class="brand-logo">
-        <div class="logo-text" style="color: #000000;">eDiye<span class="reg">®</span></div>
-        <div class="logo-sub">Clarity over clutter.</div>
-      </a>
+  <!-- 1-to-1 Case Study Hero Fold -->
+  <main>
+    <section class="cs-hero-section">
+      <div class="cs-hero-grid">
+        <!-- Left: Metadata Stack -->
+        <aside class="cs-meta-col">
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Client</span>
+            <span class="cs-meta-val">Hectic</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Duration</span>
+            <span class="cs-meta-val">3 Weeks</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Date</span>
+            <span class="cs-meta-val">Aug 14, 2025</span>
+          </div>
+        </aside>
 
-      <div class="nav-pills-group">
-        <a href="../about.html" class="nav-pill-btn">About</a>
-        <a href="../works.html" class="nav-pill-btn active">Projects</a>
-        <a href="../shopify.html" class="nav-pill-btn">Shopify</a>
-        <a href="../articles.html" class="nav-pill-btn">Articles</a>
-        <a href="../contact.html" class="nav-pill-btn">Contact</a>
-      </div>
-
-      <button class="nav-mobile-toggle" aria-label="Toggle Navigation Menu">Menu</button>
-    </nav>
-  </div>
-
-  <main class="case-study-hero">
-    <div class="container">
-      <div class="badge-tag" style="margin-bottom: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-        <span>Case Study</span>
-      </div>
-
-      <h1 class="section-hero-title">Hectic x eDiye®</h1>
-      <div class="section-hero-subtitle">A brand built to grow • Visual identity, design system, and digital presence.</div>
-
-      <img src="../assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="Hectic Showcase" class="case-hero-img">
-
-      <div class="meta-row">
-        <div>
-          <div class="meta-label">Client</div>
-          <div class="meta-val">Hectic Studio</div>
-        </div>
-        <div>
-          <div class="meta-label">Services</div>
-          <div class="meta-val">Branding, UI/UX, Framer</div>
-        </div>
-        <div>
-          <div class="meta-label">Timeline</div>
-          <div class="meta-val">4 Weeks</div>
-        </div>
-        <div>
-          <div class="meta-label">Year</div>
-          <div class="meta-val">2025</div>
+        <!-- Right: Content -->
+        <div class="cs-content-col">
+          <div class="cs-tags-row">
+            <span class="cs-tag">#Design</span>
+            <span class="cs-tag">#Branding</span>
+          </div>
+          <h1 class="cs-hero-title">A brand built to grow</h1>
+          <p class="cs-hero-desc">
+            Rebranding a fast-moving SaaS platform with a stronger identity, sharper visuals, and a high-performing website designed to convert leads into loyal customers.
+          </p>
+          <a href="#showcase" class="cs-explore-btn">Scroll to explore</a>
         </div>
       </div>
+    </section>
 
-      <div style="max-width: 760px; font-size: 18px; line-height: 1.6; color: #444; margin-bottom: 80px;">
-        <p style="margin-bottom: 24px;">
+    <!-- Full-Width Hero Media Showcase -->
+    <section id="showcase" class="cs-showcase-container">
+      <div class="cs-showcase-image-wrapper">
+        <img src="../assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="Hectic Showcase Banner" class="cs-showcase-img">
+      </div>
+    </section>
+
+    <!-- Narrative & Outcome Details -->
+    <section class="cs-body-details">
+      <div class="cs-details-sidebar">
+        <span>Overview & Impact</span>
+      </div>
+      <div class="cs-details-text">
+        <p>
           Hectic needed a bold, forward-looking aesthetic that matched their ambitious vision. We crafted a distinctive visual language with razor-sharp typography, sleek contrast palettes, and high-performance interactive interfaces.
         </p>
         <p>
           The outcome resulted in a 140% boost in inbound client inquiries and immediate recognition across creative tech communities.
         </p>
+        <a href="../works.html" class="cs-back-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to all projects
+        </a>
       </div>
-
-      <a href="../works.html" class="text-link-arrow">← Back to all projects</a>
-    </div>
+    </section>
   </main>
 
   <!-- Site Footer -->
@@ -161,7 +128,7 @@
   </footer>
 
   <script src="../js/main.js"></script>
-    <!-- Progressive Liquid Glass Bottom Blur Overlay -->
+  <!-- Progressive Liquid Glass Bottom Blur Overlay -->
   <div class="viewport-liquid-glass" aria-hidden="true"></div>
 </body>
 </html>
