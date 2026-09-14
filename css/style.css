@@ -185,14 +185,58 @@ button, input, textarea, select {
 
 /* --- Navigation --- */
 .navbar-wrapper {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 90;
+  z-index: 100;
   padding: 24px 40px;
+  box-sizing: border-box;
   pointer-events: none;
-  transition: padding var(--transition-normal);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hidden state when scrolling DOWN */
+.navbar-wrapper.nav-hidden {
+  transform: translateY(-120%);
+}
+
+/* Scrolled Floating State (active when scrolling UP past hero) */
+.navbar-wrapper.nav-scrolled {
+  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  padding: 16px 40px;
+  pointer-events: auto !important;
+}
+
+.navbar-wrapper.nav-scrolled .logo-text {
+  color: #000000;
+}
+
+.navbar-wrapper.nav-scrolled .logo-sub {
+  color: #7A7A7A;
+}
+
+.navbar-wrapper.nav-scrolled .nav-pill-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #000000;
+}
+
+.navbar-wrapper.nav-scrolled .nav-pill-btn:hover,
+.navbar-wrapper.nav-scrolled .nav-pill-btn.active {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000000;
+}
+
+.navbar-wrapper.nav-scrolled .nav-mobile-toggle {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #000000;
 }
 
 .navbar-inner {
@@ -1222,42 +1266,86 @@ button, input, textarea, select {
 
 .project-image-box {
   width: 100%;
-  border-radius: var(--radius-lg);
+  border-radius: 24px;
   overflow: hidden;
   background-color: #e5e5e5;
   position: relative;
   margin-bottom: 16px;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .project-card-item:hover .project-image-box {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.project-image-box img {
+.project-image-box img.project-card-main-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-card-item:hover .project-image-box img {
-  transform: scale(1.04);
+.project-card-item:hover .project-image-box img.project-card-main-img {
+  transform: scale(1.05);
+}
+
+.project-card-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-card-item:hover .project-card-dark-overlay {
+  opacity: 1;
+}
+
+.project-card-logo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-center-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card-item:hover .project-card-logo-overlay {
+  opacity: 1;
+}
+
+.project-card-item:hover .card-center-logo {
+  transform: scale(1.08);
 }
 
 .project-tags-overlay {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 18px;
+  left: 18px;
   display: flex;
-  gap: 6px;
-  z-index: 3;
+  gap: 8px;
+  z-index: 4;
 }
 
 .project-pill-tag {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.32);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   color: #ffffff;
@@ -1266,27 +1354,26 @@ button, input, textarea, select {
   font-weight: 500;
   padding: 6px 14px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
 .project-card-item.tall .project-image-box {
-  height: 580px;
+  height: 688px;
 }
 
 .project-card-item.medium .project-image-box {
-  height: 340px;
+  height: 442px;
 }
 
 .project-card-item.semi-tall .project-image-box {
-  height: 480px;
+  height: 548px;
 }
 
 .project-card-item.wide .project-image-box {
-  height: 380px;
+  height: 480px;
 }
-
 /* --- Case Studies Text Container (Exact Framer Specs: Fill 1fr, Fit height, Stack Center Left, Gap 4, Padding 16 4 16 4) --- */
 .project-text-container {
   width: 100%;

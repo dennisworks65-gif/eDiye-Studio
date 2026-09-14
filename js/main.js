@@ -156,15 +156,48 @@ function initHeaderScroll() {
   const navbar = document.querySelector('.navbar-wrapper');
   if (!navbar) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      navbar.style.paddingTop = '12px';
-      navbar.style.paddingBottom = '12px';
-    } else {
-      navbar.style.paddingTop = '20px';
-      navbar.style.paddingBottom = '20px';
+  // On dedicated case-study, articles, or article-detail pages, keep natural relative positioning
+  if (document.body.classList.contains('case-study-page') || 
+      document.body.classList.contains('articles-page') || 
+      document.body.classList.contains('article-detail-page')) {
+    return;
+  }
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateNavbar() {
+    const currentScrollY = window.scrollY;
+
+    // At top of page (hero fold)
+    if (currentScrollY <= 40) {
+      navbar.classList.remove('nav-hidden');
+      navbar.classList.remove('nav-scrolled');
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
     }
-  });
+
+    // Scrolling DOWN past hero -> hide smoothly
+    if (currentScrollY > lastScrollY && currentScrollY > 120) {
+      navbar.classList.add('nav-hidden');
+    } 
+    // Scrolling UP -> reveal with frosted light background
+    else if (currentScrollY < lastScrollY) {
+      navbar.classList.remove('nav-hidden');
+      navbar.classList.add('nav-scrolled');
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // --- 4. Mobile Navigation Toggle ---
