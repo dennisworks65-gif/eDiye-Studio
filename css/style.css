@@ -4409,7 +4409,21 @@ button, input, textarea, select {
   }
 }
 
-/* Card Centered Logo Overlay (Parla Porte, etc.) */
+/* Card Centered Logo Overlay & Darkening (Matching Homepage Hover Interaction) */
+.projects-card-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.projects-card-link:hover .projects-card-dark-overlay {
+  opacity: 1;
+}
+
 .projects-card-logo-overlay {
   position: absolute;
   inset: 0;
@@ -4417,21 +4431,27 @@ button, input, textarea, select {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-center-logo {
-  width: 60px;
-  height: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
-  opacity: 0.95;
-  transition: transform var(--transition-medium);
+.projects-card-link:hover .projects-card-logo-overlay {
+  opacity: 1;
+}
+
+.projects-card-logo-overlay .card-center-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .projects-card-link:hover .card-center-logo {
   transform: scale(1.08);
 }
-
 /* ==========================================================================
    Works Page Curtain Reveal Architecture (1-to-1 Framer Architecture)
    ========================================================================== */
