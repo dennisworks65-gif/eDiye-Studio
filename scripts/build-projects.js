@@ -3,34 +3,31 @@ const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const PROJECTS_DIR = path.join(ROOT_DIR, 'content', 'projects');
+const ARTICLES_DIR = path.join(ROOT_DIR, 'content', 'articles');
 const WORKS_DIR = path.join(ROOT_DIR, 'works');
+const ARTICLES_OUT_DIR = path.join(ROOT_DIR, 'articles');
 
-if (!fs.existsSync(PROJECTS_DIR)) {
-  console.error('Projects directory not found:', PROJECTS_DIR);
-  process.exit(1);
-}
+// 1. Build Case Studies
+if (fs.existsSync(PROJECTS_DIR)) {
+  const files = fs.readdirSync(PROJECTS_DIR).filter(f => f.endsWith('.json'));
+  console.log(`Found ${files.length} projects in ${PROJECTS_DIR}`);
 
-const files = fs.readdirSync(PROJECTS_DIR).filter(f => f.endsWith('.json'));
-console.log(`Found ${files.length} projects in ${PROJECTS_DIR}`);
+  const projects = files.map(file => {
+    return JSON.parse(fs.readFileSync(path.join(PROJECTS_DIR, file), 'utf8'));
+  });
 
-const projects = files.map(file => {
-  const data = JSON.parse(fs.readFileSync(path.join(PROJECTS_DIR, file), 'utf8'));
-  return data;
-});
+  function renderProjectTemplate(p) {
+    const tagsHtml = (p.tags || []).map(t => `<span class="cs-tag"># ${t.replace(/^#\s*/, '')}</span>`).join('\n            ');
+    
+    const rel = (img) => {
+      if (!img) return '';
+      if (img.startsWith('http') || img.startsWith('../')) return img;
+      return '../' + img.replace(/^\//, '');
+    };
 
-function renderTemplate(p) {
-  const tagsHtml = (p.tags || []).map(t => `<span class="cs-tag"># ${t.replace(/^#\s*/, '')}</span>`).join('\n            ');
-  
-  // Format image paths for works/ folder (needs ../ prefix if starts with assets/)
-  const rel = (img) => {
-    if (!img) return '';
-    if (img.startsWith('http') || img.startsWith('../')) return img;
-    return '../' + img.replace(/^\//, '');
-  };
-
-  const relatedCardsHtml = (p.related || []).map(r => {
-    const rTags = (r.tags || []).map(t => `<span class="projects-tag-pill">${t.replace(/^#\s*/, '')}</span>`).join('\n                ');
-    return `          <!-- Card: ${r.client || r.slug} -->
+    const relatedCardsHtml = (p.related || []).map(r => {
+      const rTags = (r.tags || []).map(t => `<span class="projects-tag-pill">${t.replace(/^#\s*/, '')}</span>`).join('\n                ');
+      return `          <!-- Card: ${r.client || r.slug} -->
           <a href="${r.slug}.html" class="projects-card-link">
             <div class="projects-card-visual visual-medium">
               <div class="projects-card-tags">
@@ -43,9 +40,9 @@ function renderTemplate(p) {
               <div class="projects-card-desc">${r.title || ''}</div>
             </div>
           </a>`;
-  }).join('\n\n');
+    }).join('\n\n');
 
-  return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -381,14 +378,14 @@ ${relatedCardsHtml}
   <script src="../js/main.js"></script>
 </body>
 </html>`;
+  }
+
+  projects.forEach(p => {
+    const outputPath = path.join(WORKS_DIR, `${p.slug}.html`);
+    const html = renderProjectTemplate(p);
+    fs.writeFileSync(outputPath, html, 'utf8');
+    console.log(`Generated: works/${p.slug}.html`);
+  });
 }
 
-// Generate each HTML file
-projects.forEach(p => {
-  const outputPath = path.join(WORKS_DIR, `${p.slug}.html`);
-  const html = renderTemplate(p);
-  fs.writeFileSync(outputPath, html, 'utf8');
-  console.log(`Generated: works/${p.slug}.html`);
-});
-
-console.log('Project HTML generation completed successfully!');
+console.log('Build automation completed successfully!');

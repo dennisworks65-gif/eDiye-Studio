@@ -43,3 +43,22 @@ collections:
       - { label: "Summary Section Label", name: "summary_label", widget: "string", default: "Summary" }
       - { label: "Summary Headline", name: "summary_headline", widget: "string" }
       - { label: "Summary Description", name: "summary_desc", widget: "text" }
+
+  - name: "articles"
+    label: "Articles & Essays"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{title}} ({{date}})"
+    fields:
+      - { label: "Slug / File Name", name: "slug", widget: "string", hint: "Identifier for URL, e.g. why-your-brand-identity-matters" }
+      - { label: "Article Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "string", default: "Jul 27, 2025" }
+      - { label: "Author Name", name: "author", widget: "string", default: "Sophie Turner" }
+      - { label: "Author Role", name: "author_role", widget: "string", default: "Brand Strategist at Noora" }
+      - { label: "Author Avatar", name: "author_avatar", widget: "image", default: "assets/images/sophie-turner-ref.png" }
+      - { label: "Lead Subtitle / Excerpt", name: "lead_subtitle", widget: "text" }
+      - { label: "Lead Featured Image", name: "lead_image", widget: "image" }
