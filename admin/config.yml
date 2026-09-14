@@ -2,9 +2,7 @@ backend:
   name: github
   repo: dennisworks65-gif/eDiye-Studio
   branch: main
-
-# Local development proxy toggle (enables editing offline without OAuth)
-local_backend: true
+  auth_endpoint: api/auth
 
 media_folder: "assets/images"
 public_folder: "../assets/images"

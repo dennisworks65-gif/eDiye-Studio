@@ -7,7 +7,26 @@
   <link rel="icon" href="../assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
 </head>
 <body>
+  <!-- Manual initialization to dynamically set Vercel OAuth base_url -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
   <!-- Decap CMS Core Script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'dennisworks65-gif/eDiye-Studio',
+          branch: 'main',
+          base_url: window.location.origin,
+          auth_endpoint: 'api/auth'
+        },
+        local_backend: isLocal
+      }
+    });
+  </script>
 </body>
 </html>
