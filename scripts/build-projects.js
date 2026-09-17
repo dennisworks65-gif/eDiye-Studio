@@ -48,8 +48,25 @@ if (fs.existsSync(PROJECTS_DIR)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${p.client || 'Project'} - ${p.title} — eDiye®</title>
-  <meta name="description" content="We build brands, design interfaces, and develop fast, functional websites that help growing teams stand out and convert. No fluff. Just work that works.">
+  <meta name="description" content="${p.hero_desc || 'We build brands, design interfaces, and develop fast, functional websites that help growing teams stand out and convert.'}">
+  <link rel="canonical" href="https://www.ediyestudio.com.ng/works/${p.slug}.html">
   <link rel="icon" href="../assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="eDiye® Studio">
+  <meta property="og:url" content="https://www.ediyestudio.com.ng/works/${p.slug}.html">
+  <meta property="og:title" content="${p.client || 'Project'} - ${p.title} — eDiye®">
+  <meta property="og:description" content="${p.hero_desc || ''}">
+  <meta property="og:image" content="https://www.ediyestudio.com.ng/${p.hero_banner || 'assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png'}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@jakke_dea">
+  <meta name="twitter:creator" content="@jakke_dea">
+  <meta name="twitter:title" content="${p.client || 'Project'} - ${p.title} — eDiye®">
+  <meta name="twitter:description" content="${p.hero_desc || ''}">
+  <meta name="twitter:image" content="https://www.ediyestudio.com.ng/${p.hero_banner || 'assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png'}">
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">

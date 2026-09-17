@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow Decap CMS Admin and Vercel API routes from indexing
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.ediyestudio.com.ng/sitemap.xml
