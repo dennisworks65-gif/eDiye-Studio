@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountUp();
   initTrueFocus();
   initTeamCarousel();
+  initAnalyticsTelemetry();
 });
 
 // --- Framer Scroll Animation: Layer in View (Replay: No) ---
@@ -255,6 +256,9 @@ function initFormSubmissions() {
         });
 
         if (response.ok) {
+          if (typeof window.va === 'function') {
+            window.va('event', { name: 'lead_inquiry_success', data: { form_id: form.id || 'contact-form' } });
+          }
           if (submitBtn) {
             submitBtn.textContent = 'Message Sent! ✓';
             submitBtn.style.backgroundColor = '#0000ff';
@@ -302,6 +306,9 @@ function initFormSubmissions() {
       e.preventDefault();
       const btn = newsletterForm.querySelector('.newsletter-btn');
       if (btn) {
+        if (typeof window.va === 'function') {
+          window.va('event', { name: 'newsletter_subscribe', data: { source: 'footer' } });
+        }
         btn.innerHTML = 'Subscribed ✓';
         setTimeout(() => {
           newsletterForm.reset();
@@ -632,3 +639,60 @@ function initTeamCarousel() {
   });
 }
 
+
+// --- 11. Analytics & Visitor Insights Telemetry ---
+function initAnalyticsTelemetry() {
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+
+  function trackEvent(name, data) {
+    try {
+      if (typeof window.va === 'function') {
+        window.va('event', { name, data });
+      }
+    } catch (e) {}
+  }
+
+  // 1. Track Project & Case Study Clicks
+  document.querySelectorAll('a[href*="/works/"], a[href*="works/"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const slug = (link.getAttribute('href') || '').split('/').pop().replace('.html', '');
+      trackEvent('case_study_click', { project: slug });
+    });
+  });
+
+  // 2. Track Article Clicks
+  document.querySelectorAll('a[href*="/articles/"], a[href*="articles/"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const slug = (link.getAttribute('href') || '').split('/').pop().replace('.html', '');
+      trackEvent('article_click', { article: slug });
+    });
+  });
+
+  // 3. Track Primary CTAs
+  document.querySelectorAll('.btn-primary, .btn-dark-pill, .cs-explore-btn, .btn-discover-articles').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.textContent.trim().slice(0, 40);
+      trackEvent('cta_click', { label: text });
+    });
+  });
+
+  // 4. Track Scroll Reading Milestones on Case Studies & Essays
+  if (document.body.classList.contains('case-study-page') || 
+      document.body.classList.contains('article-detail-page')) {
+    const milestones = [25, 50, 75, 100];
+    const passed = new Set();
+    
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) return;
+      const percent = Math.round((window.scrollY / maxScroll) * 100);
+
+      milestones.forEach(m => {
+        if (percent >= m && !passed.has(m)) {
+          passed.add(m);
+          trackEvent('scroll_milestone', { depth: `${m}%`, page: window.location.pathname });
+        }
+      });
+    }, { passive: true });
+  }
+}
