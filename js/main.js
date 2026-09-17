@@ -224,26 +224,77 @@ function initMobileNav() {
   });
 }
 
-// --- 5. Form Submissions ---
+// --- 5. Form Submissions with Formspree Endpoint ---
 function initFormSubmissions() {
-  const contactForm = document.getElementById('studio-contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvkgovlb';
+
+  const contactForms = document.querySelectorAll('#studio-contact-form, #page-contact-form, .contact-form-clean, .contact-form');
+  
+  contactForms.forEach(form => {
+    form.setAttribute('action', FORMSPREE_ENDPOINT);
+    form.setAttribute('method', 'POST');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : 'Send message';
+
       if (submitBtn) {
-        submitBtn.textContent = 'Message Sent! ✓';
-        submitBtn.style.backgroundColor = '#0000ff';
-        submitBtn.style.color = '#ffffff';
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.textContent = 'Send message';
-          submitBtn.style.backgroundColor = '#ffffff';
-          submitBtn.style.color = '#000000';
-        }, 3000);
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          if (submitBtn) {
+            submitBtn.textContent = 'Message Sent! ✓';
+            submitBtn.style.backgroundColor = '#0000ff';
+            submitBtn.style.color = '#ffffff';
+          }
+          form.reset();
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.textContent = originalText;
+              submitBtn.style.backgroundColor = '';
+              submitBtn.style.color = '';
+              submitBtn.disabled = false;
+            }
+          }, 4000);
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Submission failed';
+          if (submitBtn) {
+            submitBtn.textContent = 'Error: ' + errorMsg;
+            submitBtn.style.backgroundColor = '#e00000';
+            submitBtn.style.color = '#ffffff';
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.style.backgroundColor = '';
+              submitBtn.style.color = '';
+              submitBtn.disabled = false;
+            }, 4000);
+          }
+        }
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.textContent = 'Network error. Please try again.';
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, 4000);
+        }
       }
     });
-  }
+  });
 
   const newsletterForm = document.getElementById('newsletter-form');
   if (newsletterForm) {
@@ -254,7 +305,7 @@ function initFormSubmissions() {
         btn.innerHTML = 'Subscribed ✓';
         setTimeout(() => {
           newsletterForm.reset();
-          btn.innerHTML = 'Subscribe ↳';
+          btn.innerHTML = '<span>Subscribe</span><span class="sub-arrow">↳</span>';
         }, 3000);
       }
     });
