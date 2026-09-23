@@ -1,0 +1,119 @@
+{
+  "slug": "op1-field",
+  "title": "Tactile synthesizer screen graphics & hardware interface system",
+  "client": "OP-1 Field",
+  "duration": "5 Weeks",
+  "date": "Jun 24, 2025",
+  "tags": [
+    "Product Design",
+    "Hardware UI",
+    "Teenage Engineering",
+    "Design System"
+  ],
+  "hero_desc": "A hyper-tactile, high-density screen graphics system inspired by Teenage Engineering's iconic OP-1 Field synthesizer, fusing retro physical playfulness with modern micro-interaction precision.",
+  "hero_banner": "assets/images/projects/op1-field/cover.webp",
+  "about_label": "About the product UI",
+  "about_headline": "Channeling Teenage Engineering's design ethos: playful mechanical clarity, color-coded rotary controls, and expressive vector physics.",
+  "about_desc": "Inspired by Teenage Engineering's uncompromising industrial and digital craft, this UI system translates intricate DSP sound-design engines into vibrant, immediate graphical worlds. Rather than relying on skeuomorphic knobs or generic digital sliders, each screen introduces a unique visual metaphor—from real-time oscilloscope ripples to mechanical 4-track tape spools—inviting intuitive experimentation without cognitive friction.",
+  "showcase_img_1": "assets/images/projects/op1-field/sample.webp",
+  "challenges_label": "Design & Interaction Physics",
+  "challenges_headline": "Designing high-legibility vector graphics calibrated for 1:1 hardware encoder alignment.",
+  "challenges_desc": "Synthesizer interfaces must communicate complex acoustic dynamics—envelope curves, filter cutoffs, and frequency modulation—in split seconds on compact displays. We mapped four persistent color axes directly to the hardware's rotary dials, establishing consistent spatial relationships across all 16 engine modes. Whether tweaking a resonant 24-band vocoder or dialing in physical spring reverb dampening, the visual feedback remains instant, tactile, and delightfully responsive.",
+  "gallery": [
+    {
+      "src": "assets/images/projects/op1-field/tape.webp",
+      "caption": "4-Track Reel-to-Reel Tape Recorder & Transport System"
+    },
+    {
+      "src": "assets/images/projects/op1-field/cluster.webp",
+      "caption": "Cluster Multi-Oscillator Phase & Harmonic Sculpting"
+    },
+    {
+      "src": "assets/images/projects/op1-field/wave.webp",
+      "caption": "Dual-Axis Oscilloscope & Frequency Modulation Canvas"
+    },
+    {
+      "src": "assets/images/projects/op1-field/dsynth.webp",
+      "caption": "D-Synth Dual Oscillator Matrix & Digital Wave Shapes"
+    },
+    {
+      "src": "assets/images/projects/op1-field/envelope.webp",
+      "caption": "Dynamic ADSR Envelope Visualizer & Transient Shaper"
+    },
+    {
+      "src": "assets/images/projects/op1-field/output.webp",
+      "caption": "Master Stereo Field Spatializer, Limiter & Gain Staging"
+    },
+    {
+      "src": "assets/images/projects/op1-field/noise.webp",
+      "caption": "Perlin Noise Generator & Resonant Frequency Filter"
+    },
+    {
+      "src": "assets/images/projects/op1-field/digital.webp",
+      "caption": "Digital Synthesis Engine & Harmonic Overtone Matrix"
+    },
+    {
+      "src": "assets/images/projects/op1-field/mixer.webp",
+      "caption": "4-Channel Tactical Hardware Mixer & Panning Surface"
+    },
+    {
+      "src": "assets/images/projects/op1-field/rec.webp",
+      "caption": "Live Sample & Direct Acoustic Line-In Interface"
+    },
+    {
+      "src": "assets/images/projects/op1-field/spring.webp",
+      "caption": "Spring Reverb Physical Simulation & Tension Mechanics"
+    },
+    {
+      "src": "assets/images/projects/op1-field/vocoder.webp",
+      "caption": "24-Band Voice Tracking Vocoder & Formant Synthesis"
+    },
+    {
+      "src": "assets/images/projects/op1-field/eq.webp",
+      "caption": "3-Band Parametric Master Equalizer & Tone Sculpting"
+    },
+    {
+      "src": "assets/images/projects/op1-field/strings.webp",
+      "caption": "Physical String Modeling Synthesizer & Resonance Chamber"
+    },
+    {
+      "src": "assets/images/projects/op1-field/connect.webp",
+      "caption": "BLE Wireless MIDI & Hardware Interconnect Overview"
+    }
+  ],
+  "summary_label": "Summary",
+  "summary_headline": "A cohesive graphical design language that makes sound design feel physical, intuitive, and deeply rewarding.",
+  "summary_desc": "The OP-1 Field Screen Graphics project demonstrates how thoughtful design engineering transforms complex technical parameters into engaging, approachable play. By harmonizing vector physics, color-coded rotary ergonomics, and retro-futuristic typography, the system stands as a tribute to Teenage Engineering's design philosophy—where instruments feel simultaneously like precision studio tools and delightful creative toys.",
+  "related": [
+    {
+      "slug": "xtoken",
+      "client": "xToken",
+      "title": "Decentralized staking & liquidity terminal",
+      "tags": [
+        "Product Design",
+        "Web3"
+      ],
+      "image": "assets/images/projects/xtoken.webp"
+    },
+    {
+      "slug": "seed",
+      "client": "Seed",
+      "title": "B2B SaaS financial operations platform",
+      "tags": [
+        "Product Design",
+        "SaaS"
+      ],
+      "image": "assets/images/projects/seed.webp"
+    },
+    {
+      "slug": "fragile-base",
+      "client": "Fragile Base",
+      "title": "Contemporary fashion house digital commerce experience",
+      "tags": [
+        "E-Commerce",
+        "Brand Direction"
+      ],
+      "image": "assets/images/projects/fragile-base/hero_showcase.webp"
+    }
+  ]
+}
