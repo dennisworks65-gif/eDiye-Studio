@@ -4788,9 +4788,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 .cs-hero-banner img {
   width: 100%;
   height: auto;
-  max-height: 915px;
-  object-fit: cover;
   display: block;
+  border-radius: 16px;
 }
 
 /* Content Section with 1-to-1 Narrative Blocks */
@@ -4851,14 +4850,12 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   overflow: hidden;
   margin: 80px 0;
 }
-
 .cs-content-img-full img {
   width: 100%;
   height: auto;
-  max-height: 830px;
-  object-fit: cover;
   display: block;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 /* 3-Image Gallery Layout (2 Columns + 1 Full Width) */
@@ -4913,11 +4910,11 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
-
 .cs-gallery-masonry-item img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .cs-gallery-caption {
