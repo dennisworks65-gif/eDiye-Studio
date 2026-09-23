@@ -48,6 +48,34 @@ button, input, textarea, select {
   background: none;
 }
 
+/* Emil Kowalski Button Press Feedback — Physicality (STANDARDS.md #59) */
+button, .btn-primary, .btn-dark-pill, .btn-pricing-book, .btn-pricing-meeting, 
+.btn-discover-articles, .btn-discover-more, .nav-btn-pill, .newsletter-btn {
+  transition: transform var(--duration-instant, 140ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)), 
+              background-color var(--duration-fast, 180ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)), 
+              box-shadow var(--duration-fast, 180ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+}
+
+button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:active, 
+.btn-pricing-meeting:active, .btn-discover-articles:active, .btn-discover-more:active, 
+.nav-btn-pill:active, .newsletter-btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Emil Kowalski Rule: Accessible reduced motion (STANDARDS.md #8) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .framer-scroll-enter {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* --- Container & Utilities --- */
 .container {
   width: 100%;
@@ -2717,7 +2745,13 @@ button, input, textarea, select {
   font-weight: 400;
   line-height: 1;
   flex-shrink: 0;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--duration-fast, 180ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+              transform var(--duration-normal, 260ms) var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.accordion-item.active .accordion-toggle-icon,
+.faq-accordion-item.active .faq-toggle-circle {
+  transform: rotate(45deg);
 }
 
 .accordion-toggle-icon:hover, .faq-toggle-circle:hover {
@@ -2727,8 +2761,18 @@ button, input, textarea, select {
 .accordion-content, .faq-accordion-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height var(--duration-normal, 280ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+              opacity var(--duration-fast, 200ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+              transform var(--duration-normal, 280ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
   padding: 0;
+}
+
+.accordion-item.active .accordion-content,
+.faq-accordion-item.active .faq-accordion-body {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .accordion-content p, .faq-answer {

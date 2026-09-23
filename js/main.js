@@ -64,23 +64,24 @@ function initPricingSlider() {
   const priceDisplay = document.getElementById('price-value');
   const priceMainVal = document.getElementById('price-main-val');
   const priceSubVal = document.getElementById('price-sub-val');
-
   if (!sliderInput) return;
 
-  function updateSlider() {
-    const min = parseFloat(sliderInput.min) || 0;
-    const max = parseFloat(sliderInput.max) || 100;
-    const val = parseFloat(sliderInput.value) || 0;
-    const percent = ((val - min) / (max - min)) * 100;
+  let currentAnimatedPrice = 2500;
+  let targetPrice = 2500;
+  let animationFrameId = null;
 
-    if (sliderFill) sliderFill.style.width = `${percent}%`;
-    if (sliderThumb) sliderThumb.style.left = `${percent}%`;
+  function animatePrice() {
+    const diff = targetPrice - currentAnimatedPrice;
+    if (Math.abs(diff) < 2) {
+      currentAnimatedPrice = targetPrice;
+    } else {
+      // Spring-like interpolation step (Emil Kowalski continuous motion)
+      currentAnimatedPrice += diff * 0.22;
+      animationFrameId = requestAnimationFrame(animatePrice);
+    }
 
-    // Calculate dynamic price based on scope slider ($2,500 to $8,500)
-    const basePrice = 2500;
-    const maxPrice = 8500;
-    const calculatedPrice = Math.round(basePrice + ((maxPrice - basePrice) * (percent / 100)) / 100) * 100;
-    const formatted = calculatedPrice.toLocaleString();
+    const displayVal = Math.round(currentAnimatedPrice);
+    const formatted = displayVal.toLocaleString();
     
     if (priceDisplay) {
       priceDisplay.textContent = formatted;
@@ -95,6 +96,24 @@ function initPricingSlider() {
         priceSubVal.textContent = '';
       }
     }
+  }
+
+  function updateSlider() {
+    const min = parseFloat(sliderInput.min) || 0;
+    const max = parseFloat(sliderInput.max) || 100;
+    const val = parseFloat(sliderInput.value) || 0;
+    const percent = ((val - min) / (max - min)) * 100;
+
+    if (sliderFill) sliderFill.style.width = `${percent}%`;
+    if (sliderThumb) sliderThumb.style.left = `${percent}%`;
+
+    // Calculate dynamic price based on scope slider ($2,500 to $8,500)
+    const basePrice = 2500;
+    const maxPrice = 8500;
+    targetPrice = Math.round(basePrice + ((maxPrice - basePrice) * (percent / 100)) / 100) * 100;
+
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = requestAnimationFrame(animatePrice);
   }
 
   sliderInput.addEventListener('input', updateSlider);
@@ -121,8 +140,6 @@ function initFaqAccordion() {
           other.classList.remove('active');
           const otherContent = other.querySelector('.accordion-content, .faq-accordion-body');
           if (otherContent) otherContent.style.maxHeight = null;
-          const otherIcon = other.querySelector('.accordion-toggle-icon, .toggle-symbol');
-          if (otherIcon) otherIcon.textContent = '+';
         }
       });
 
@@ -130,11 +147,9 @@ function initFaqAccordion() {
       if (isActive) {
         item.classList.remove('active');
         content.style.maxHeight = null;
-        if (toggleIcon) toggleIcon.textContent = '+';
       } else {
         item.classList.add('active');
         content.style.maxHeight = content.scrollHeight + 30 + 'px';
-        if (toggleIcon) toggleIcon.textContent = '–';
       }
     });
   });
@@ -208,21 +223,110 @@ function initMobileNav() {
 
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
+  navLinks.style.transition = 'opacity var(--duration-fast, 180ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)), transform var(--duration-normal, 240ms) var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1))';
+  navLinks.style.transformOrigin = 'top right';
+
+  const closeMenu = () => {
+    navLinks.style.opacity = '0';
+    navLinks.style.transform = 'scale(0.96) translateY(-8px)';
+    setTimeout(() => {
       navLinks.style.display = 'none';
+    }, 180);
+  };
+
+  const openMenu = () => {
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '70px';
+    navLinks.style.right = '20px';
+    navLinks.style.background = 'rgba(10, 10, 10, 0.94)';
+    navLinks.style.backdropFilter = 'blur(16px)';
+    navLinks.style.webkitBackdropFilter = 'blur(16px)';
+    navLinks.style.padding = '16px';
+    navLinks.style.borderRadius = '16px';
+    navLinks.style.gap = '8px';
+    navLinks.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.4)';
+    navLinks.style.opacity = '0';
+    navLinks.style.transform = 'scale(0.96) translateY(-8px)';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        navLinks.style.opacity = '1';
+        navLinks.style.transform = 'scale(1) translateY(0)';
+      });
+    });
+  };
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.style.display === 'flex' && navLinks.style.opacity === '1';
+    if (isOpen) {
+      closeMenu();
     } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '70px';
-      navLinks.style.right = '20px';
-      navLinks.style.background = 'rgba(10, 10, 10, 0.95)';
-      navLinks.style.padding = '16px';
-      navLinks.style.borderRadius = '16px';
-      navLinks.style.gap = '8px';
+      openMenu();
     }
   });
+
+  document.addEventListener('click', (e) => {
+    if (navLinks.style.display === 'flex' && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+}
+
+function showToast(message, type = 'success') {
+  let container = document.getElementById('sonner-toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'sonner-toast-container';
+    container.style.position = 'fixed';
+    container.style.bottom = '24px';
+    container.style.right = '24px';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+    container.style.gap = '10px';
+    container.style.zIndex = '99999';
+    container.style.pointerEvents = 'none';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.style.background = type === 'success' ? '#000000' : '#1f1f1f';
+  toast.style.color = '#ffffff';
+  toast.style.padding = '12px 20px';
+  toast.style.borderRadius = '9999px';
+  toast.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.2)';
+  toast.style.fontSize = '14px';
+  toast.style.fontWeight = '500';
+  toast.style.display = 'flex';
+  toast.style.alignItems = 'center';
+  toast.style.gap = '8px';
+  toast.style.opacity = '0';
+  toast.style.transform = 'translateY(16px) scale(0.96)';
+  toast.style.transition = 'opacity 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 260ms cubic-bezier(0.16, 1, 0.3, 1)';
+  toast.style.pointerEvents = 'auto';
+  toast.style.border = type === 'success' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 50, 50, 0.3)';
+  
+  const icon = type === 'success' ? '✓' : '!';
+  toast.innerHTML = `<span style="font-weight:700; color:${type === 'success' ? '#38bdf8' : '#f87171'}">${icon}</span> <span>${message}</span>`;
+
+  container.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(8px) scale(0.96)';
+    setTimeout(() => {
+      toast.remove();
+    }, 260);
+  }, 3500);
 }
 
 // --- 5. Form Submissions with Formspree Endpoint ---
@@ -259,6 +363,7 @@ function initFormSubmissions() {
           if (typeof window.va === 'function') {
             window.va('event', { name: 'lead_inquiry_success', data: { form_id: form.id || 'contact-form' } });
           }
+          showToast('Inquiry sent successfully. We will get back shortly!');
           if (submitBtn) {
             submitBtn.textContent = 'Message Sent! ✓';
             submitBtn.style.backgroundColor = '#0000ff';
@@ -272,10 +377,11 @@ function initFormSubmissions() {
               submitBtn.style.color = '';
               submitBtn.disabled = false;
             }
-          }, 4000);
+          }, 3000);
         } else {
           const data = await response.json().catch(() => ({}));
           const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Submission failed';
+          showToast(errorMsg, 'error');
           if (submitBtn) {
             submitBtn.textContent = 'Error: ' + errorMsg;
             submitBtn.style.backgroundColor = '#e00000';
@@ -285,16 +391,17 @@ function initFormSubmissions() {
               submitBtn.style.backgroundColor = '';
               submitBtn.style.color = '';
               submitBtn.disabled = false;
-            }, 4000);
+            }, 3000);
           }
         }
       } catch (err) {
+        showToast('Network error. Please try again.', 'error');
         if (submitBtn) {
           submitBtn.textContent = 'Network error. Please try again.';
           setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-          }, 4000);
+          }, 3000);
         }
       }
     });
@@ -309,11 +416,12 @@ function initFormSubmissions() {
         if (typeof window.va === 'function') {
           window.va('event', { name: 'newsletter_subscribe', data: { source: 'footer' } });
         }
+        showToast('Thank you for subscribing to Ediye insights!');
         btn.innerHTML = 'Subscribed ✓';
         setTimeout(() => {
           newsletterForm.reset();
           btn.innerHTML = '<span>Subscribe</span><span class="sub-arrow">↳</span>';
-        }, 3000);
+        }, 2500);
       }
     });
   }

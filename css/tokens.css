@@ -188,9 +188,19 @@
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
   --shadow-glow: 0 0 40px rgba(0, 0, 255, 0.35);
   
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Standard Emil Kowalski Easing & Motion Tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);        /* strong ease-out for responsive UI */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);    /* strong ease-in-out for on-screen movement */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);     /* iOS-like drawer / sheet curve */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);      /* crisp micro-interaction spring */
+
+  --duration-instant: 120ms;
+  --duration-fast: 180ms;
+  --duration-normal: 260ms;
+  --duration-slow: 400ms;
   
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-normal: var(--duration-normal) var(--ease-out);
+  --transition-slow: var(--duration-slow) var(--ease-out);
   --max-width: 1440px;
 }
