@@ -20,16 +20,20 @@
   "challenges_desc": "Web3 interfaces frequently struggle with visual noise, opaque gas fees, and bewildering modal confirmations. We conducted user research to distill multi-step protocol actions into modular transaction sheets. By redesigning real-time feedback loops, simplifying wallet interaction states, and establishing a typographic hierarchy with stark dark-mode ergonomics, we eliminated friction across the deposit and withdrawal lifecycle.",
   "gallery": [
     {
+      "src": "assets/images/projects/xtoken/desktop view1.webp",
+      "caption": "Terminal Staking Engine & Asset Overview"
+    },
+    {
       "src": "assets/images/projects/xtoken/desktop view2.webp",
-      "caption": "Primary Staking Dashboard & Pool Metrics"
+      "caption": "Liquidity Pool Strategy Allocation Matrix"
     },
     {
       "src": "assets/images/projects/xtoken/desktop view3.webp",
-      "caption": "Liquidity Strategy Allocation Matrix"
+      "caption": "Real-Time APY Performance & Reward Stream"
     },
     {
       "src": "assets/images/projects/xtoken/desktop view4.webp",
-      "caption": "Portfolio Yield History & Analytics"
+      "caption": "Portfolio Holdings & Historical Growth Metrics"
     },
     {
       "src": "assets/images/projects/xtoken/desktop modal1.webp",
@@ -37,19 +41,135 @@
     },
     {
       "src": "assets/images/projects/xtoken/desktop modal2.webp",
-      "caption": "Transaction Confirmation & Gas Settings"
+      "caption": "Gas Configuration & Slippage Tolerance"
     },
     {
       "src": "assets/images/projects/xtoken/desktop modal3.webp",
-      "caption": "Unstaking & Cooldown Schedule Interface"
+      "caption": "Unstaking Cooldown & Timeline Scheduler"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop modal5.webp",
+      "caption": "Liquidity Pool Rebalance Confirmation"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop modal6.webp",
+      "caption": "Transaction Execution & Receipt Verification"
     },
     {
       "src": "assets/images/projects/xtoken/mobile modals (1).webp",
-      "caption": "Responsive Mobile Staking Experience"
+      "caption": "Mobile Interface \u2014 Flow State 1"
     },
     {
       "src": "assets/images/projects/xtoken/mobile modals (2).webp",
-      "caption": "Mobile Modal Bottom Sheets"
+      "caption": "Mobile Interface \u2014 Flow State 2"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (3).webp",
+      "caption": "Mobile Interface \u2014 Flow State 3"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (4).webp",
+      "caption": "Mobile Interface \u2014 Flow State 4"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (5).webp",
+      "caption": "Mobile Interface \u2014 Flow State 5"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (6).webp",
+      "caption": "Mobile Interface \u2014 Flow State 6"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (7).webp",
+      "caption": "Mobile Interface \u2014 Flow State 7"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (8).webp",
+      "caption": "Mobile Interface \u2014 Flow State 8"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (9).webp",
+      "caption": "Mobile Interface \u2014 Flow State 9"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (10).webp",
+      "caption": "Mobile Interface \u2014 Flow State 10"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (11).webp",
+      "caption": "Mobile Interface \u2014 Flow State 11"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (12).webp",
+      "caption": "Mobile Interface \u2014 Flow State 12"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (13).webp",
+      "caption": "Mobile Interface \u2014 Flow State 13"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (14).webp",
+      "caption": "Mobile Interface \u2014 Flow State 14"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (15).webp",
+      "caption": "Mobile Interface \u2014 Flow State 15"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (16).webp",
+      "caption": "Mobile Interface \u2014 Flow State 16"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (17).webp",
+      "caption": "Mobile Interface \u2014 Flow State 17"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (18).webp",
+      "caption": "Mobile Interface \u2014 Flow State 18"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (19).webp",
+      "caption": "Mobile Interface \u2014 Flow State 19"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (20).webp",
+      "caption": "Mobile Interface \u2014 Flow State 20"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (21).webp",
+      "caption": "Mobile Interface \u2014 Flow State 21"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (22).webp",
+      "caption": "Mobile Interface \u2014 Flow State 22"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (23).webp",
+      "caption": "Mobile Interface \u2014 Flow State 23"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (24).webp",
+      "caption": "Mobile Interface \u2014 Flow State 24"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (25).webp",
+      "caption": "Mobile Interface \u2014 Flow State 25"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (26).webp",
+      "caption": "Mobile Interface \u2014 Flow State 26"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (27).webp",
+      "caption": "Mobile Interface \u2014 Flow State 27"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (28).webp",
+      "caption": "Mobile Interface \u2014 Flow State 28"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (29).webp",
+      "caption": "Mobile Interface \u2014 Flow State 29"
     }
   ],
   "summary_label": "Summary",
