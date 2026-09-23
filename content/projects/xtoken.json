@@ -1,0 +1,59 @@
+{
+  "slug": "xtoken",
+  "title": "Decentralized staking & liquidity terminal",
+  "client": "xToken",
+  "duration": "8 Weeks",
+  "date": "Nov 18, 2024",
+  "tags": [
+    "Product Design",
+    "Web3",
+    "UI/UX"
+  ],
+  "hero_desc": "Architecting an intuitive decentralized financial terminal that demystifies multi-asset staking and automated yield strategies for both institutional and retail crypto participants.",
+  "hero_banner": "assets/images/projects/xtoken.webp",
+  "about_label": "About the project",
+  "about_headline": "xToken simplifies complex DeFi staking mechanisms into effortless, user-centric investment strategies.",
+  "about_desc": "xToken is an innovative decentralized asset management protocol offering seamless staking and liquidity management across modern networks. The core objective was reimagining a traditionally dense, intimidating Web3 trading interface into a streamlined, high-clarity dashboard where users can effortlessly stake tokens, monitor APY yields in real time, and adjust automated liquidity allocations with total confidence.",
+  "showcase_img_1": "assets/images/projects/xtoken/desktop view1.webp",
+  "challenges_label": "Challenges & Insights",
+  "challenges_headline": "Bridging institutional-grade transaction accuracy with frictionless consumer usability.",
+  "challenges_desc": "Web3 interfaces frequently struggle with visual noise, opaque gas fees, and bewildering modal confirmations. We conducted user research to distill multi-step protocol actions into modular transaction sheets. By redesigning real-time feedback loops, simplifying wallet interaction states, and establishing a typographic hierarchy with stark dark-mode ergonomics, we eliminated friction across the deposit and withdrawal lifecycle.",
+  "gallery_img_left": "assets/images/projects/xtoken/desktop view2.webp",
+  "gallery_img_right": "assets/images/projects/xtoken/desktop view3.webp",
+  "gallery_img_bottom": "assets/images/projects/xtoken/desktop modal1.webp",
+  "summary_label": "Summary",
+  "summary_headline": "A cohesive design system delivering higher liquidity retention and seamless transaction execution.",
+  "summary_desc": "The transformed xToken platform establishes a new benchmark for DeFi accessibility. By marrying data density with minimal, high-craft aesthetic standards, xToken empowers users to execute sophisticated financial operations without cognitive strain, bolstering overall platform volume and user trust.",
+  "related": [
+    {
+      "slug": "seed",
+      "client": "Seed",
+      "title": "B2B SaaS financial operations platform",
+      "tags": [
+        "Product Design",
+        "SaaS"
+      ],
+      "image": "assets/images/projects/seed.webp"
+    },
+    {
+      "slug": "parla-porte",
+      "client": "Parla Porte",
+      "title": "Redefining sport for the digital age",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png"
+    },
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    }
+  ]
+}
