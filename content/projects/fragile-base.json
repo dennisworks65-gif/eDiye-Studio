@@ -1,0 +1,119 @@
+{
+  "slug": "fragile-base",
+  "title": "Contemporary fashion house digital commerce experience",
+  "client": "Fragile Base",
+  "duration": "7 Weeks",
+  "date": "May 14, 2025",
+  "tags": [
+    "E-Commerce",
+    "Brand Direction",
+    "Digital Flagship",
+    "UI/UX"
+  ],
+  "hero_desc": "Designing a digital flagship for Fragile Base, an avant-garde fashion house built on the intersection of raw architectural strength and emotional vulnerability.",
+  "hero_banner": "assets/images/projects/fragile-base/hero_showcase.webp",
+  "about_label": "About the fashion house",
+  "about_headline": "Fragile Base explores modern tailoring through tactile silhouettes, thoughtful sustainability, and unyielding emotional expression.",
+  "about_desc": "Founded on the philosophy that fashion carries responsibility far beyond immediate aesthetics, Fragile Base crafts contemporary garments that embrace paradox: structural durability and intimate delicacy. Our design objective was translating this duality into an immersive online flagship—balancing expansive editorial whitespace with high-converting e-commerce interactions.",
+  "showcase_img_1": "assets/images/projects/fragile-base/hero_dark.webp",
+  "challenges_label": "Design & Interaction Craft",
+  "challenges_headline": "Crafting tactile online shopping that mirrors the luxury experience of a physical boutique.",
+  "challenges_desc": "High fashion platforms often sacrifice purchasing fluidity for artistic indulgence, or dilute brand identity in generic catalog grids. We developed a bespoke layout architecture: dynamic lookbook pagination, tactile hover previews, a slide-out cart drawer with micro-interactions, and frictionless one-page checkout. Every garment presentation honors fabric drape, weight, and artisan provenance.",
+  "gallery": [
+    {
+      "src": "assets/images/projects/fragile-base/fragile_01.webp",
+      "caption": "Runway Editorial — Spring/Summer Campaign"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_02.webp",
+      "caption": "Minimalist Monochromatic Silhouette"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_03.webp",
+      "caption": "Textile Architecture & Wool Blend Drape"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_04.webp",
+      "caption": "Studio Portrait — Contemporary Tailoring"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_05.webp",
+      "caption": "Footwear & Sculptural Leather Accessories"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_06.webp",
+      "caption": "Atelier Craftsmanship & Precision Seaming"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_07.webp",
+      "caption": "Lookbook Detail — Deconstructed Outerwear"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_08.webp",
+      "caption": "Tactile Fabric Sourcing & Organic Silk"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_09.webp",
+      "caption": "Monochrome Studio Study"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_10.webp",
+      "caption": "Garment Fluidity & Spatial Flow"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_11.webp",
+      "caption": "Campaign Vision — Strength & Vulnerability"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_12.webp",
+      "caption": "Modular Layering & Trench Study"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_13.webp",
+      "caption": "Hand-Finished Edge & Seam Integrity"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_14.webp",
+      "caption": "High-Density Knitwear Architecture"
+    },
+    {
+      "src": "assets/images/projects/fragile-base/fragile_15.webp",
+      "caption": "Sculpted Collar & Asymmetric Closure"
+    }
+  ],
+  "summary_label": "Summary",
+  "summary_headline": "An editorial digital flagship uniting seasonal storytelling with effortless commerce.",
+  "summary_desc": "The new Fragile Base flagship store captures the house's avant-garde ethos while delivering measurable commercial results: lower bounce rates on editorial pages, seamless mobile purchasing, and an enduring digital presence that establishes Fragile Base among the leaders of contemporary independent fashion.",
+  "related": [
+    {
+      "slug": "luxury-goals",
+      "client": "Luxury Goals",
+      "title": "A brand identity for modern luxury",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/QcRjYq2q5Qgsa7NIv4d3QAijeRA.png"
+    },
+    {
+      "slug": "parla-porte",
+      "client": "Parla Porte",
+      "title": "Redefining sport for the digital age",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png"
+    },
+    {
+      "slug": "everly",
+      "client": "Everly",
+      "title": "A lifestyle brand with a sporting edge",
+      "tags": [
+        "Branding",
+        "Developement"
+      ],
+      "image": "assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png"
+    }
+  ]
+}
