@@ -18,13 +18,50 @@
   "challenges_label": "Challenges & Insights",
   "challenges_headline": "Organizing dense tabular data without sacrificing legibility or workflow momentum.",
   "challenges_desc": "Enterprise financial software often suffers from visual fatigue: crowded grids, confusing filters, and disjointed team permission settings. We introduced a flexible drawer architecture, contextual batch actions, and clean role-based invitation flows. This allowed operators to drill into granular invoice details or pivot high-level cashflow reports within two clicks.",
-  "gallery_img_left": "assets/images/projects/seed/seed 5.webp",
-  "gallery_img_right": "assets/images/projects/seed/seed 6.webp",
-  "gallery_img_bottom": "assets/images/projects/seed/seed 4.webp",
+  "gallery": [
+    {
+      "src": "assets/images/projects/seed/seed 4.webp",
+      "caption": "Customer Ledger & Payment Records View"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 5.webp",
+      "caption": "Automated Recurring Billing Scheduler"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 6.webp",
+      "caption": "Role-Based Team Permission Management"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 7.webp",
+      "caption": "Real-Time Revenue Analytics & Metrics"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 8.webp",
+      "caption": "Enterprise Invoicing Configuration Modal"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 9.webp",
+      "caption": "Transaction Drill-Down Details Drawer"
+    },
+    {
+      "src": "assets/images/projects/seed/seed 10.webp",
+      "caption": "Multi-Currency Settlement Flow"
+    }
+  ],
   "summary_label": "Summary",
   "summary_headline": "A precision-built workspace that scales effortlessly with fast-growing enterprises.",
   "summary_desc": "By fusing ergonomic data visualization with a minimalist design language, the Seed platform significantly reduced onboarding ramp times and reduced billing discrepancies. Seed now stands as an indispensable operational foundation for modern corporate finance teams.",
   "related": [
+    {
+      "slug": "xtoken-brand",
+      "client": "xToken Branding",
+      "title": "Decentralized staking protocol visual identity & styleguide",
+      "tags": [
+        "Brand Identity",
+        "Design System"
+      ],
+      "image": "assets/images/projects/xtoken-brand/hero_banner.png"
+    },
     {
       "slug": "xtoken",
       "client": "xToken",
@@ -44,15 +81,6 @@
         "Developement"
       ],
       "image": "assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png"
-    },
-    {
-      "slug": "korten",
-      "client": "Korten",
-      "title": "Turning tradition into a modern brand",
-      "tags": [
-        "Design"
-      ],
-      "image": "assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png"
     }
   ]
 }

@@ -18,13 +18,54 @@
   "challenges_label": "Challenges & Insights",
   "challenges_headline": "Bridging institutional-grade transaction accuracy with frictionless consumer usability.",
   "challenges_desc": "Web3 interfaces frequently struggle with visual noise, opaque gas fees, and bewildering modal confirmations. We conducted user research to distill multi-step protocol actions into modular transaction sheets. By redesigning real-time feedback loops, simplifying wallet interaction states, and establishing a typographic hierarchy with stark dark-mode ergonomics, we eliminated friction across the deposit and withdrawal lifecycle.",
-  "gallery_img_left": "assets/images/projects/xtoken/desktop view2.webp",
-  "gallery_img_right": "assets/images/projects/xtoken/desktop view3.webp",
-  "gallery_img_bottom": "assets/images/projects/xtoken/desktop modal1.webp",
+  "gallery": [
+    {
+      "src": "assets/images/projects/xtoken/desktop view2.webp",
+      "caption": "Primary Staking Dashboard & Pool Metrics"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop view3.webp",
+      "caption": "Liquidity Strategy Allocation Matrix"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop view4.webp",
+      "caption": "Portfolio Yield History & Analytics"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop modal1.webp",
+      "caption": "Deposit & Smart Contract Staking Modal"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop modal2.webp",
+      "caption": "Transaction Confirmation & Gas Settings"
+    },
+    {
+      "src": "assets/images/projects/xtoken/desktop modal3.webp",
+      "caption": "Unstaking & Cooldown Schedule Interface"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (1).webp",
+      "caption": "Responsive Mobile Staking Experience"
+    },
+    {
+      "src": "assets/images/projects/xtoken/mobile modals (2).webp",
+      "caption": "Mobile Modal Bottom Sheets"
+    }
+  ],
   "summary_label": "Summary",
   "summary_headline": "A cohesive design system delivering higher liquidity retention and seamless transaction execution.",
   "summary_desc": "The transformed xToken platform establishes a new benchmark for DeFi accessibility. By marrying data density with minimal, high-craft aesthetic standards, xToken empowers users to execute sophisticated financial operations without cognitive strain, bolstering overall platform volume and user trust.",
   "related": [
+    {
+      "slug": "xtoken-brand",
+      "client": "xToken Branding",
+      "title": "Decentralized staking protocol visual identity & styleguide",
+      "tags": [
+        "Brand Identity",
+        "Design System"
+      ],
+      "image": "assets/images/projects/xtoken-brand/hero_banner.png"
+    },
     {
       "slug": "seed",
       "client": "Seed",
@@ -44,16 +85,6 @@
         "Branding"
       ],
       "image": "assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png"
-    },
-    {
-      "slug": "hectic",
-      "client": "Hectic",
-      "title": "A brand built to grow",
-      "tags": [
-        "Design",
-        "Branding"
-      ],
-      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
     }
   ]
 }

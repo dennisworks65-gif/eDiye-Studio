@@ -36,10 +36,16 @@ collections:
       - { label: "Challenges Headline", name: "challenges_headline", widget: "string" }
       - { label: "Challenges Description", name: "challenges_desc", widget: "text" }
 
-      - { label: "Gallery Left Image", name: "gallery_img_left", widget: "image" }
-      - { label: "Gallery Right Image", name: "gallery_img_right", widget: "image" }
-      - { label: "Gallery Bottom Full-Width Image", name: "gallery_img_bottom", widget: "image" }
-
+      - label: "Dynamic Gallery (Masonry Grid)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Image", name: "src", widget: "image" }
+          - { label: "Caption / Description", name: "caption", widget: "string", required: false }
+      - { label: "Gallery Left Image (Legacy)", name: "gallery_img_left", widget: "image", required: false }
+      - { label: "Gallery Right Image (Legacy)", name: "gallery_img_right", widget: "image", required: false }
+      - { label: "Gallery Bottom Image (Legacy)", name: "gallery_img_bottom", widget: "image", required: false }
       - { label: "Summary Section Label", name: "summary_label", widget: "string", default: "Summary" }
       - { label: "Summary Headline", name: "summary_headline", widget: "string" }
       - { label: "Summary Description", name: "summary_desc", widget: "text" }

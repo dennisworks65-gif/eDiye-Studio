@@ -39,8 +39,36 @@ if (fs.existsSync(PROJECTS_DIR)) {
               <h3 class="projects-card-title">${r.client || r.slug}</h3>
               <div class="projects-card-desc">${r.title || ''}</div>
             </div>
+            </div>
           </a>`;
     }).join('\n\n');
+
+    // Dynamic gallery rendering: supports arbitrary list of images in a responsive masonry grid, or legacy 3-image layout
+    let galleryHtml = '';
+    if (Array.isArray(p.gallery) && p.gallery.length > 0) {
+      const items = p.gallery.map(g => {
+        const src = typeof g === 'string' ? g : g.src;
+        const caption = typeof g === 'object' && g.caption ? `<div class="cs-gallery-caption">${g.caption}</div>` : '';
+        return `        <div class="cs-gallery-masonry-item">
+          <img src="${rel(src)}" alt="${p.client} visual" loading="lazy">
+          ${caption}
+        </div>`;
+      }).join('\n');
+
+      galleryHtml = `      <!-- Dynamic Masonry Image Gallery -->
+      <div class="cs-gallery-masonry">
+${items}
+      </div>`;
+    } else {
+      galleryHtml = `      <!-- 3-Image Gallery (2 Columns + 1 Full Width) -->
+      <div class="cs-gallery-wrapper">
+        <div class="cs-gallery-row-2col">
+          <img src="${rel(p.gallery_img_left)}" alt="${p.client} Detail 1" loading="lazy">
+          <img src="${rel(p.gallery_img_right)}" alt="${p.client} Detail 2" loading="lazy">
+        </div>
+        <img src="${rel(p.gallery_img_bottom)}" alt="${p.client} Detail 3" class="cs-gallery-img-bottom" loading="lazy">
+      </div>`;
+    }
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -183,14 +211,7 @@ if (fs.existsSync(PROJECTS_DIR)) {
         </div>
       </div>
 
-      <!-- 3-Image Gallery (2 Columns + 1 Full Width) -->
-      <div class="cs-gallery-wrapper">
-        <div class="cs-gallery-row-2col">
-          <img src="${rel(p.gallery_img_left)}" alt="${p.client} Detail 1" loading="lazy">
-          <img src="${rel(p.gallery_img_right)}" alt="${p.client} Detail 2" loading="lazy">
-        </div>
-        <img src="${rel(p.gallery_img_bottom)}" alt="${p.client} Detail 3" class="cs-gallery-img-bottom" loading="lazy">
-      </div>
+${galleryHtml}
 
       <!-- Block 3: Summary -->
       <div class="cs-content-block" style="padding-bottom: 80px;">
