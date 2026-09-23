@@ -1,0 +1,59 @@
+{
+  "slug": "xtoken-brand",
+  "title": "Decentralized staking protocol visual identity & styleguide",
+  "client": "xToken Branding",
+  "duration": "4 Weeks",
+  "date": "Feb 10, 2025",
+  "tags": [
+    "Brand Identity",
+    "Design System",
+    "Web3"
+  ],
+  "hero_desc": "Creating a comprehensive, high-voltage brand system and design styleguide for xToken, turning complex DeFi staking mechanisms into an approachable, memorable visual language.",
+  "hero_banner": "assets/images/projects/xtoken-brand/hero_banner.png",
+  "about_label": "About the brand",
+  "about_headline": "xToken needed an iconic, authoritative visual identity to match its mission of passive, efficient staking strategies.",
+  "about_desc": "As decentralized finance expands, the technical expertise and management complexity required by staking can intimidate potential participants. xToken was engineered to simplify these mechanics. To mirror this technological clarity, we built a visual identity rooted in distinct electric purple and magenta accents, clean geometric logomark construction, and a humanized typographic hierarchy that stands out against noisy crypto design tropes.",
+  "showcase_img_1": "assets/images/projects/xtoken-brand/logo_construction.png",
+  "challenges_label": "Design System & Harmony",
+  "challenges_headline": "Developing mathematical harmony between the logomark, typography, and dark-mode ergonomics.",
+  "challenges_desc": "The primary design challenge was balancing high-energy digital gradients with legible corporate reliability. We established precise clearspace regulations, responsive minimum sizing down to 16px favicons, and paired Bourbon Grotesque for bold editorial headlines with Open Sans for high-density interface metrics. The resulting system scales effortlessly from Twitter headers to terminal dashboards.",
+  "gallery_img_left": "assets/images/projects/xtoken-brand/color_palette.png",
+  "gallery_img_right": "assets/images/projects/xtoken-brand/typography.png",
+  "gallery_img_bottom": "assets/images/projects/xtoken-brand/alternative_bg.png",
+  "summary_label": "Summary",
+  "summary_headline": "A resilient, cohesive identity delivering brand clarity across global Web3 touchpoints.",
+  "summary_desc": "The completed xToken Brand and Styleguide provides the platform with an enduring, recognizable brand presence. By pairing clear construction rules with vibrant color architecture, xToken commands immediate trust, communicating institutional competence alongside grassroots decentralized energy.",
+  "related": [
+    {
+      "slug": "xtoken",
+      "client": "xToken Terminal",
+      "title": "Decentralized staking & liquidity terminal",
+      "tags": [
+        "Product Design",
+        "Web3"
+      ],
+      "image": "assets/images/projects/xtoken.webp"
+    },
+    {
+      "slug": "hectic",
+      "client": "Hectic",
+      "title": "A brand built to grow",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg"
+    },
+    {
+      "slug": "parla-porte",
+      "client": "Parla Porte",
+      "title": "Redefining sport for the digital age",
+      "tags": [
+        "Design",
+        "Branding"
+      ],
+      "image": "assets/images/yozzyuWWwaLOU0WEgDNDJVjlvA.png"
+    }
+  ]
+}
