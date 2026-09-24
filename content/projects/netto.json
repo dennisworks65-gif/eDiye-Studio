@@ -1,0 +1,99 @@
+{
+  "slug": "netto",
+  "title": "Supermarket chain digital career & employer branding platform",
+  "client": "Netto Marken-Discount",
+  "duration": "10 Weeks",
+  "date": "Aug 18, 2025",
+  "tags": [
+    "Product Design",
+    "Information Architecture",
+    "UX Research",
+    "Design System"
+  ],
+  "hero_desc": "Reimagining the digital employer branding and recruitment portal for Netto, one of Germany's leading supermarket chains with over 4,200 stores and 84,000 employees.",
+  "hero_banner": "assets/images/projects/netto/netto_cover.webp",
+  "about_label": "About the project",
+  "about_headline": "Netto needed a frictionless, community-first career portal to attract apprentices, dual-study candidates, and career switchers across Germany.",
+  "about_desc": "Netto Marken-Discount is a central pillar of German retail, operating more than 4,200 branches nationwide. During the complete digital transformation of their recruitment ecosystem, our UX design engagement centered on information architecture, stakeholder discovery, persona-driven user journeys, interactive wireframing, and design system components. The goal was breaking down corporate hierarchy into approachable, transparent career pathways tailored to neighbourhood jobseekers.",
+  "showcase_img_1": "assets/images/projects/netto/01_frontpage.webp",
+  "challenges_label": "UX Strategy & Systems",
+  "challenges_headline": "Structuring diverse career pathways into an intuitive, high-converting digital portal.",
+  "challenges_desc": "Retail job portals often overwhelm candidates with fragmented job codes, bureaucratic language, and convoluted application forms. We restructured Netto's entry points into seven distinct career pillars: Apprenticeship (Ausbildung), Dual Study (Studium), Career Switchers (Quereinstieg), Part-Time Support (Teilzeit & Aushilfe), and Professional Growth (Weiterentwickeln). With geolocated branch search, transparent compensation highlights, and a streamlined mobile-first application process, candidate drop-off was drastically reduced.",
+  "gallery": [
+    {
+      "src": "assets/images/projects/netto/02_arbeiten_bei_netto.webp",
+      "caption": "Working at Netto — Culture, Values & Location Search"
+    },
+    {
+      "src": "assets/images/projects/netto/03_berufsleben_einsteigen.webp",
+      "caption": "Early Career Entry — Vocational Pathways & Orientation"
+    },
+    {
+      "src": "assets/images/projects/netto/04_karriere_portal.webp",
+      "caption": "Career Progression & Professional Development Hub"
+    },
+    {
+      "src": "assets/images/projects/netto/05_ausbildung.webp",
+      "caption": "Apprenticeship Portal — Fair Pay & Mentorship Tracks"
+    },
+    {
+      "src": "assets/images/projects/netto/06_studium.webp",
+      "caption": "Dual Study Programs — Academic Theory & Practical Retail"
+    },
+    {
+      "src": "assets/images/projects/netto/07_quereinstieg.webp",
+      "caption": "Career Switcher Guidance — Low-Barrier Re-entry System"
+    },
+    {
+      "src": "assets/images/projects/netto/08_teilzeit_aushilfe.webp",
+      "caption": "Part-Time & Flexible Student Employment Engine"
+    },
+    {
+      "src": "assets/images/projects/netto/09_weiterentwickeln.webp",
+      "caption": "Internal Talent Academy & Leadership Workshops"
+    },
+    {
+      "src": "assets/images/projects/netto/10_mobile_frontpage.webp",
+      "caption": "Mobile Viewport — Streamlined Neighborhood Job Finder"
+    },
+    {
+      "src": "assets/images/projects/netto/11_mobile_burger_menu.webp",
+      "caption": "Mobile Navigation Drawer & Regional Branch Filters"
+    }
+  ],
+  "summary_label": "Summary",
+  "summary_headline": "A human-centered employer brand system driving record job applications across 4,200 branches.",
+  "summary_desc": "The redesigned Netto digital career platform replaced bureaucratic ambiguity with genuine warmth, clarity, and neighborhood pride. By prioritizing transparent benefits, clear branch discovery, and frictionless mobile applications, Netto empowered tens of thousands of applicants to start and grow their retail careers with confidence.",
+  "related": [
+    {
+      "slug": "seed",
+      "client": "Seed",
+      "title": "B2B SaaS financial operations platform",
+      "tags": [
+        "Product Design",
+        "SaaS"
+      ],
+      "image": "assets/images/projects/seed.webp"
+    },
+    {
+      "slug": "op1-field",
+      "client": "OP-1 Field",
+      "title": "Tactile synthesizer screen graphics & hardware interface system",
+      "tags": [
+        "Product Design",
+        "Hardware UI"
+      ],
+      "image": "assets/images/projects/op1-field/cover.webp"
+    },
+    {
+      "slug": "fragile-base",
+      "client": "Fragile Base",
+      "title": "Contemporary fashion house digital commerce experience",
+      "tags": [
+        "E-Commerce",
+        "Brand Direction"
+      ],
+      "image": "assets/images/projects/fragile-base/hero_showcase.webp"
+    }
+  ]
+}
