@@ -51,7 +51,7 @@
   </div>
 
   <main>
-    <!-- Section: 1-to-1 Framer Reference Contact Hero -->
+    <!-- Section 1: Contact Hero & Form (1-to-1 Framer Reference) -->
     <section class="contact-hero-section">
       <div class="contact-hero-container">
 
@@ -67,7 +67,7 @@
           <div class="contact-col-empty"></div>
 
           <div class="contact-content-stack">
-            <!-- Headline Stack (Matching 1-to-1 Reference) -->
+            <!-- Headline Stack -->
             <h1 class="contact-hero-title">Contact</h1>
             <p class="contact-hero-desc">
               Tell us about your brand, your goals, and the challenges you’re facing — we’ll come back with ideas, direction, and a clear path to move forward.
@@ -75,7 +75,7 @@
 
             <!-- Clean Underline Form (Matching 1-to-1 Reference Layout) -->
             <form class="contact-form-light" id="page-contact-form" action="https://formspree.io/f/xvkgovlb" method="POST">
-              <!-- Row 1: Name + Company -->
+              <!-- Row 1: Name * + Company -->
               <div class="contact-form-row-2col">
                 <div class="form-group-light">
                   <label for="form-name" class="form-label-light">Name *</label>
@@ -87,29 +87,81 @@
                 </div>
               </div>
 
-              <!-- Row 2: E-mail + Phone -->
+              <!-- Row 2: E-mail * + Phone number -->
               <div class="contact-form-row-2col">
                 <div class="form-group-light">
                   <label for="form-email" class="form-label-light">E-mail *</label>
-                  <input type="email" id="form-email" class="form-input-light" placeholder="jon@example.com" required name="email">
+                  <input type="email" id="form-email" class="form-input-light" placeholder="jane@framer.com" required name="email">
                 </div>
                 <div class="form-group-light">
-                  <label for="form-phone" class="form-label-light">Phone</label>
-                  <input type="tel" id="form-phone" class="form-input-light" placeholder="+1 (555) 000-0000" name="phone">
+                  <label for="form-phone" class="form-label-light">Phone number</label>
+                  <input type="tel" id="form-phone" class="form-input-light" placeholder="(00) 123 456" name="phone">
                 </div>
               </div>
 
-              <!-- Row 3: Project and goals -->
+              <!-- Row 3: Budget * Dropdown Selection -->
               <div class="form-group-light">
-                <label for="form-goals" class="form-label-light">Project and goals *</label>
-                <textarea id="form-goals" class="form-textarea-light" placeholder="Tell us more about your brand, vision, and timeline..." required name="goals"></textarea>
+                <label for="form-budget" class="form-label-light">Budget *</label>
+                <select id="form-budget" class="form-select-light" required name="budget">
+                  <option value="" disabled selected>Select...</option>
+                  <option value="under-5k">&lt; $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-plus">$25,000+</option>
+                </select>
               </div>
 
+              <!-- Row 4: Project and goals * -->
+              <div class="form-group-light">
+                <label for="form-goals" class="form-label-light">Project and goals *</label>
+                <textarea id="form-goals" class="form-textarea-light" placeholder="Tell us more" required name="goals"></textarea>
+              </div>
+
+              <!-- Submit Button (White Pill with Border) -->
               <button type="submit" class="btn-contact-submit">Send message</button>
             </form>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Section 2: Prefer Skipping Forms? Reach Us Directly (1-to-1 Framer Reference) -->
+    <section class="section-contact-direct">
+      <div class="container">
+        <div class="contact-direct-3col-grid">
+          
+          <div class="contact-direct-badge-col">
+            <div class="contact-direct-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+              <span>Awards</span>
+            </div>
+          </div>
+
+          <div class="contact-direct-content">
+            <h2 class="contact-direct-heading">
+              Prefer skipping forms? Reach us directly by phone or email and we’ll take it from there
+            </h2>
+
+            <div class="contact-direct-channels">
+              <a href="mailto:hello@diye.studio" class="btn-channel-pill">
+                <i class="ph-duotone ph-envelope-simple"></i>
+                <span>hello@diye.studio</span>
+              </a>
+              <a href="tel:2349065175674" class="btn-channel-pill">
+                <i class="ph-duotone ph-phone-call"></i>
+                <span>(234) 906 517 5674</span>
+              </a>
+              <a href="https://x.com/jakke_dea" target="_blank" rel="noopener" class="btn-channel-pill">
+                <i class="ph-duotone ph-chat-teardrop-dots"></i>
+                <span>Chat on Twitter / X</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
