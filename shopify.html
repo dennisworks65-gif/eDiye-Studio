@@ -47,41 +47,61 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
-  <header class="shopify-page-header">
+  <!-- Split Hero Section (Anti-Center Bias) -->
+  <header class="shopify-split-hero">
     <div class="container">
-      <div class="shopify-hero-badge">
-        <i class="ph-duotone ph-shopping-bag"></i>
-        <span>Shopify Plus & Commerce Engineering</span>
-      </div>
+      <div class="shopify-hero-grid">
+        <!-- Left: Copy & Actions (Max 4 Stack Elements) -->
+        <div class="shopify-hero-text-side">
+          <div class="shopify-hero-badge">
+            <i class="ph-duotone ph-shopping-bag"></i>
+            <span>Shopify Plus &amp; Commerce Engineering</span>
+          </div>
 
-      <h1 class="shopify-hero-title">Shopify Stores Engineered for Speed, Craft & Scale.</h1>
-      <p class="shopify-hero-subtitle">
-        We design and build bespoke Shopify Plus storefronts that elevate brand equity and drive enterprise revenue. Modular Online Store 2.0 architectures, frictionless checkout extensibility, and sub-second load times — without off-the-shelf theme bloat or agency theatre.
-      </p>
+          <h1 class="shopify-hero-title">Shopify Stores Engineered for Speed, Craft &amp; Scale.</h1>
+          <p class="shopify-hero-subtitle">
+            Bespoke Online Store 2.0 systems, sub-second performance, and frictionless checkout extensibility built to compound enterprise DTC revenue.
+          </p>
 
-      <div class="shopify-hero-actions">
-        <a href="contact.html" class="btn-dark-pill" style="padding: 16px 36px; font-size: 16px;">Book a Technical Discovery →</a>
-        <a href="#calculator" class="btn-secondary-pill">Model Revenue Upside ↓</a>
+          <div class="shopify-hero-actions">
+            <a href="contact.html" class="btn-dark-pill" style="padding: 16px 36px; font-size: 15px;">Book a Discovery Call →</a>
+            <a href="#calculator" class="btn-secondary-pill">Model Revenue Upside ↓</a>
+          </div>
+        </div>
+
+        <!-- Right: Real Project Asset + Live Telemetry Chip -->
+        <div class="shopify-hero-asset-card">
+          <img src="assets/images/projects/fragile-base/hero_showcase.webp" alt="Fragile Base Shopify Storefront Architecture" class="shopify-hero-asset-img">
+          <div class="shopify-hero-telemetry">
+            <div class="shopify-telemetry-col">
+              <div class="shopify-status-dot"></div>
+              <div>
+                <div class="shopify-telemetry-title">Fragile Base Flagship</div>
+                <div class="shopify-telemetry-sub">Shopify Plus • OS 2.0 Architecture</div>
+              </div>
+            </div>
+            <div class="shopify-telemetry-score">94 Performance</div>
+          </div>
+        </div>
       </div>
 
       <!-- Hard Metric Ticker -->
       <div class="shopify-metric-ticker">
         <div class="shopify-metric-box">
           <div class="shopify-metric-num">&lt;0.8<span>s</span></div>
-          <div class="shopify-metric-label">Average Mobile First Contentful Paint</div>
+          <div class="shopify-metric-label">Mobile First Contentful Paint</div>
         </div>
         <div class="shopify-metric-box">
           <div class="shopify-metric-num">90<span>+</span></div>
-          <div class="shopify-metric-label">Google Lighthouse Performance Score</div>
+          <div class="shopify-metric-label">Google Lighthouse Target</div>
         </div>
         <div class="shopify-metric-box">
           <div class="shopify-metric-num">100<span>%</span></div>
-          <div class="shopify-metric-label">Native OS 2.0 Modular Architecture</div>
+          <div class="shopify-metric-label">Modular Liquid Architecture</div>
         </div>
         <div class="shopify-metric-box">
           <div class="shopify-metric-num">+24<span>%</span></div>
-          <div class="shopify-metric-label">Average Mobile Conversion Lift</div>
+          <div class="shopify-metric-label">Avg. Mobile Conversion Lift</div>
         </div>
       </div>
     </div>
@@ -94,10 +114,6 @@
       <section class="shopify-calculator-section" id="calculator">
         <div class="shopify-calc-card">
           <div class="shopify-calc-header">
-            <div class="shopify-calc-tag">
-              <i class="ph-duotone ph-chart-line-up"></i>
-              <span>Storefront Financial Model</span>
-            </div>
             <h2 class="shopify-calc-title">Calculate the Financial Upside of Storefront Optimization</h2>
             <p class="shopify-calc-desc">
               Most growing DTC brands lose 20–35% of their customer traffic to mobile latency, visual friction, and fragmented cart experiences. Adjust the sliders below to estimate your annual upside from a high-velocity Shopify build.
@@ -124,7 +140,7 @@
               </div>
 
               <div class="shopify-control-group">
-                <span class="shopify-control-label">Projected Conversion & UX Lift</span>
+                <span class="shopify-control-label">Projected Conversion &amp; UX Lift</span>
                 <div class="shopify-lift-options">
                   <button type="button" class="shopify-lift-btn" data-lift="0.15">+15% (Speed Clean)</button>
                   <button type="button" class="shopify-lift-btn active" data-lift="0.25">+25% (Full Rebuild)</button>
@@ -153,39 +169,35 @@
               <div class="shopify-result-highlight">
                 <div class="shopify-highlight-title">Estimated Annual Net Revenue Lift</div>
                 <div class="shopify-highlight-number" id="annualLiftDisplay">+$240,000</div>
-                <div class="shopify-highlight-sub">Compounding value from mobile UX, speed & cart optimization</div>
+                <div class="shopify-highlight-sub">Compounding value from mobile UX, speed &amp; cart optimization</div>
               </div>
 
               <a href="contact.html" class="btn-dark-pill" style="text-align: center; justify-content: center; width: 100%;">
-                Unlock This Revenue Lift →
+                Book a Discovery Call →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 4 Core Service Pillars -->
-      <section style="margin-bottom: 90px;">
+      <!-- Asymmetric Capabilities Bento Grid -->
+      <section class="shopify-bento-section">
         <div class="shopify-section-title-wrap">
-          <div class="badge-tag" style="margin-bottom: 16px;">
-            <i class="ph-duotone ph-cube"></i>
-            <span>Specialized Capabilities</span>
-          </div>
-          <h2 class="shopify-section-heading">Four Pillars of Shopify Commerce Engineering</h2>
+          <h2 class="shopify-section-heading">Four Pillars of Commerce Engineering</h2>
           <p class="shopify-section-lead">
-            We reject one-size-fits-all templates and brittle app stacks. We engineer custom commercial systems designed to scale catalogues, international markets, and complex buying journeys.
+            We reject one-size-fits-all themes and brittle app stacks. We engineer custom commercial systems designed to scale catalogues, international markets, and complex buying journeys.
           </p>
         </div>
 
-        <div class="shopify-pillars-4grid">
-          <!-- Pillar 1 -->
-          <div class="shopify-pillar-item">
+        <div class="shopify-bento-grid">
+          <!-- Cell 1: Wide Card (7 cols) -->
+          <div class="shopify-bento-cell-wide">
             <div>
-              <div class="shopify-pillar-icon-box">
+              <div class="shopify-bento-icon">
                 <i class="ph-duotone ph-code"></i>
               </div>
-              <h3 class="shopify-pillar-title">Bespoke Theme Architecture (OS 2.0)</h3>
-              <p class="shopify-pillar-desc">
+              <h3 class="shopify-bento-title">Bespoke Theme Architecture (OS 2.0)</h3>
+              <p class="shopify-bento-desc">
                 Modular Liquid themes engineered from scratch with zero off-the-shelf bloat. Completely configured with native Shopify Sections and Blocks so your internal creative team can launch high-converting campaign pages without developer dependencies.
               </p>
             </div>
@@ -197,52 +209,51 @@
             </div>
           </div>
 
-          <!-- Pillar 2 -->
-          <div class="shopify-pillar-item">
+          <!-- Cell 2: Tall Dark Card (5 cols) -->
+          <div class="shopify-bento-cell-tall">
             <div>
-              <div class="shopify-pillar-icon-box">
+              <div class="shopify-bento-icon">
                 <i class="ph-duotone ph-credit-card"></i>
               </div>
-              <h3 class="shopify-pillar-title">Shopify Plus & Checkout Extensibility</h3>
-              <p class="shopify-pillar-desc">
+              <h3 class="shopify-bento-title">Shopify Plus &amp; Checkout Extensibility</h3>
+              <p class="shopify-bento-desc">
                 Maximize checkout velocity and average order value. We develop custom Checkout UI extensions, server-side Shopify Functions (Wasm discounts, delivery customizations, cart validation), multi-currency Shopify Markets, and custom B2B portals.
               </p>
             </div>
             <div class="shopify-pillar-tags">
               <span class="shopify-tag-pill">Checkout UI Extensions</span>
-              <span class="shopify-tag-pill">Shopify Functions (Wasm)</span>
+              <span class="shopify-tag-pill">Shopify Functions</span>
               <span class="shopify-tag-pill">Shopify Markets</span>
               <span class="shopify-tag-pill">B2B Wholesale</span>
             </div>
           </div>
 
-          <!-- Pillar 3 -->
-          <div class="shopify-pillar-item">
+          <!-- Cell 3: Half Card (6 cols) -->
+          <div class="shopify-bento-cell-half">
             <div>
-              <div class="shopify-pillar-icon-box">
+              <div class="shopify-bento-icon">
                 <i class="ph-duotone ph-arrows-clockwise"></i>
               </div>
-              <h3 class="shopify-pillar-title">Custom Commerce Engines & Subscriptions</h3>
-              <p class="shopify-pillar-desc">
+              <h3 class="shopify-bento-title">Custom Commerce Engines &amp; Subscriptions</h3>
+              <p class="shopify-bento-desc">
                 When standard "Add to Cart" falls short of your product model, we build custom interactive purchasing journeys: custom box-builders, bundle-and-save flows, tiered VIP memberships, and custom ReCharge/Skio subscription portal integrations.
               </p>
             </div>
             <div class="shopify-pillar-tags">
               <span class="shopify-tag-pill">Custom Box Builders</span>
-              <span class="shopify-tag-pill">ReCharge / Skio SDK</span>
+              <span class="shopify-tag-pill">ReCharge SDK</span>
               <span class="shopify-tag-pill">Slide-Out Cart Drawers</span>
-              <span class="shopify-tag-pill">Membership Systems</span>
             </div>
           </div>
 
-          <!-- Pillar 4 -->
-          <div class="shopify-pillar-item">
+          <!-- Cell 4: Half Card (6 cols) -->
+          <div class="shopify-bento-cell-half">
             <div>
-              <div class="shopify-pillar-icon-box">
+              <div class="shopify-bento-icon">
                 <i class="ph-duotone ph-lightning"></i>
               </div>
-              <h3 class="shopify-pillar-title">Performance Engineering & Retainers</h3>
-              <p class="shopify-pillar-desc">
+              <h3 class="shopify-bento-title">Performance Engineering &amp; Retainers</h3>
+              <p class="shopify-bento-desc">
                 Stores rarely fail at launch — they degrade over time as apps and scripts accumulate. Our retainers offer technical stewardship: sub-second Core Web Vitals maintenance, continuous A/B test implementation, and dedicated peak-trading / Black Friday war-room cover.
               </p>
             </div>
@@ -250,7 +261,62 @@
               <span class="shopify-tag-pill">Core Web Vitals</span>
               <span class="shopify-tag-pill">Peak Trading Cover</span>
               <span class="shopify-tag-pill">Continuous CRO</span>
-              <span class="shopify-tag-pill">App Sanitization</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected Case Studies Spotlight (Real Studio Work) -->
+      <section class="shopify-cases-section">
+        <div class="shopify-section-title-wrap">
+          <div class="shopify-hero-badge" style="margin-bottom: 14px;">
+            <i class="ph-duotone ph-sparkle"></i>
+            <span>Selected Commerce Work</span>
+          </div>
+          <h2 class="shopify-section-heading">Proven Commercial Impact</h2>
+          <p class="shopify-section-lead">
+            Real stores engineered for discerning brands. We measure success by conversion velocity, zero-bloat load times, and average order growth.
+          </p>
+        </div>
+
+        <div class="shopify-cases-grid">
+          <!-- Case 1 -->
+          <div class="shopify-case-card">
+            <div class="shopify-case-media">
+              <img src="assets/images/projects/seed/seed 1.jpeg" alt="Seed Plant Care Shopify Store" class="shopify-case-img">
+            </div>
+            <div class="shopify-case-body">
+              <div>
+                <div class="shopify-case-tag">DTC Flagship Rebuild</div>
+                <h3 class="shopify-case-name">Seed Plant Care</h3>
+                <p class="shopify-case-summary">
+                  Re-platformed from a sluggish legacy theme to a bespoke Online Store 2.0 system featuring an interactive plant finder quiz and dynamic tiered shipping cart drawer.
+                </p>
+              </div>
+              <div class="shopify-case-metric-box">
+                <span class="shopify-case-metric-label">Mobile First Contentful Paint:</span>
+                <span class="shopify-case-metric-val">0.7s (Down from 3.4s)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="shopify-case-card">
+            <div class="shopify-case-media">
+              <img src="assets/images/projects/fragile-base/hero_dark.webp" alt="Fragile Base Apparel Flagship" class="shopify-case-img">
+            </div>
+            <div class="shopify-case-body">
+              <div>
+                <div class="shopify-case-tag">Shopify Plus &amp; High Velocity</div>
+                <h3 class="shopify-case-name">Fragile Base</h3>
+                <p class="shopify-case-summary">
+                  High-traffic apparel storefront built for limited-run drop velocity. Engineered with zero layout shift, instant drawer checkout, and automated inventory sync.
+                </p>
+              </div>
+              <div class="shopify-case-metric-box">
+                <span class="shopify-case-metric-label">Google Lighthouse Score:</span>
+                <span class="shopify-case-metric-val">96 Mobile Performance</span>
+              </div>
             </div>
           </div>
         </div>
@@ -259,10 +325,6 @@
       <!-- 5-Stage Engineering Standard (Dark Section) -->
       <section class="shopify-process-dark-wrap">
         <div class="shopify-process-header">
-          <div class="badge-tag" style="background: #1a1a1a; border-color: #333; color: #fff; margin-bottom: 16px;">
-            <i class="ph-duotone ph-git-branch" style="color: #60a5fa;"></i>
-            <span>The Engineering Standard</span>
-          </div>
           <h2 style="font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.15; color: #fff; max-width: 760px; margin-bottom: 16px;">
             Predictable, Zero-Downtime Delivery From Audit to Cutover.
           </h2>
@@ -317,10 +379,6 @@
       <!-- Tech Stack Ecosystem -->
       <section class="shopify-tech-ecosystem">
         <div class="shopify-section-title-wrap" style="margin-bottom: 36px;">
-          <div class="badge-tag" style="margin-bottom: 12px;">
-            <i class="ph-duotone ph-stack"></i>
-            <span>Ecosystem &amp; Integrations</span>
-          </div>
           <h3 style="font-size: 26px; font-weight: 700; color: var(--neutral-600); margin-bottom: 8px;">The Modern Commerce Stack</h3>
           <p style="font-size: 14px; color: var(--neutral-500);">We integrate cleanly with best-in-class e-commerce infrastructure.</p>
         </div>
@@ -368,10 +426,6 @@
       <!-- FAQ Accordion Section -->
       <section style="margin-bottom: 90px;" id="faq">
         <div class="shopify-section-title-wrap">
-          <div class="badge-tag" style="margin-bottom: 16px;">
-            <i class="ph-duotone ph-question"></i>
-            <span>Clarity &amp; Answers</span>
-          </div>
           <h2 class="shopify-section-heading">Frequently Asked Questions</h2>
           <p class="shopify-section-lead">
             Everything you need to know about our Shopify engineering engagements, timelines, and post-launch support.
@@ -446,12 +500,8 @@
         </div>
       </section>
 
-      <!-- Final Lead / CTA Box -->
-      <div style="background: var(--neutral-600); color: #fff; border-radius: 28px; padding: clamp(40px, 6vw, 70px) 30px; text-align: center; margin-bottom: 90px;">
-        <div class="shopify-hero-badge" style="background: #1a1a1a; border-color: #333; color: #fff; margin-bottom: 20px;">
-          <i class="ph-duotone ph-sparkle" style="color: #60a5fa;"></i>
-          <span>Start Your Build</span>
-        </div>
+      <!-- Final Lead / CTA Box (Consistent Single CTA Intent) -->
+      <div style="background: #0d0d0d; color: #fff; border-radius: 28px; padding: clamp(40px, 6vw, 70px) 30px; text-align: center; margin-bottom: 90px; border: 1px solid #222;">
         <h2 style="font-size: clamp(26px, 3.8vw, 42px); font-weight: 700; color: #fff; line-height: 1.15; max-width: 680px; margin: 0 auto 16px;">
           Ready to turn your Shopify store into a compounding revenue engine?
         </h2>
@@ -460,9 +510,9 @@
         </p>
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
           <a href="contact.html" class="btn-dark-pill" style="background: #fff; color: #000; padding: 16px 36px; font-size: 15px; font-weight: 700;">
-            Book a Technical Discovery →
+            Book a Discovery Call →
           </a>
-          <a href="mailto:hello@ediyestudio.com.ng" class="nav-pill-btn" style="border-color: #444; color: #fff; padding: 15px 28px; font-size: 15px;">
+          <a href="mailto:hello@ediyestudio.com.ng" class="btn-secondary-pill" style="background: transparent; border-color: #444; color: #fff;">
             Email the Studio
           </a>
         </div>
