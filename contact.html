@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — eDiye studio</title>
+  <title>Contact — eDiye Studio</title>
+  <meta name="description" content="Tell us about your brand, your goals, and the challenges you're facing — we'll come back with ideas, direction, and a clear path to move forward.">
   <link rel="canonical" href="https://www.ediyestudio.com.ng/contact.html">
+  <link rel="icon" href="assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
 
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="eDiye® Studio">
   <meta property="og:url" content="https://www.ediyestudio.com.ng/contact.html">
-  <meta property="og:title" content="Contact — eDiye® Studio">
-  <meta property="og:description" content="Let’s build something exceptional. Tell us about your brand, timeline, and goals.">
-  <meta property="og:image" content="https://www.ediyestudio.com.ng/assets/images/2QwXSHgmouhAG707Aj6Ue0D7ZBg.png">
+  <meta property="og:title" content="Contact — eDiye Studio">
+  <meta property="og:description" content="Tell us about your brand, your goals, and the challenges you're facing — we'll come back with ideas, direction, and a clear path to move forward.">
+  <meta property="og:image" content="https://www.ediyestudio.com.ng/assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@jakke_dea">
-  <meta name="twitter:creator" content="@jakke_dea">
-  <meta name="twitter:title" content="Contact — eDiye® Studio">
-  <meta name="twitter:description" content="Let’s build something exceptional. Tell us about your brand, timeline, and goals.">
-  <meta name="twitter:image" content="https://www.ediyestudio.com.ng/assets/images/2QwXSHgmouhAG707Aj6Ue0D7ZBg.png">
+  <meta name="twitter:title" content="Contact — eDiye Studio">
+  <meta name="twitter:description" content="Tell us about your brand, your goals, and the challenges you're facing — we'll come back with ideas, direction, and a clear path to move forward.">
+  <meta name="twitter:image" content="https://www.ediyestudio.com.ng/assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png">
 
-  <link rel="icon" href="assets/images/ljCwDyWpHUcR27Eh2oMvudEmA.png">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .page-hero { padding: 140px 0 60px; }
-  </style>
 </head>
-<body>
-<div class="navbar-wrapper theme-light">
+<body class="contact-page">
+
+  <!-- Navigation Bar (Light Theme, Standard Across Site) -->
+  <div class="navbar-wrapper theme-light">
     <nav class="navbar-inner theme-light">
       <a href="index.html" class="brand-logo">
         <div class="logo-text">eDiye<span class="reg">®</span></div>
         <div class="logo-sub">Clarity over clutter.</div>
       </a>
+
       <div class="nav-pills-group">
         <a href="about.html" class="nav-pill-btn">About</a>
         <a href="works.html" class="nav-pill-btn">Projects</a>
@@ -46,60 +45,169 @@
         <a href="articles.html" class="nav-pill-btn">Articles</a>
         <a href="contact.html" class="nav-pill-btn active">Contact</a>
       </div>
-      <button class="nav-mobile-toggle" aria-label="Toggle Menu">Menu</button>
+
+      <button class="nav-mobile-toggle" aria-label="Toggle Navigation Menu">Menu</button>
     </nav>
   </div>
 
-  <main class="page-hero">
-    <div class="container">
-      <div class="badge-tag" style="margin-bottom: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-        <span>Get in Touch</span>
+  <main>
+    <!-- Section: 1-to-1 Framer Reference Contact Hero -->
+    <section class="contact-hero-section">
+      <div class="contact-hero-container">
+
+        <!-- Top Crosshairs Row -->
+        <div class="contact-crosshairs-row" aria-hidden="true">
+          <span class="grid-crosshair-sm">+</span>
+          <span class="grid-crosshair-sm">+</span>
+          <span class="grid-crosshair-sm">+</span>
+        </div>
+
+        <!-- 3-Column Architecture: 1fr empty + 2fr content -->
+        <div class="contact-hero-3col-row">
+          <div class="contact-col-empty"></div>
+
+          <div class="contact-content-stack">
+            <!-- Headline Stack (Matching 1-to-1 Reference) -->
+            <h1 class="contact-hero-title">Contact</h1>
+            <p class="contact-hero-desc">
+              Tell us about your brand, your goals, and the challenges you’re facing — we’ll come back with ideas, direction, and a clear path to move forward.
+            </p>
+
+            <!-- Clean Underline Form (Matching 1-to-1 Reference Layout) -->
+            <form class="contact-form-light" id="page-contact-form" action="https://formspree.io/f/xvkgovlb" method="POST">
+              <!-- Row 1: Name + Company -->
+              <div class="contact-form-row-2col">
+                <div class="form-group-light">
+                  <label for="form-name" class="form-label-light">Name *</label>
+                  <input type="text" id="form-name" class="form-input-light" placeholder="Jon Bosco" required name="name">
+                </div>
+                <div class="form-group-light">
+                  <label for="form-company" class="form-label-light">Company</label>
+                  <input type="text" id="form-company" class="form-input-light" placeholder="eDiye" name="company">
+                </div>
+              </div>
+
+              <!-- Row 2: E-mail + Phone -->
+              <div class="contact-form-row-2col">
+                <div class="form-group-light">
+                  <label for="form-email" class="form-label-light">E-mail *</label>
+                  <input type="email" id="form-email" class="form-input-light" placeholder="jon@example.com" required name="email">
+                </div>
+                <div class="form-group-light">
+                  <label for="form-phone" class="form-label-light">Phone</label>
+                  <input type="tel" id="form-phone" class="form-input-light" placeholder="+1 (555) 000-0000" name="phone">
+                </div>
+              </div>
+
+              <!-- Row 3: Project and goals -->
+              <div class="form-group-light">
+                <label for="form-goals" class="form-label-light">Project and goals *</label>
+                <textarea id="form-goals" class="form-textarea-light" placeholder="Tell us more about your brand, vision, and timeline..." required name="goals"></textarea>
+              </div>
+
+              <button type="submit" class="btn-contact-submit">Send message</button>
+            </form>
+          </div>
+        </div>
+
       </div>
-
-      <h1 class="section-hero-title">Let's build something exceptional.</h1>
-      <div class="section-hero-subtitle">Tell us about your brand, timeline, and goals.</div>
-
-      <div style="max-width: 680px; margin-top: 50px; margin-bottom: 80px;">
-        <form class="contact-form" id="page-contact-form" style="background:#ffffff; padding:44px; border-radius:var(--radius-xl); border:1px solid #e8e8e8; box-shadow:var(--shadow-sm);" action="https://formspree.io/f/xvkgovlb" method="POST">
-          <div class="form-group">
-            <label for="p-name" class="form-label" style="color:#555;">Name *</label>
-            <input type="text" id="p-name" class="form-input" placeholder="Your name" style="color:#000; border-bottom:1px solid #d0d0d0;" required name="name">
-          </div>
-
-          <div class="form-group" style="margin-top: 20px;">
-            <label for="p-email" class="form-label" style="color:#555;">E-mail *</label>
-            <input type="email" id="p-email" class="form-input" placeholder="name@company.com" style="color:#000; border-bottom:1px solid #d0d0d0;" required name="email">
-          </div>
-
-          <div class="form-group" style="margin-top: 20px;">
-            <label for="p-goals" class="form-label" style="color:#555;">Project and goals *</label>
-            <textarea id="p-goals" class="form-textarea" placeholder="Tell us what you want to achieve..." style="color:#000; border-bottom:1px solid #d0d0d0;" required name="goals"></textarea>
-          </div>
-
-          <button type="submit" class="btn-dark-pill" style="margin-top: 30px; width:100%; padding:16px; font-size:16px; justify-content:center;">Send Message</button>
-        </form>
-      </div>
-    </div>
+    </section>
   </main>
 
+  <!-- Site Footer (1-to-1 Framer Architecture) -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-main-grid">
+      <div class="footer-3col-layout">
+        
+        <!-- Left Column: Brand, Mission, and Contact Items -->
         <div class="footer-brand-side">
-          <div class="footer-brand-logo">eDiye®</div>
-          <div class="footer-tagline">Clarity over clutter.</div>
+          <div class="footer-brand-top">
+            <div class="footer-brand-logo">eDiye®</div>
+            <div class="footer-tagline">Clarity over clutter.</div>
+          </div>
+
+          <div class="footer-brand-bottom">
+            <p class="footer-mission">
+              With eDiye, every part of your website works together to build clarity, trust, and momentum — not just visual polish, but real purpose.
+            </p>
+
+            <div class="footer-brand-divider"></div>
+
+            <div class="footer-contact-items">
+              <div class="footer-contact-item">
+                <div class="label">[ Email ]</div>
+                <div class="val"><a href="mailto:hello@diye.studio">hello@diye.studio</a></div>
+              </div>
+              <div class="footer-contact-item">
+                <div class="label">[ Phone ]</div>
+                <div class="val"><a href="tel:2349065175674">(234) 906 517 5674</a></div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Right 2 Columns: Newsletter & Navigation Grid -->
+        <div class="footer-links-side">
+          
+          <!-- Top: Newsletter Form -->
+          <div class="footer-newsletter-wrap">
+            <form class="newsletter-form-clean" id="newsletter-form">
+              <input type="email" placeholder="Your email address" class="newsletter-input" required>
+              <button type="submit" class="newsletter-btn">
+                <span>Subscribe</span>
+                <span class="sub-arrow">↳</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Bottom: 3 Nav Columns -->
+          <div class="footer-nav-columns">
+            <div class="footer-nav-col">
+              <div class="footer-nav-col-title">[ Pages ]</div>
+              <ul class="footer-nav-list">
+                <li><a href="about.html">About us</a></li>
+                <li><a href="works.html">Case Studies</a></li>
+                <li><a href="shopify.html">Shopify</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <div class="footer-nav-col-title">[ Socials ]</div>
+              <ul class="footer-nav-list">
+                <li><a href="https://x.com/jakke_dea" target="_blank" rel="noopener">Twitter / X</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <div class="footer-nav-col-title">[ Legal ]</div>
+              <ul class="footer-nav-list">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
-    <div class="footer-bottom-bar">
-      <div>© 2025 eDiye. All rights reserved.</div>
-      <div>Created by @Dennis</div>
-    </div>
   </footer>
+
+  <div class="footer-bottom-bar">
+    <div class="left-stack">
+      © 2025 eDiye® Studio. All rights reserved.
+    </div>
+    <div class="right-stack">
+      <span class="creator-link">Designed with clarity</span>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
-    <!-- Progressive Liquid Glass Bottom Blur Overlay -->
-  <div class="viewport-liquid-glass" aria-hidden="true"></div>
   <!-- Vercel Web Analytics & Speed Insights Telemetry -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
