@@ -39,7 +39,6 @@ if (fs.existsSync(PROJECTS_DIR)) {
               <h3 class="projects-card-title">${r.client || r.slug}</h3>
               <div class="projects-card-desc">${r.title || ''}</div>
             </div>
-            </div>
           </a>`;
     }).join('\n\n');
 
@@ -228,19 +227,25 @@ ${galleryHtml}
 
     </section>
 
-    <!-- Discover More / Other Projects Section -->
+    <!-- Discover More / Other Projects Section (1-to-1 Framer Reference) -->
     <section class="cs-discover-section">
       <div class="cs-discover-container">
         
-        <div class="cs-discover-badge">
-          <i class="ph-duotone ph-folder"></i>
-          <span>DISCOVER MORE</span>
-        </div>
+        <div class="cs-discover-header-layout">
+          <div class="cs-discover-badge-col">
+            <div class="cs-discover-badge">
+              <i class="ph-duotone ph-folder"></i>
+              <span>DISCOVER MORE</span>
+            </div>
+          </div>
 
-        <h2 class="cs-discover-heading">
-          Want to check more?<br>
-          <span class="cs-discover-heading-sub">Discover our other projects.</span>
-        </h2>
+          <div class="cs-discover-title-col">
+            <h2 class="cs-discover-heading">
+              Want to check more?<br>
+              <span class="cs-discover-heading-sub">Discover our other projects.</span>
+            </h2>
+          </div>
+        </div>
 
         <div class="cs-discover-grid">
 ${relatedCardsHtml}
