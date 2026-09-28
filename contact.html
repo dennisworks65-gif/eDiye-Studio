@@ -164,9 +164,65 @@
         </div>
       </div>
     </section>
+    <!-- Section 7: Dark Lead Capture / Contact Section (1-to-1 Framer Architecture from About Page) -->
+    <section class="section-contact-dark" id="contact">
+      <div class="contact-dark-bg">
+        <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="eDiye Studio Contact" class="contact-dark-img">
+        <div class="contact-dark-overlay"></div>
+      </div>
+
+      <div class="container">
+        
+        <!-- Top Row: Badge + Main Heading + Subtitle in 3-Column Grid -->
+        <div class="contact-header-3col-grid">
+          <div class="grid-col-1">
+            <div class="badge-tag contact-badge-blue">
+              <i class="ph-duotone ph-paper-plane-tilt"></i>
+              <span>Contact</span>
+            </div>
+          </div>
+
+          <div class="grid-col-span-2">
+            <h2 class="contact-heading-main">
+              If your brand feels outdated, your website isn’t pulling its weight, or you’re simply ready to look more professional, eDiye is here to help.
+            </h2>
+            <p class="contact-sub-text">
+              Reach out today and you’ll get a clear plan, honest advice, and a team that cares about the outcome as much as you do. Whether you prefer a quick call or a simple email, getting started is easy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Form Aligned with Right 2-Column Span -->
+        <div class="contact-form-3col-grid">
+          <div class="grid-col-1"></div>
+
+          <div class="grid-col-span-2">
+            <form class="contact-form-clean" id="studio-contact-form" action="https://formspree.io/f/xvkgovlb" method="POST">
+              <div class="form-group-clean">
+                <label for="form-name-dark" class="form-label-clean">Name *</label>
+                <input type="text" id="form-name-dark" class="form-input-clean" placeholder="Jane Foster" required name="name">
+              </div>
+
+              <div class="form-group-clean">
+                <label for="form-email-dark" class="form-label-clean">E-mail *</label>
+                <input type="email" id="form-email-dark" class="form-input-clean" placeholder="jane@framer.com" required name="email">
+              </div>
+
+              <div class="form-group-clean">
+                <label for="form-goals-dark" class="form-label-clean">Project and goals *</label>
+                <textarea id="form-goals-dark" class="form-textarea-clean" placeholder="Tell us more" required name="goals"></textarea>
+              </div>
+
+              <button type="submit" class="btn-send-message">Send message</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
-  <!-- Site Footer (1-to-1 Framer Architecture) -->
+  <!-- Site Footer (1-to-1 Framer Architecture from About Page) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-3col-layout">
@@ -203,8 +259,11 @@
           
           <!-- Top: Newsletter Form -->
           <div class="footer-newsletter-wrap">
-            <form class="newsletter-form-clean" id="newsletter-form">
-              <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <h3 class="newsletter-title">Newsletter</h3>
+            <div class="newsletter-sub">Sign in to newsletter and never miss any update.</div>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="text" class="newsletter-input" placeholder="your name..." required name="subscriber_name">
+              <input type="email" class="newsletter-input" placeholder="your e-mail address..." required name="subscriber_email">
               <button type="submit" class="newsletter-btn">
                 <span>Subscribe</span>
                 <span class="sub-arrow">↳</span>
@@ -213,33 +272,34 @@
           </div>
 
           <!-- Bottom: 3 Nav Columns -->
-          <div class="footer-nav-columns">
-            <div class="footer-nav-col">
-              <div class="footer-nav-col-title">[ Pages ]</div>
+          <div class="footer-nav-cols">
+            <div>
+              <div class="footer-nav-col-title">Navigation</div>
               <ul class="footer-nav-list">
-                <li><a href="about.html">About us</a></li>
-                <li><a href="works.html">Case Studies</a></li>
-                <li><a href="shopify.html">Shopify</a></li>
-                <li><a href="articles.html">Articles</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html">Projects <span class="nav-count">[6]</span></a></li>
+                <li><a href="articles.html">Articles <span class="nav-count">[8]</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
 
-            <div class="footer-nav-col">
-              <div class="footer-nav-col-title">[ Socials ]</div>
+            <div>
+              <div class="footer-nav-col-title">Social</div>
               <ul class="footer-nav-list">
-                <li><a href="https://x.com/jakke_dea" target="_blank" rel="noopener">Twitter / X</a></li>
+                <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
                 <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble</a></li>
+                <li><a href="https://behance.net" target="_blank" rel="noopener">Behance</a></li>
+                <li><a href="https://youtube.com" target="_blank" rel="noopener">Youtube</a></li>
               </ul>
             </div>
 
-            <div class="footer-nav-col">
-              <div class="footer-nav-col-title">[ Legal ]</div>
+            <div>
+              <div class="footer-nav-col-title">Additionals</div>
               <ul class="footer-nav-list">
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="404.html">404</a></li>
               </ul>
             </div>
           </div>
@@ -250,14 +310,8 @@
     </div>
   </footer>
 
-  <div class="footer-bottom-bar">
-    <div class="left-stack">
-      © 2025 eDiye® Studio. All rights reserved.
-    </div>
-    <div class="right-stack">
-      <span class="creator-link">Designed with clarity</span>
-    </div>
-  </div>
+  <!-- Progressive Liquid Glass Bottom Blur Overlay -->
+  <div class="viewport-liquid-glass" aria-hidden="true"></div>
 
   <script src="js/main.js"></script>
   <!-- Vercel Web Analytics & Speed Insights Telemetry -->
