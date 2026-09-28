@@ -340,7 +340,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   transform: translateY(-1px);
 }
 
-/* --- Light Theme Navbar Variant --- */
+/* --- Light Theme Navbar Variant (Matches About Page 1-to-1) --- */
 .navbar-inner.theme-light .logo-text,
 .navbar-wrapper.theme-light .logo-text {
   color: #000000;
@@ -358,18 +358,17 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.navbar-inner.theme-light .nav-pill-btn:hover,
-.navbar-wrapper.theme-light .nav-pill-btn:hover {
+.navbar-inner.theme-light .nav-pill-btn:hover {
   background: rgba(0, 0, 0, 0.08);
   color: #000000;
 }
 
 .navbar-inner.theme-light .nav-pill-btn.active,
 .navbar-wrapper.theme-light .nav-pill-btn.active {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.06);
   color: #000000;
   font-weight: 600;
-  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .navbar-inner.theme-light .nav-mobile-toggle,
@@ -378,8 +377,6 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: #000000;
 }
-
-
 .nav-mobile-toggle {
   display: none;
   background: rgba(18, 18, 18, 0.85);
