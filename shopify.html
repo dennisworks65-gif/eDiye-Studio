@@ -47,34 +47,427 @@
     </nav>
   </div>
 
-  <main class="page-hero">
+  <!-- Hero Section -->
+  <header class="shopify-page-header">
     <div class="container">
-      <div class="badge-tag" style="margin-bottom: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        <span>E-Commerce Services</span>
+      <div class="shopify-hero-badge">
+        <i class="ph-duotone ph-shopping-bag"></i>
+        <span>Shopify Plus & Commerce Engineering</span>
       </div>
 
-      <h1 class="section-hero-title">Shopify Stores Built to Convert</h1>
-      <div class="section-hero-subtitle">High-converting themes, bespoke Liquid development, and frictionless checkouts.</div>
+      <h1 class="shopify-hero-title">Shopify Stores Engineered for Speed, Craft & Scale.</h1>
+      <p class="shopify-hero-subtitle">
+        We design and build bespoke Shopify Plus storefronts that elevate brand equity and drive enterprise revenue. Modular Online Store 2.0 architectures, frictionless checkout extensibility, and sub-second load times — without off-the-shelf theme bloat or agency theatre.
+      </p>
 
-      <div class="shopify-features-grid">
-        <div class="shopify-feature-card">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Custom Shopify Themes</h3>
-          <p style="color: #666; font-size: 15px; line-height: 1.5;">Pixel-perfect custom storefronts coded with modern Liquid and headless architectures.</p>
+      <div class="shopify-hero-actions">
+        <a href="contact.html" class="btn-dark-pill" style="padding: 16px 36px; font-size: 16px;">Book a Technical Discovery →</a>
+        <a href="#calculator" class="btn-secondary-pill">Model Revenue Upside ↓</a>
+      </div>
+
+      <!-- Hard Metric Ticker -->
+      <div class="shopify-metric-ticker">
+        <div class="shopify-metric-box">
+          <div class="shopify-metric-num">&lt;0.8<span>s</span></div>
+          <div class="shopify-metric-label">Average Mobile First Contentful Paint</div>
         </div>
-        <div class="shopify-feature-card">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Speed & Performance</h3>
-          <p style="color: #666; font-size: 15px; line-height: 1.5;">Sub-second load times that keep bounce rates minimal and maximize checkout completion.</p>
+        <div class="shopify-metric-box">
+          <div class="shopify-metric-num">90<span>+</span></div>
+          <div class="shopify-metric-label">Google Lighthouse Performance Score</div>
         </div>
-        <div class="shopify-feature-card">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">App & Stack Integrations</h3>
-          <p style="color: #666; font-size: 15px; line-height: 1.5;">Seamless integrations with Klaviyo, Recharge, ERPs, and custom backend inventory systems.</p>
+        <div class="shopify-metric-box">
+          <div class="shopify-metric-num">100<span>%</span></div>
+          <div class="shopify-metric-label">Native OS 2.0 Modular Architecture</div>
+        </div>
+        <div class="shopify-metric-box">
+          <div class="shopify-metric-num">+24<span>%</span></div>
+          <div class="shopify-metric-label">Average Mobile Conversion Lift</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Interactive Revenue & Conversion Calculator (Lead Magnet) -->
+      <section class="shopify-calculator-section" id="calculator">
+        <div class="shopify-calc-card">
+          <div class="shopify-calc-header">
+            <div class="shopify-calc-tag">
+              <i class="ph-duotone ph-chart-line-up"></i>
+              <span>Storefront Financial Model</span>
+            </div>
+            <h2 class="shopify-calc-title">Calculate the Financial Upside of Storefront Optimization</h2>
+            <p class="shopify-calc-desc">
+              Most growing DTC brands lose 20–35% of their customer traffic to mobile latency, visual friction, and fragmented cart experiences. Adjust the sliders below to estimate your annual upside from a high-velocity Shopify build.
+            </p>
+          </div>
+
+          <div class="shopify-calc-body">
+            <!-- Controls -->
+            <div class="shopify-calc-controls">
+              <div class="shopify-control-group">
+                <div class="shopify-control-top">
+                  <span class="shopify-control-label">Monthly Gross Revenue</span>
+                  <span class="shopify-control-val" id="revValDisplay">$80,000</span>
+                </div>
+                <input type="range" min="10000" max="600000" step="5000" value="80000" class="shopify-range-input" id="revRange">
+              </div>
+
+              <div class="shopify-control-group">
+                <div class="shopify-control-top">
+                  <span class="shopify-control-label">Average Order Value (AOV)</span>
+                  <span class="shopify-control-val" id="aovValDisplay">$85</span>
+                </div>
+                <input type="range" min="20" max="400" step="5" value="85" class="shopify-range-input" id="aovRange">
+              </div>
+
+              <div class="shopify-control-group">
+                <span class="shopify-control-label">Projected Conversion & UX Lift</span>
+                <div class="shopify-lift-options">
+                  <button type="button" class="shopify-lift-btn" data-lift="0.15">+15% (Speed Clean)</button>
+                  <button type="button" class="shopify-lift-btn active" data-lift="0.25">+25% (Full Rebuild)</button>
+                  <button type="button" class="shopify-lift-btn" data-lift="0.35">+35% (Plus + CRO)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Box -->
+            <div class="shopify-calc-results">
+              <div>
+                <div class="shopify-result-row">
+                  <span class="shopify-result-label">Current Monthly Orders</span>
+                  <span class="shopify-result-subval" id="currentOrdersDisplay">941</span>
+                </div>
+                <div class="shopify-result-row" style="margin-top: 14px;">
+                  <span class="shopify-result-label">Additional Monthly Orders</span>
+                  <span class="shopify-result-subval" id="newOrdersDisplay">+235</span>
+                </div>
+                <div class="shopify-result-row" style="margin-top: 14px;">
+                  <span class="shopify-result-label">Extra Monthly Revenue</span>
+                  <span class="shopify-result-subval" id="monthlyLiftDisplay">+$20,000</span>
+                </div>
+              </div>
+
+              <div class="shopify-result-highlight">
+                <div class="shopify-highlight-title">Estimated Annual Net Revenue Lift</div>
+                <div class="shopify-highlight-number" id="annualLiftDisplay">+$240,000</div>
+                <div class="shopify-highlight-sub">Compounding value from mobile UX, speed & cart optimization</div>
+              </div>
+
+              <a href="contact.html" class="btn-dark-pill" style="text-align: center; justify-content: center; width: 100%;">
+                Unlock This Revenue Lift →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 Core Service Pillars -->
+      <section style="margin-bottom: 90px;">
+        <div class="shopify-section-title-wrap">
+          <div class="badge-tag" style="margin-bottom: 16px;">
+            <i class="ph-duotone ph-cube"></i>
+            <span>Specialized Capabilities</span>
+          </div>
+          <h2 class="shopify-section-heading">Four Pillars of Shopify Commerce Engineering</h2>
+          <p class="shopify-section-lead">
+            We reject one-size-fits-all templates and brittle app stacks. We engineer custom commercial systems designed to scale catalogues, international markets, and complex buying journeys.
+          </p>
+        </div>
+
+        <div class="shopify-pillars-4grid">
+          <!-- Pillar 1 -->
+          <div class="shopify-pillar-item">
+            <div>
+              <div class="shopify-pillar-icon-box">
+                <i class="ph-duotone ph-code"></i>
+              </div>
+              <h3 class="shopify-pillar-title">Bespoke Theme Architecture (OS 2.0)</h3>
+              <p class="shopify-pillar-desc">
+                Modular Liquid themes engineered from scratch with zero off-the-shelf bloat. Completely configured with native Shopify Sections and Blocks so your internal creative team can launch high-converting campaign pages without developer dependencies.
+              </p>
+            </div>
+            <div class="shopify-pillar-tags">
+              <span class="shopify-tag-pill">Online Store 2.0</span>
+              <span class="shopify-tag-pill">Zero Theme Bloat</span>
+              <span class="shopify-tag-pill">Custom Metaobjects</span>
+              <span class="shopify-tag-pill">Design System</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="shopify-pillar-item">
+            <div>
+              <div class="shopify-pillar-icon-box">
+                <i class="ph-duotone ph-credit-card"></i>
+              </div>
+              <h3 class="shopify-pillar-title">Shopify Plus & Checkout Extensibility</h3>
+              <p class="shopify-pillar-desc">
+                Maximize checkout velocity and average order value. We develop custom Checkout UI extensions, server-side Shopify Functions (Wasm discounts, delivery customizations, cart validation), multi-currency Shopify Markets, and custom B2B portals.
+              </p>
+            </div>
+            <div class="shopify-pillar-tags">
+              <span class="shopify-tag-pill">Checkout UI Extensions</span>
+              <span class="shopify-tag-pill">Shopify Functions (Wasm)</span>
+              <span class="shopify-tag-pill">Shopify Markets</span>
+              <span class="shopify-tag-pill">B2B Wholesale</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="shopify-pillar-item">
+            <div>
+              <div class="shopify-pillar-icon-box">
+                <i class="ph-duotone ph-arrows-clockwise"></i>
+              </div>
+              <h3 class="shopify-pillar-title">Custom Commerce Engines & Subscriptions</h3>
+              <p class="shopify-pillar-desc">
+                When standard "Add to Cart" falls short of your product model, we build custom interactive purchasing journeys: custom box-builders, bundle-and-save flows, tiered VIP memberships, and custom ReCharge/Skio subscription portal integrations.
+              </p>
+            </div>
+            <div class="shopify-pillar-tags">
+              <span class="shopify-tag-pill">Custom Box Builders</span>
+              <span class="shopify-tag-pill">ReCharge / Skio SDK</span>
+              <span class="shopify-tag-pill">Slide-Out Cart Drawers</span>
+              <span class="shopify-tag-pill">Membership Systems</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="shopify-pillar-item">
+            <div>
+              <div class="shopify-pillar-icon-box">
+                <i class="ph-duotone ph-lightning"></i>
+              </div>
+              <h3 class="shopify-pillar-title">Performance Engineering & Retainers</h3>
+              <p class="shopify-pillar-desc">
+                Stores rarely fail at launch — they degrade over time as apps and scripts accumulate. Our retainers offer technical stewardship: sub-second Core Web Vitals maintenance, continuous A/B test implementation, and dedicated peak-trading / Black Friday war-room cover.
+              </p>
+            </div>
+            <div class="shopify-pillar-tags">
+              <span class="shopify-tag-pill">Core Web Vitals</span>
+              <span class="shopify-tag-pill">Peak Trading Cover</span>
+              <span class="shopify-tag-pill">Continuous CRO</span>
+              <span class="shopify-tag-pill">App Sanitization</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5-Stage Engineering Standard (Dark Section) -->
+      <section class="shopify-process-dark-wrap">
+        <div class="shopify-process-header">
+          <div class="badge-tag" style="background: #1a1a1a; border-color: #333; color: #fff; margin-bottom: 16px;">
+            <i class="ph-duotone ph-git-branch" style="color: #60a5fa;"></i>
+            <span>The Engineering Standard</span>
+          </div>
+          <h2 style="font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.15; color: #fff; max-width: 760px; margin-bottom: 16px;">
+            Predictable, Zero-Downtime Delivery From Audit to Cutover.
+          </h2>
+          <p style="color: #999; font-size: 16px; max-width: 640px; line-height: 1.6;">
+            Every engagement follows a structured 5-stage sprint model. No surprises, no black-box development, and total transparent communication.
+          </p>
+        </div>
+
+        <div class="shopify-process-timeline">
+          <div class="shopify-step-card">
+            <div class="shopify-step-num">STAGE 01</div>
+            <div>
+              <h4 class="shopify-step-title">Discovery &amp; Tech Audit</h4>
+              <p class="shopify-step-desc">Catalogue taxonomy analysis, third-party app sanitization, ERP/inventory hook audits, and conversion drop-off mapping.</p>
+            </div>
+          </div>
+
+          <div class="shopify-step-card">
+            <div class="shopify-step-num">STAGE 02</div>
+            <div>
+              <h4 class="shopify-step-title">Editorial UX Prototyping</h4>
+              <p class="shopify-step-desc">High-fidelity Figma design systems balancing editorial prestige with conversion ergonomics. Mobile-first cart &amp; PDP flows.</p>
+            </div>
+          </div>
+
+          <div class="shopify-step-card">
+            <div class="shopify-step-num">STAGE 03</div>
+            <div>
+              <h4 class="shopify-step-title">Clean Liquid Engineering</h4>
+              <p class="shopify-step-desc">Modular Liquid 2.0 sections, vanilla JavaScript components, and custom CSS custom properties. Zero slow page-builder bloat.</p>
+            </div>
+          </div>
+
+          <div class="shopify-step-card">
+            <div class="shopify-step-num">STAGE 04</div>
+            <div>
+              <h4 class="shopify-step-title">QA &amp; 301 Redirect Mapping</h4>
+              <p class="shopify-step-desc">Rigorous cross-device stress testing, payment gateway simulation, and comprehensive 1:1 URL redirect maps preserving 100% SEO ranking.</p>
+            </div>
+          </div>
+
+          <div class="shopify-step-card">
+            <div class="shopify-step-num">STAGE 05</div>
+            <div>
+              <h4 class="shopify-step-title">Cutover &amp; Retainer Stewardship</h4>
+              <p class="shopify-step-desc">Zero-downtime DNS cutover, GA4 tracking verification, team training workshops, and proactive post-launch maintenance sprints.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Ecosystem -->
+      <section class="shopify-tech-ecosystem">
+        <div class="shopify-section-title-wrap" style="margin-bottom: 36px;">
+          <div class="badge-tag" style="margin-bottom: 12px;">
+            <i class="ph-duotone ph-stack"></i>
+            <span>Ecosystem &amp; Integrations</span>
+          </div>
+          <h3 style="font-size: 26px; font-weight: 700; color: var(--neutral-600); margin-bottom: 8px;">The Modern Commerce Stack</h3>
+          <p style="font-size: 14px; color: var(--neutral-500);">We integrate cleanly with best-in-class e-commerce infrastructure.</p>
+        </div>
+
+        <div class="shopify-tech-grid">
+          <div>
+            <div class="shopify-tech-group-title">Commerce Core</div>
+            <ul class="shopify-tech-list">
+              <li>Shopify Plus &amp; POS</li>
+              <li>Checkout Extensibility</li>
+              <li>Shopify Functions (Wasm)</li>
+              <li>Storefront API (GraphQL)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="shopify-tech-group-title">Frontend Engineering</div>
+            <ul class="shopify-tech-list">
+              <li>Online Store 2.0 (Liquid)</li>
+              <li>Hydrogen / Oxygen (Headless)</li>
+              <li>Vanilla Web Components</li>
+              <li>View Transitions API</li>
+            </ul>
+          </div>
+          <div>
+            <div class="shopify-tech-group-title">Subscriptions &amp; CRM</div>
+            <ul class="shopify-tech-list">
+              <li>ReCharge &amp; Skio Subscriptions</li>
+              <li>Klaviyo Email &amp; SMS</li>
+              <li>Attentive Retention</li>
+              <li>Gorgias &amp; Loop Returns</li>
+            </ul>
+          </div>
+          <div>
+            <div class="shopify-tech-group-title">Data &amp; Optimization</div>
+            <ul class="shopify-tech-list">
+              <li>Intelligems A/B Testing</li>
+              <li>Triple Whale &amp; GA4</li>
+              <li>Nosto Personalization</li>
+              <li>Algolia Search &amp; Discovery</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Accordion Section -->
+      <section style="margin-bottom: 90px;" id="faq">
+        <div class="shopify-section-title-wrap">
+          <div class="badge-tag" style="margin-bottom: 16px;">
+            <i class="ph-duotone ph-question"></i>
+            <span>Clarity &amp; Answers</span>
+          </div>
+          <h2 class="shopify-section-heading">Frequently Asked Questions</h2>
+          <p class="shopify-section-lead">
+            Everything you need to know about our Shopify engineering engagements, timelines, and post-launch support.
+          </p>
+        </div>
+
+        <div class="accordion-list" style="max-width: 860px; margin: 0 auto;">
+          <!-- Item 1 -->
+          <div class="accordion-item active">
+            <div class="accordion-header">
+              <h4 class="accordion-question">How long does a bespoke Shopify store build take?</h4>
+              <div class="accordion-toggle-icon">–</div>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-answer">
+                A full bespoke Shopify Online Store 2.0 build typically takes <strong>6 to 10 weeks</strong> from technical discovery through to cutover. Smaller architectural optimizations or checkout extensibility builds can launch in <strong>3 to 4 weeks</strong>. We provide transparent weekly sprint demos and milestone roadmaps from day one.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h4 class="accordion-question">Do we need Shopify Plus, or is standard Shopify sufficient?</h4>
+              <div class="accordion-toggle-icon">+</div>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-answer">
+                Standard Shopify is remarkably capable for brands scaling under $1M/year. Shopify Plus becomes essential when you require <strong>Checkout Extensibility</strong>, custom backend discounting functions (Shopify Functions), dedicated B2B wholesale portals, multi-store operations, or lower credit card transaction fees. We help you evaluate the exact ROI before making any platform commitment.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h4 class="accordion-question">Will migrating or rebuilding hurt our existing SEO rankings?</h4>
+              <div class="accordion-toggle-icon">+</div>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-answer">
+                No. Preserving your organic search equity is a core technical priority. During Stage 04, we perform a complete URL crawl of your existing store and map <strong>1:1 301 redirects</strong> for every product, collection, and blog post. We also preserve structured schema data and page heading hierarchies, ensuring zero traffic dips post-cutover.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h4 class="accordion-question">Can our creative team manage the store without writing code?</h4>
+              <div class="accordion-toggle-icon">+</div>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-answer">
+                100% yes. We build completely within Shopify's native <strong>Theme Editor</strong> using modular Sections, Blocks, and custom Metaobjects. Your team can spin up landing pages, swap campaign imagery, reorder collections, and update promotional announcements natively with zero ongoing developer dependency.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h4 class="accordion-question">What kind of support do you provide after launch?</h4>
+              <div class="accordion-toggle-icon">+</div>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-answer">
+                We offer ongoing <strong>Technical Stewardship Retainers</strong>. This includes proactive Core Web Vitals monitoring, app conflict triage, monthly CRO experiments, feature additions, and dedicated war-room coverage during high-volume sales like Black Friday / Cyber Monday.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Lead / CTA Box -->
+      <div style="background: var(--neutral-600); color: #fff; border-radius: 28px; padding: clamp(40px, 6vw, 70px) 30px; text-align: center; margin-bottom: 90px;">
+        <div class="shopify-hero-badge" style="background: #1a1a1a; border-color: #333; color: #fff; margin-bottom: 20px;">
+          <i class="ph-duotone ph-sparkle" style="color: #60a5fa;"></i>
+          <span>Start Your Build</span>
+        </div>
+        <h2 style="font-size: clamp(26px, 3.8vw, 42px); font-weight: 700; color: #fff; line-height: 1.15; max-width: 680px; margin: 0 auto 16px;">
+          Ready to turn your Shopify store into a compounding revenue engine?
+        </h2>
+        <p style="color: #999; font-size: 16px; max-width: 520px; margin: 0 auto 32px; line-height: 1.55;">
+          Schedule a 30-minute technical architecture call. We'll review your current setup and identify immediate conversion and speed opportunities.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-dark-pill" style="background: #fff; color: #000; padding: 16px 36px; font-size: 15px; font-weight: 700;">
+            Book a Technical Discovery →
+          </a>
+          <a href="mailto:hello@ediyestudio.com.ng" class="nav-pill-btn" style="border-color: #444; color: #fff; padding: 15px 28px; font-size: 15px;">
+            Email the Studio
+          </a>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="contact.html" class="btn-dark-pill" style="padding: 16px 36px; font-size: 16px;">Discuss Your Shopify Store →</a>
-      </div>
     </div>
   </main>
 
@@ -107,6 +500,57 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script>
+    // Interactive Shopify Storefront Financial Model
+    document.addEventListener('DOMContentLoaded', () => {
+      const revRange = document.getElementById('revRange');
+      const revValDisplay = document.getElementById('revValDisplay');
+      const aovRange = document.getElementById('aovRange');
+      const aovValDisplay = document.getElementById('aovValDisplay');
+      const liftBtns = document.querySelectorAll('.shopify-lift-btn');
+      
+      const currentOrdersDisplay = document.getElementById('currentOrdersDisplay');
+      const newOrdersDisplay = document.getElementById('newOrdersDisplay');
+      const monthlyLiftDisplay = document.getElementById('monthlyLiftDisplay');
+      const annualLiftDisplay = document.getElementById('annualLiftDisplay');
+
+      let activeLift = 0.25;
+
+      const formatCurrency = (num) => '$' + num.toLocaleString('en-US');
+
+      function recalculate() {
+        const rev = parseInt(revRange.value, 10);
+        const aov = parseInt(aovRange.value, 10);
+        
+        revValDisplay.textContent = formatCurrency(rev);
+        aovValDisplay.textContent = formatCurrency(aov);
+
+        const currentOrders = Math.round(rev / aov);
+        const extraOrders = Math.round(currentOrders * activeLift);
+        const monthlyExtraRev = Math.round(rev * activeLift);
+        const annualExtraRev = monthlyExtraRev * 12;
+
+        currentOrdersDisplay.textContent = currentOrders.toLocaleString('en-US');
+        newOrdersDisplay.textContent = '+' + extraOrders.toLocaleString('en-US');
+        monthlyLiftDisplay.textContent = '+' + formatCurrency(monthlyExtraRev);
+        annualLiftDisplay.textContent = '+' + formatCurrency(annualExtraRev);
+      }
+
+      revRange.addEventListener('input', recalculate);
+      aovRange.addEventListener('input', recalculate);
+
+      liftBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          liftBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeLift = parseFloat(btn.dataset.lift);
+          recalculate();
+        });
+      });
+
+      recalculate();
+    });
+  </script>
     <!-- Progressive Liquid Glass Bottom Blur Overlay -->
   <div class="viewport-liquid-glass" aria-hidden="true"></div>
   <!-- Vercel Web Analytics & Speed Insights Telemetry -->

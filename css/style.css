@@ -6008,3 +6008,577 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     padding: 0 20px 80px;
   }
 }
+
+/* ==========================================================================
+   SHOPIFY FLAGSHIP LANDING PAGE STYLES (Ediye Commerce Standard)
+   ========================================================================== */
+
+.shopify-page-header {
+  padding: 140px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.shopify-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--neutral-600);
+  margin-bottom: 24px;
+}
+
+.shopify-hero-badge i {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.shopify-hero-title {
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--neutral-600);
+  max-width: 960px;
+  margin: 0 auto 24px;
+}
+
+.shopify-hero-subtitle {
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.55;
+  color: var(--neutral-500);
+  max-width: 740px;
+  margin: 0 auto 36px;
+}
+
+.shopify-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.btn-secondary-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: var(--neutral-600);
+  border: 1px solid var(--neutral-300);
+  padding: 15px 28px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-pill:hover {
+  background-color: var(--neutral-100);
+  border-color: var(--neutral-600);
+  transform: translateY(-2px);
+}
+
+/* Metric Ticker */
+.shopify-metric-ticker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1040px;
+  margin: 0 auto 60px;
+}
+
+.shopify-metric-box {
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.shopify-metric-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.shopify-metric-num {
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--neutral-600);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.shopify-metric-num span {
+  color: var(--color-primary);
+}
+
+.shopify-metric-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--neutral-500);
+  line-height: 1.35;
+}
+
+/* Interactive Calculator Card */
+.shopify-calculator-section {
+  margin: 40px auto 90px;
+  max-width: 1080px;
+}
+
+.shopify-calc-card {
+  background: var(--neutral-600);
+  color: var(--neutral-0);
+  border-radius: 28px;
+  padding: clamp(32px, 5vw, 56px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+.shopify-calc-card::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.shopify-calc-header {
+  text-align: left;
+  max-width: 720px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.shopify-calc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+
+.shopify-calc-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.shopify-calc-desc {
+  font-size: 15px;
+  color: #a3a3a3;
+  line-height: 1.6;
+}
+
+.shopify-calc-body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.shopify-calc-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: center;
+}
+
+.shopify-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shopify-control-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopify-control-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.shopify-control-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.shopify-range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #2a2a2a;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.shopify-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 12px rgba(0, 0, 255, 0.6);
+  transition: transform 0.15s ease;
+}
+
+.shopify-range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.shopify-lift-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.shopify-lift-btn {
+  flex: 1;
+  padding: 10px 14px;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  color: #a3a3a3;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shopify-lift-btn.active,
+.shopify-lift-btn:hover {
+  background: #262626;
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.shopify-calc-results {
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.shopify-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #262626;
+}
+
+.shopify-result-label {
+  font-size: 13px;
+  color: #888888;
+  font-weight: 500;
+}
+
+.shopify-result-subval {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e5e5e5;
+  font-variant-numeric: tabular-nums;
+}
+
+.shopify-result-highlight {
+  background: linear-gradient(145deg, #181828 0%, #10101c 100%);
+  border: 1px solid rgba(0, 0, 255, 0.4);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.shopify-highlight-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #93c5fd;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.shopify-highlight-number {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.shopify-highlight-sub {
+  font-size: 12px;
+  color: #888888;
+  margin-top: 6px;
+}
+
+/* Pillars Section */
+.shopify-section-title-wrap {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.shopify-section-heading {
+  font-size: clamp(28px, 3.8vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--neutral-600);
+  margin-bottom: 16px;
+}
+
+.shopify-section-lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--neutral-500);
+}
+
+.shopify-pillars-4grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 90px;
+}
+
+.shopify-pillar-item {
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: 20px;
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shopify-pillar-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+}
+
+.shopify-pillar-icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--neutral-100);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.shopify-pillar-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--neutral-600);
+  margin-bottom: 12px;
+}
+
+.shopify-pillar-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--neutral-500);
+  margin-bottom: 24px;
+}
+
+.shopify-pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.shopify-tag-pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+  border-radius: 999px;
+  border: 1px solid var(--neutral-200);
+}
+
+/* Process Section (Dark Editorial) */
+.shopify-process-dark-wrap {
+  background: #000000;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: clamp(48px, 6vw, 84px) clamp(24px, 5vw, 60px);
+  margin: 40px auto 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shopify-process-header {
+  margin-bottom: 50px;
+}
+
+.shopify-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.shopify-step-card {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 16px;
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.shopify-step-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.shopify-step-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.shopify-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.shopify-step-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #888888;
+}
+
+/* Tech Ecosystem Stack */
+.shopify-tech-ecosystem {
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: 24px;
+  padding: 48px 40px;
+  margin: 40px auto 90px;
+}
+
+.shopify-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.shopify-tech-group-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.shopify-tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shopify-tech-list li {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neutral-600);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shopify-tech-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--neutral-300);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 1024px) {
+  .shopify-metric-ticker {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shopify-calc-body {
+    grid-template-columns: 1fr;
+  }
+  .shopify-pillars-4grid {
+    grid-template-columns: 1fr;
+  }
+  .shopify-process-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .shopify-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .shopify-metric-ticker {
+    grid-template-columns: 1fr;
+  }
+  .shopify-process-timeline {
+    grid-template-columns: 1fr;
+  }
+  .shopify-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .shopify-calc-card {
+    padding: 24px 18px;
+  }
+}
