@@ -6839,15 +6839,29 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+  position: relative;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-editorial-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+  transform: translateY(-3px);
+  border-color: #000000;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
 }
 
+.service-editorial-card:hover .service-card-arrow {
+  transform: translate(3px, -3px);
+  color: #000000;
+}
+
+.service-card-arrow {
+  font-size: 20px;
+  color: var(--neutral-400);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 .service-card-top {
   display: flex;
   justify-content: space-between;
