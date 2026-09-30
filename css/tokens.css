@@ -3,11 +3,13 @@
      COLOR TOKENS (Extracted from Framer Style Guide)
      ========================================================================== */
   
-  /* Primary */
-  --color-primary: #0000FF;           /* Primary (Electric Blue) */
-  --accent-blue: #0000FF;
-  --accent-blue-hover: #0000CC;
-  --accent-blue-glow: rgba(0, 0, 255, 0.25);
+  /* Primary / Accent Tokens (Editorial Silver Neutral #D4D4D4) */
+  --color-primary: #D4D4D4;           /* Primary Accent (#D4D4D4) */
+  --accent-blue: #D4D4D4;
+  --accent-blue-hover: #BFBFBF;
+  --accent-blue-glow: rgba(212, 212, 212, 0.35);
+  --accent-silver: #D4D4D4;
+  --accent-silver-glow: rgba(212, 212, 212, 0.4);
 
   /* Background */
   --neutral-bg: #F5F5F5;             /* neutral-bg */

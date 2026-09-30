@@ -1882,7 +1882,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: #0000FF;
+  color: #000000;
   margin-bottom: 12px;
 }
 
@@ -2648,9 +2648,9 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   position: absolute;
   width: 5px;
   height: 5px;
-  border: 1.8px solid var(--border-color, #0000FF);
+  border: 1.8px solid var(--border-color, #D4D4D4);
   border-radius: 2px;
-  filter: drop-shadow(0px 0px 3px var(--glow-color, rgba(0, 0, 255, 0.4)));
+  filter: drop-shadow(0px 0px 4px var(--glow-color, rgba(212, 212, 212, 0.5)));
 }
 
 .true-focus-frame .top-left {
@@ -3271,7 +3271,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   gap: 6px;
   background: transparent;
   border: none;
-  color: #0000FF;
+  color: #000000;
   font-family: var(--font-main);
   font-size: 16px;
   font-weight: 700;
@@ -3331,7 +3331,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 }
 
 .footer-nav-list a:hover {
-  color: #0000FF;
+  color: #000000;
 }
 
 .nav-count {
@@ -4729,7 +4729,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 }
 
 .projects-card-link:hover .projects-card-title {
-  color: #0000FF;
+  color: #555555;
 }
 
 .projects-card-desc {
@@ -5379,7 +5379,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 }
 
 .cs-discover-grid .projects-card-link:hover .projects-card-title {
-  color: #0000FF;
+  color: #555555;
 }
 
 .cs-discover-grid .projects-card-desc {
@@ -6166,8 +6166,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 .shopify-telemetry-score {
   font-size: 15px;
   font-weight: 800;
-  color: var(--color-primary);
-  background: #ffffff;
+  color: #000000;
+  background: #D4D4D4;
   padding: 4px 10px;
   border-radius: 8px;
 }
@@ -6205,7 +6205,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 }
 
 .shopify-metric-num span {
-  color: var(--color-primary);
+  color: #737373;
 }
 
 .shopify-metric-label {
@@ -6239,7 +6239,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   right: -120px;
   width: 360px;
   height: 360px;
-  background: radial-gradient(circle, rgba(0, 0, 255, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 212, 212, 0.12) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -6324,10 +6324,10 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: #D4D4D4;
   cursor: pointer;
   border: 3px solid #ffffff;
-  box-shadow: 0 0 12px rgba(0, 0, 255, 0.6);
+  box-shadow: 0 0 12px rgba(212, 212, 212, 0.45);
   transition: transform 0.15s ease;
 }
 
@@ -6394,8 +6394,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 }
 
 .shopify-result-highlight {
-  background: linear-gradient(145deg, #131326 0%, #0d0d18 100%);
-  border: 1px solid rgba(0, 0, 255, 0.45);
+  background: linear-gradient(145deg, #181818 0%, #0f0f0f 100%);
+  border: 1px solid rgba(212, 212, 212, 0.35);
   border-radius: 14px;
   padding: 20px;
   text-align: center;
@@ -6405,7 +6405,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #93c5fd;
+  color: #D4D4D4;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -6508,13 +6508,13 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: var(--color-primary);
+  color: #000000;
   margin-bottom: 22px;
 }
 
 .shopify-bento-cell-tall .shopify-bento-icon {
   background: #1a1a1a;
-  color: #60a5fa;
+  color: #D4D4D4;
 }
 
 .shopify-bento-title {
@@ -6701,7 +6701,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 .shopify-step-num {
   font-size: 12px;
   font-weight: 800;
-  color: #60a5fa;
+  color: #D4D4D4;
   letter-spacing: 0.05em;
   margin-bottom: 14px;
 }
@@ -6740,7 +6740,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-primary);
+  color: #111111;
   margin-bottom: 16px;
 }
 
@@ -6859,8 +6859,9 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
+  color: #000000;
   background: var(--neutral-100);
+  border: 1px solid #D4D4D4;
   padding: 4px 10px;
   border-radius: 6px;
 }
@@ -6884,7 +6885,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-family: var(--font-main);
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-primary);
+  color: #525252;
   line-height: 1.45;
   margin: 0 0 16px 0;
 }
@@ -6943,7 +6944,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
+  color: #000000;
   text-transform: uppercase;
 }
 
