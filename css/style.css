@@ -6984,3 +6984,210 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   21DEV SERVICES-01 ROW-LIST UI (Dark Editorial Layout)
+   ========================================================================== */
+
+.section-services-dark-list {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 120px 0 140px;
+  position: relative;
+  width: 100%;
+}
+
+.services-list-header {
+  margin-bottom: 64px;
+}
+
+.services-list-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a3a3a3;
+  margin-bottom: 16px;
+}
+
+.services-list-eyebrow i {
+  color: #d4d4d4;
+  font-size: 16px;
+}
+
+.services-list-title {
+  font-family: var(--font-main);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.services-list-desc {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888888;
+  max-width: 620px;
+  margin: 0;
+}
+
+.services-row-container {
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.services-row-item {
+  border-bottom: 1px solid #1a1a1a;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-row-item:last-child {
+  border-bottom: none;
+}
+
+.services-row-link {
+  display: grid;
+  grid-template-columns: 3.5rem 1.1fr 1.6fr auto;
+  gap: 40px;
+  align-items: start;
+  padding: 38px 0;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.services-row-link:hover {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.services-row-num {
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: #666666;
+  padding-top: 6px;
+}
+
+.services-row-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.services-row-title {
+  font-family: var(--font-main);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.services-row-price {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: #888888;
+  margin: 0;
+}
+
+.services-row-desc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.services-row-desc {
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888888;
+  margin: 0;
+}
+
+.services-row-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.services-pill {
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: #d4d4d4;
+  border: 1px solid #282828;
+  background: #0f0f0f;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1.4;
+  transition: border-color 0.2s ease;
+}
+
+.services-row-link:hover .services-pill {
+  border-color: #383838;
+}
+
+.services-row-arrow-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.services-circle-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #282828;
+  background: #0a0a0a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.services-row-link:hover .services-circle-arrow {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+/* Responsive collapse */
+@media (max-width: 1024px) {
+  .services-row-link {
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 24px;
+  }
+  .services-row-desc-col {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-row-link {
+    grid-template-columns: 2rem 1fr auto;
+    gap: 16px;
+    padding: 28px 0;
+  }
+  .services-row-title {
+    font-size: 20px;
+  }
+  .services-circle-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
