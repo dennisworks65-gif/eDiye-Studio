@@ -7214,3 +7214,133 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     flex-shrink: 0;
   }
 }
+
+/* ==========================================================================
+   APPLE DESIGN MOBILE FOUNDATIONS (WWDC Design Principles for the Web)
+   ========================================================================== */
+
+/* 1. Touch Ergonomics & Immediate Press Feedback (§1 & §4) */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  .btn-dark-pill:active,
+  .btn-secondary-pill:active,
+  .btn-discover-more:active,
+  .btn-send-message:active,
+  .nav-pill-btn:active,
+  .nav-mobile-toggle:active,
+  .services-row-link:active,
+  .service-editorial-card:active,
+  .accordion-header:active {
+    transform: scale(0.97) !important;
+    transition: transform 80ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+  }
+
+  /* Kill tap latency and gray tap flash on WebKit */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* 2. Apple 44pt Touch Targets Minimums (§10) */
+@media (max-width: 768px) {
+  .nav-mobile-toggle {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-pill-btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .accordion-header {
+    min-height: 48px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .btn-dark-pill,
+  .btn-secondary-pill,
+  .btn-discover-more,
+  .btn-send-message {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-input-clean,
+  .form-textarea-clean {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+    min-height: 44px;
+  }
+}
+
+/* 3. Viewport Stability & Dynamic Viewport (§15) */
+.hero-section {
+  min-height: 100dvh;
+}
+
+@media (max-width: 768px) {
+  h1, .about-hero-title, .shopify-hero-title, .section-hero-title {
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  h2, .about-statement-heading, .services-list-title {
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  p, .about-hero-desc, .services-list-desc {
+    letter-spacing: -0.01em;
+    line-height: 1.55;
+  }
+}
+
+/* 4. Apple Accessibility Accommodations (§14) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .services-circle-arrow,
+  .service-card-arrow,
+  .nav-pill-btn,
+  button {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .navbar-wrapper,
+  .navbar-inner,
+  .nav-pills-group,
+  .viewport-liquid-glass,
+  .services-circle-arrow {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .navbar-wrapper.theme-light,
+  .navbar-inner.theme-light {
+    background-color: #ffffff !important;
+  }
+  .navbar-wrapper:not(.theme-light) {
+    background-color: #000000 !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .nav-mobile-toggle,
+  .nav-pill-btn,
+  .services-pill,
+  .services-circle-arrow,
+  .services-row-item {
+    border-color: currentColor !important;
+  }
+  .services-row-num,
+  .services-row-price,
+  .services-row-desc {
+    color: #e5e5e5 !important;
+  }
+}

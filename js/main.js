@@ -220,35 +220,70 @@ function initHeaderScroll() {
 function initMobileNav() {
   const toggleBtn = document.querySelector('.nav-mobile-toggle');
   const navLinks = document.querySelector('.nav-pills-group');
+  const navbarWrapper = document.querySelector('.navbar-wrapper');
 
   if (!toggleBtn || !navLinks) return;
 
-  navLinks.style.transition = 'opacity var(--duration-fast, 180ms) var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)), transform var(--duration-normal, 240ms) var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1))';
+  toggleBtn.setAttribute('aria-expanded', 'false');
+  toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
+  navLinks.setAttribute('role', 'navigation');
+  navLinks.setAttribute('aria-label', 'Mobile Navigation Links');
+
+  // Apple Spring Easing curve
+  navLinks.style.transition = 'opacity 180ms ease-out, transform 260ms cubic-bezier(0.16, 1, 0.3, 1)';
   navLinks.style.transformOrigin = 'top right';
+
+  const isLightTheme = () => {
+    return (navbarWrapper && navbarWrapper.classList.contains('theme-light')) ||
+           (document.querySelector('.navbar-inner') && document.querySelector('.navbar-inner').classList.contains('theme-light'));
+  };
 
   const closeMenu = () => {
     navLinks.style.opacity = '0';
     navLinks.style.transform = 'scale(0.96) translateY(-8px)';
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
     setTimeout(() => {
       navLinks.style.display = 'none';
     }, 180);
   };
 
   const openMenu = () => {
+    const light = isLightTheme();
     navLinks.style.display = 'flex';
     navLinks.style.flexDirection = 'column';
     navLinks.style.position = 'absolute';
-    navLinks.style.top = '70px';
+    navLinks.style.top = '72px';
     navLinks.style.right = '20px';
-    navLinks.style.background = 'rgba(10, 10, 10, 0.94)';
-    navLinks.style.backdropFilter = 'blur(16px)';
-    navLinks.style.webkitBackdropFilter = 'blur(16px)';
-    navLinks.style.padding = '16px';
-    navLinks.style.borderRadius = '16px';
-    navLinks.style.gap = '8px';
-    navLinks.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.4)';
+    navLinks.style.minWidth = '220px';
+    navLinks.style.background = light ? 'rgba(255, 255, 255, 0.94)' : 'rgba(18, 18, 18, 0.94)';
+    navLinks.style.backdropFilter = 'blur(24px) saturate(180%)';
+    navLinks.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+    navLinks.style.border = light ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.12)';
+    navLinks.style.padding = '12px';
+    navLinks.style.borderRadius = '20px';
+    navLinks.style.gap = '6px';
+    navLinks.style.boxShadow = light ? '0 20px 48px rgba(0, 0, 0, 0.12)' : '0 24px 56px rgba(0, 0, 0, 0.55)';
     navLinks.style.opacity = '0';
     navLinks.style.transform = 'scale(0.96) translateY(-8px)';
+    navLinks.style.zIndex = '9999';
+
+    // Ensure links have 44pt touch targets and correct text contrast
+    navLinks.querySelectorAll('.nav-pill-btn').forEach(btn => {
+      btn.style.color = light ? '#000000' : '#ffffff';
+      btn.style.minHeight = '44px';
+      btn.style.display = 'flex';
+      btn.style.alignItems = 'center';
+      btn.style.padding = '10px 16px';
+      btn.style.borderRadius = '12px';
+      btn.style.fontSize = '15px';
+      btn.style.fontWeight = '600';
+      btn.style.width = '100%';
+      btn.style.boxSizing = 'border-box';
+    });
+
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.setAttribute('aria-label', 'Close Navigation Menu');
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -260,7 +295,7 @@ function initMobileNav() {
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = navLinks.style.display === 'flex' && navLinks.style.opacity === '1';
+    const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
     if (isOpen) {
       closeMenu();
     } else {
@@ -269,8 +304,16 @@ function initMobileNav() {
   });
 
   document.addEventListener('click', (e) => {
-    if (navLinks.style.display === 'flex' && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+    if (toggleBtn.getAttribute('aria-expanded') === 'true' && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
       closeMenu();
+    }
+  });
+
+  // Apple Escape Key Dismissal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      toggleBtn.focus();
     }
   });
 }
@@ -309,7 +352,7 @@ function showToast(message, type = 'success') {
   toast.style.border = type === 'success' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 50, 50, 0.3)';
   
   const icon = type === 'success' ? '✓' : '!';
-  toast.innerHTML = `<span style="font-weight:700; color:${type === 'success' ? '#38bdf8' : '#f87171'}">${icon}</span> <span>${message}</span>`;
+  toast.innerHTML = `<span style="font-weight:700; color:${type === 'success' ? '#d4d4d4' : '#f87171'}">${icon}</span> <span>${message}</span>`;
 
   container.appendChild(toast);
 
@@ -366,7 +409,7 @@ function initFormSubmissions() {
           showToast('Inquiry sent successfully. We will get back shortly!');
           if (submitBtn) {
             submitBtn.textContent = 'Message Sent! ✓';
-            submitBtn.style.backgroundColor = '#0000ff';
+            submitBtn.style.backgroundColor = '#000000';
             submitBtn.style.color = '#ffffff';
           }
           form.reset();
@@ -631,8 +674,8 @@ function initTrueFocus() {
   containers.forEach(container => {
     const sentence = container.getAttribute('data-sentence') || 'Ask a question';
     const blurAmount = parseFloat(container.getAttribute('data-blur') || '2.5');
-    const borderColor = container.getAttribute('data-border-color') || '#0000FF';
-    const glowColor = container.getAttribute('data-glow-color') || 'rgba(0, 0, 255, 0.4)';
+    const borderColor = container.getAttribute('data-border-color') || '#D4D4D4';
+    const glowColor = container.getAttribute('data-glow-color') || 'rgba(212, 212, 212, 0.4)';
     const animationDuration = parseFloat(container.getAttribute('data-duration') || '0.45');
     const pauseBetweenAnimations = parseFloat(container.getAttribute('data-pause') || '1.4');
     const manualMode = container.getAttribute('data-manual') === 'true';
