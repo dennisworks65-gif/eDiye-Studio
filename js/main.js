@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.add('js-enabled');
+  initLenisSmoothScroll();
   initPricingSlider();
   initFaqAccordion();
   initMobileNav();
@@ -167,6 +168,56 @@ function initFaqAccordion() {
   });
 }
 
+
+// --- 2.5. Lenis Smooth Scrolling (1-to-1 Live Framer Architecture) ---
+function initLenisSmoothScroll() {
+  function startLenis() {
+    if (typeof Lenis === 'undefined') return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple exponential decay
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            lenis.scrollTo(targetEl, { offset: -70 });
+          }
+        }
+      });
+    });
+
+    window.lenis = lenis;
+  }
+
+  if (typeof Lenis !== 'undefined') {
+    startLenis();
+  } else {
+    // Dynamically load Lenis 1.1.9 matching Framer
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/lenis@1.1.9/dist/lenis.min.js';
+    script.onload = startLenis;
+    document.head.appendChild(script);
+  }
+}
 // --- 3. Sticky Navbar & Header Scroll State ---
 function initHeaderScroll() {
   const navbar = document.querySelector('.navbar-wrapper');

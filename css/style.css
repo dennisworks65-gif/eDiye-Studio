@@ -7910,3 +7910,28 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     color: #e5e5e5 !important;
   }
 }
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLL (1-to-1 Live Framer Architecture)
+   ========================================================================== */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
