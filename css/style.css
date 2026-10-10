@@ -7314,6 +7314,52 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     font-size: 14px;
     flex-shrink: 0;
   }
+  .section-services-dark-list {
+    padding: 80px 0 90px;
+  }
+  .services-list-header {
+    margin-bottom: 36px;
+  }
+  .service-editorial-card {
+    padding: 26px 20px !important;
+    border-radius: 16px !important;
+  }
+  .process-step-item {
+    padding: 22px 18px !important;
+    border-radius: 14px !important;
+  }
+}
+
+.service-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .services-list-title {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+  .service-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  .service-hero-actions .btn-dark-pill,
+  .service-hero-actions .btn-secondary-pill {
+    width: 100% !important;
+    min-height: 48px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .contact-form-clean .btn-send-message {
+    width: 100% !important;
+    min-height: 48px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
 }
 
 /* ==========================================================================
