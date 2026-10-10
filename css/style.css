@@ -4398,25 +4398,78 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     display: block;
   }
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .about-hero-container {
-    padding: 120px 20px 60px;
+    padding: 120px 16px 60px;
     gap: 36px;
   }
   .hero-content {
-    padding: 0;
+    padding: 0 16px !important;
+    margin-bottom: 24px;
   }
-  .section-hero-title {
-    font-size: clamp(36px, 5.5vw, 48px);
-    line-height: 1.05;
+  .hero-right-card-wrapper {
+    display: none !important;
   }
-  .statement-heading {
-    font-size: clamp(24px, 4vw, 32px);
+  .hero-left-copy {
+    max-width: 100% !important;
   }
-  .process-heading {
-    font-size: clamp(26px, 4vw, 34px);
+  .hero-subhead {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.72px !important;
+    margin-bottom: 8px !important;
+  }
+  .hero-description {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+    letter-spacing: -0.48px !important;
+    color: #a8a8a8 !important;
+    margin-bottom: 24px !important;
+    max-width: 100% !important;
+  }
+  .statement-heading,
+  .benefits-title,
+  .process-heading,
+  .services-heading,
+  .testimonials-heading,
+  .faq-main-heading,
+  .insights-heading {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 30.8px !important;
+    letter-spacing: -1.68px !important;
+    margin-bottom: 20px !important;
+  }
+  .section-hero-title,
+  .pricing-main-title {
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    line-height: 52.8px !important;
+    letter-spacing: -1.92px !important;
+  }
+  .faq-2col-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+  .accordion-list {
+    order: 1 !important;
+    width: 100% !important;
+  }
+  .faq-left-box {
+    order: 2 !important;
+    width: 100% !important;
+    margin-top: 16px;
+  }
+  .stats-rating-value {
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    letter-spacing: -1.2px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
   }
   .showreel-card {
     height: 300px;
