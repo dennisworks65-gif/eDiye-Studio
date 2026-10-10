@@ -4573,6 +4573,63 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
+
+  /* Mobile Section Vertical Padding Normalization */
+  .section-statement,
+  .section-benefits,
+  .section-case-studies,
+  .section-process-dark,
+  .section-services,
+  .section-pricing,
+  .section-faq,
+  .section-insights,
+  .section-contact-dark,
+  .section-about-block,
+  .site-footer {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  /* Universal Mobile Container Horizontal Padding */
+  .container,
+  .about-hero-container,
+  .projects-hero-container,
+  .articles-container,
+  .cs-discover-container,
+  .contact-dark-container,
+  .contact-hero-container,
+  .policy-body-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mobile Card Internal Padding Normalization */
+  .benefit-card,
+  .pricing-card-clean,
+  .pricing-card-photo,
+  .testimonial-card-ref,
+  .stats-rating-block,
+  .service-editorial-card,
+  .process-step-item,
+  .about-metric-card,
+  .shopify-metric-box {
+    padding: 24px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mobile Accordion Padding Calibration */
+  .accordion-item {
+    border-radius: 18px !important;
+    margin-bottom: 12px !important;
+  }
+  .accordion-header {
+    padding: 16px 18px !important;
+    min-height: 48px !important;
+  }
+  .accordion-content {
+    padding: 0 18px 18px 18px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4585,7 +4642,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .pricing-card-clean,
   .pricing-card-photo {
-    padding: 32px 20px;
+    padding: 24px 18px !important;
   }
   .pricing-price-row .price-number {
     font-size: 32px;
@@ -4593,8 +4650,26 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   .section-hero-title {
     font-size: 34px;
   }
+  .hero-section {
+    padding-top: 110px !important;
+    padding-bottom: 36px !important;
+  }
   .hero-content {
-    padding: 0 20px;
+    padding: 0 16px !important;
+  }
+  .section-statement,
+  .section-benefits,
+  .section-case-studies,
+  .section-process-dark,
+  .section-services,
+  .section-pricing,
+  .section-faq,
+  .section-insights,
+  .section-contact-dark,
+  .section-about-block,
+  .site-footer {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
   }
   .hero-left-copy .btn-primary {
     width: 100%;
