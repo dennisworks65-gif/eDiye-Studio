@@ -9,7 +9,7 @@ This document captures the complete design token specifications extracted direct
 ### Primary Accent
 | Token Name | Hex Code | Preview / Description | CSS Variable |
 | :--- | :--- | :--- | :--- |
-| **Primary** | `#0000FF` | Electric Blue (Brand Accent, 100%) | `--color-primary` / `--accent-blue` |
+| **Primary** | `#D4D4D4` | Silver Neutral (Monochrome Studio Accent) | `--color-primary` / `--accent-silver` |
 
 ### Backgrounds
 | Token Name | Hex Code | Preview / Description | CSS Variable |

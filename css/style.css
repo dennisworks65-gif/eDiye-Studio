@@ -3007,12 +3007,14 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   margin-bottom: 72px;
 }
 
+.contact-badge-accent,
 .contact-badge-blue {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #d4d4d4;
 }
 
+.contact-badge-accent i, .contact-badge-accent span,
 .contact-badge-blue i, .contact-badge-blue span {
   color: #d4d4d4;
 }
@@ -3486,6 +3488,14 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   overflow: hidden;
   line-height: 0;
   margin-bottom: 20px;
+}
+
+.about-hero-img-full {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
 }
 
 /* --- Contact Page 1-to-1 Framer Architecture --- */
@@ -4201,6 +4211,15 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 
 .team-carousel-card:hover .team-carousel-img {
   transform: scale(1.03);
+}
+
+@media (max-width: 640px) {
+  .team-carousel-card {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    height: 340px !important;
+    border-radius: 20px !important;
+  }
 }
 
 /* Values Grid */

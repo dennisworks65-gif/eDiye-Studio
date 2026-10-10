@@ -5,12 +5,15 @@ backend:
   auth_endpoint: api/auth
 
 media_folder: "assets/images"
-public_folder: "../assets/images"
+public_folder: "assets/images"
 
 collections:
+  # ============================================================================
+  # 1. CASE STUDIES & PROJECTS
+  # ============================================================================
   - name: "projects"
-    label: "Projects & Case Studies"
-    label_singular: "Project"
+    label: "Case Studies"
+    label_singular: "Case Study"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
@@ -18,40 +21,94 @@ collections:
     extension: "json"
     summary: "{{client}} — {{title}}"
     fields:
-      - { label: "Slug / File Name", name: "slug", widget: "string", hint: "Identifier for URL, e.g. hectic, korten" }
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string", hint: "e.g. hectic, netto, korten (determines works/[slug].html)" }
       - { label: "Client Name", name: "client", widget: "string" }
       - { label: "Project Title", name: "title", widget: "string" }
       - { label: "Timeline / Duration", name: "duration", widget: "string", default: "3 Weeks" }
-      - { label: "Date", name: "date", widget: "string", default: "Aug 14, 2025" }
+      - { label: "Launch Date", name: "date", widget: "string", default: "Aug 14, 2025" }
       - { label: "Tags", name: "tags", widget: "list", default: ["Design", "Branding"] }
       - { label: "Hero Description", name: "hero_desc", widget: "text" }
-      - { label: "Hero Showcase Banner", name: "hero_banner", widget: "image" }
+      - { label: "Hero Banner Visual", name: "hero_banner", widget: "image" }
 
       - { label: "About Section Label", name: "about_label", widget: "string", default: "About the project" }
       - { label: "About Headline", name: "about_headline", widget: "string" }
       - { label: "About Description", name: "about_desc", widget: "text" }
-      - { label: "Showcase Image 1", name: "showcase_img_1", widget: "image" }
+      - { label: "Showcase Detail Image 1", name: "showcase_img_1", widget: "image" }
 
-      - { label: "Challenges Section Label", name: "challenges_label", widget: "string", default: "Challanges" }
+      - { label: "Challenges Section Label", name: "challenges_label", widget: "string", default: "Challenges" }
       - { label: "Challenges Headline", name: "challenges_headline", widget: "string" }
       - { label: "Challenges Description", name: "challenges_desc", widget: "text" }
 
-      - label: "Dynamic Gallery (Masonry Grid)"
+      - label: "Dynamic Image Gallery (Masonry Grid)"
         name: "gallery"
         widget: "list"
         required: false
         fields:
-          - { label: "Image", name: "src", widget: "image" }
+          - { label: "Gallery Image", name: "src", widget: "image" }
           - { label: "Caption / Description", name: "caption", widget: "string", required: false }
-      - { label: "Gallery Left Image (Legacy)", name: "gallery_img_left", widget: "image", required: false }
-      - { label: "Gallery Right Image (Legacy)", name: "gallery_img_right", widget: "image", required: false }
-      - { label: "Gallery Bottom Image (Legacy)", name: "gallery_img_bottom", widget: "image", required: false }
+
       - { label: "Summary Section Label", name: "summary_label", widget: "string", default: "Summary" }
       - { label: "Summary Headline", name: "summary_headline", widget: "string" }
       - { label: "Summary Description", name: "summary_desc", widget: "text" }
 
+      - label: "Related Projects"
+        name: "related"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Slug", name: "slug", widget: "string" }
+          - { label: "Client Name", name: "client", widget: "string" }
+          - { label: "Title / Scope", name: "title", widget: "string" }
+          - { label: "Preview Image", name: "image", widget: "image" }
+          - { label: "Tags", name: "tags", widget: "list" }
+
+  # ============================================================================
+  # 2. SERVICES & EXPERTISES
+  # ============================================================================
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{number}} — {{title}} ({{price}})"
+    fields:
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string", hint: "e.g. brand-strategy-identity (determines services/[slug].html)" }
+      - { label: "Service Number", name: "number", widget: "string", default: "01", hint: "01, 02, etc." }
+      - { label: "Service Title", name: "title", widget: "string" }
+      - { label: "Price / Engagement", name: "price", widget: "string", default: "From $4,000" }
+      - { label: "Timeline / Duration", name: "duration", widget: "string", default: "3-5 Weeks" }
+      - { label: "Hero Tagline", name: "tagline", widget: "string" }
+      - { label: "Hero Description", name: "hero_desc", widget: "text" }
+      - { label: "Panoramic Studio Image", name: "hero_image", widget: "image", default: "assets/images/about-hero-studio.jpg" }
+      - { label: "Expertise Badges / Pills", name: "pills", widget: "list" }
+
+      - label: "Strategic Pillars / Deliverables"
+        name: "deliverables"
+        widget: "list"
+        fields:
+          - { label: "Pillar Identifier", name: "pillar", widget: "string", default: "PILLAR 01" }
+          - { label: "Pillar Title", name: "title", widget: "string" }
+          - { label: "Sub-Tagline", name: "tagline", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Capability Tags", name: "tags", widget: "list", required: false }
+
+      - label: "Process Stages (Optional)"
+        name: "process_steps"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Stage Badge", name: "stage", widget: "string", default: "STEP 01" }
+          - { label: "Stage Heading", name: "heading", widget: "string" }
+          - { label: "Stage Description", name: "description", widget: "text" }
+
+  # ============================================================================
+  # 3. ARTICLES & JOURNAL
+  # ============================================================================
   - name: "articles"
-    label: "Articles & Essays"
+    label: "Articles & Journal"
     label_singular: "Article"
     folder: "content/articles"
     create: true
@@ -60,11 +117,307 @@ collections:
     extension: "json"
     summary: "{{title}} ({{date}})"
     fields:
-      - { label: "Slug / File Name", name: "slug", widget: "string", hint: "Identifier for URL, e.g. why-your-brand-identity-matters" }
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string", hint: "e.g. why-your-brand-identity-matters" }
       - { label: "Article Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "string", default: "Jul 27, 2025" }
+      - { label: "Date Published", name: "date", widget: "string", default: "Jul 27, 2025" }
+      - { label: "Reading Time", name: "read_time", widget: "string", default: "4 min read" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["Strategy", "Design"] }
+
       - { label: "Author Name", name: "author", widget: "string", default: "Sophie Turner" }
       - { label: "Author Role", name: "author_role", widget: "string", default: "Brand Strategist at Noora" }
-      - { label: "Author Avatar", name: "author_avatar", widget: "image", default: "assets/images/sophie-turner-ref.png" }
+      - { label: "Author Avatar Image", name: "author_avatar", widget: "image", default: "assets/images/sophie-turner-ref.png" }
+
       - { label: "Lead Subtitle / Excerpt", name: "lead_subtitle", widget: "text" }
-      - { label: "Lead Featured Image", name: "lead_image", widget: "image" }
+      - { label: "Featured Banner Image", name: "lead_image", widget: "image" }
+      - { label: "Full Article Prose Body", name: "body", widget: "markdown", hint: "Rich content with headings and paragraphs" }
+
+  # ============================================================================
+  # 4. PAGES (SINGLETONS)
+  # ============================================================================
+  - name: "pages"
+    label: "Pages"
+    delete: false
+    files:
+      # --- HOME PAGE ---
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow Tagline", name: "eyebrow", widget: "string" }
+              - { label: "Main Headline", name: "title", widget: "string" }
+              - { label: "Subtitle Description", name: "subtitle", widget: "text" }
+              - { label: "Primary CTA Label", name: "primary_cta_label", widget: "string" }
+              - { label: "Primary CTA Link", name: "primary_cta_link", widget: "string" }
+              - { label: "Secondary CTA Label", name: "secondary_cta_label", widget: "string" }
+              - { label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string" }
+
+          - label: "Statement Section"
+            name: "statement"
+            widget: "object"
+            fields:
+              - { label: "Statement Quote", name: "quote", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Highlight Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Card Tag", name: "tag", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Card Description", name: "desc", widget: "text" }
+
+          - label: "Capabilities Section"
+            name: "capabilities"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Fields Tags", name: "fields", widget: "list" }
+              - label: "Specialized Offering Box"
+                name: "specialized_offering"
+                widget: "object"
+                fields:
+                  - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Button Label", name: "cta_label", widget: "string" }
+                  - { label: "Button Link", name: "cta_link", widget: "string" }
+
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Role & Company", name: "role", widget: "string" }
+              - { label: "Star Rating", name: "rating", widget: "number", default: 5 }
+
+          - label: "FAQ Accordion"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+      # --- ABOUT PAGE ---
+      - name: "about"
+        label: "About Page"
+        file: "content/pages/about.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Panoramic Studio Image", name: "image", widget: "image" }
+
+          - label: "Philosophy & Story"
+            name: "story"
+            widget: "object"
+            fields:
+              - { label: "Badge Label", name: "badge", widget: "string" }
+              - { label: "Main Heading", name: "heading", widget: "string" }
+              - { label: "Narrative Paragraphs", name: "paragraphs", widget: "list" }
+
+          - label: "Principles"
+            name: "principles"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+          - label: "Key Metrics / Proof"
+            name: "metrics"
+            widget: "list"
+            fields:
+              - { label: "Metric Value", name: "value", widget: "string" }
+              - { label: "Metric Label", name: "label", widget: "string" }
+
+      # --- SERVICES HUB PAGE ---
+      - name: "services_hub"
+        label: "Services Hub (shopify.html)"
+        file: "content/pages/services-hub.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Studio Image Banner", name: "image", widget: "image" }
+
+          - label: "Services Overview Header"
+            name: "overview"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow Badge", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Fields Tags", name: "fields", widget: "list" }
+
+          - label: "Methodology Section"
+            name: "methodology"
+            widget: "object"
+            fields:
+              - { label: "Badge Label", name: "badge", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtext", name: "subtext", widget: "text" }
+              - label: "Process Stages"
+                name: "stages"
+                widget: "list"
+                fields:
+                  - { label: "Stage Badge", name: "stage", widget: "string" }
+                  - { label: "Stage Heading", name: "heading", widget: "string" }
+                  - { label: "Stage Description", name: "desc", widget: "text" }
+
+          - label: "Client Endorsements"
+            name: "endorsements"
+            widget: "list"
+            fields:
+              - { label: "Endorsement Quote", name: "quote", widget: "text" }
+              - { label: "Author Title & Company", name: "author", widget: "string" }
+
+          - label: "FAQ Items"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+      # --- WORKS PAGE ---
+      - name: "works_page"
+        label: "Projects Index (works.html)"
+        file: "content/pages/works-page.json"
+        fields:
+          - label: "Hero Header"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      # --- ARTICLES PAGE ---
+      - name: "articles_page"
+        label: "Articles Index (articles.html)"
+        file: "content/pages/articles-page.json"
+        fields:
+          - label: "Hero Header"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      # --- CONTACT PAGE ---
+      - name: "contact_page"
+        label: "Contact Page"
+        file: "content/pages/contact.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Formspree Endpoint URL", name: "form_action", widget: "string" }
+
+          - label: "Direct Contact Channels"
+            name: "direct_channels"
+            widget: "object"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Direct Email", name: "email", widget: "string" }
+              - { label: "Direct Phone", name: "phone", widget: "string" }
+              - { label: "Twitter / X Profile URL", name: "twitter_url", widget: "string" }
+              - { label: "Twitter Handle Display", name: "twitter_handle", widget: "string" }
+
+      # --- PRIVACY POLICY ---
+      - name: "privacy_policy"
+        label: "Privacy Policy"
+        file: "content/pages/privacy-policy.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Last Updated Date", name: "last_updated", widget: "string" }
+          - { label: "Introduction", name: "description", widget: "text" }
+          - label: "Policy Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Content (HTML or Markdown)", name: "content", widget: "text" }
+
+      # --- TERMS OF SERVICE ---
+      - name: "terms_of_service"
+        label: "Terms of Service"
+        file: "content/pages/terms-of-service.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Last Updated Date", name: "last_updated", widget: "string" }
+          - { label: "Introduction", name: "description", widget: "text" }
+          - label: "Terms Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Content (HTML or Markdown)", name: "content", widget: "text" }
+
+  # ============================================================================
+  # 5. GLOBAL SITE SETTINGS & BRANDING
+  # ============================================================================
+  - name: "settings"
+    label: "Global Settings"
+    delete: false
+    files:
+      - name: "general"
+        label: "General & Branding"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string" }
+          - { label: "Brand Name", name: "brand_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Favicon Image", name: "favicon", widget: "image" }
+          - { label: "Canonical URL Base", name: "canonical_base", widget: "string" }
+          - { label: "Default SEO Meta Description", name: "default_meta_description", widget: "text" }
+          - { label: "Default Open Graph Image", name: "default_og_image", widget: "image" }
+          - { label: "Twitter Handle", name: "twitter_handle", widget: "string" }
+          - { label: "Primary Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Primary Phone Number", name: "contact_phone", widget: "string" }
+
+      - name: "navigation"
+        label: "Navigation & Header"
+        file: "content/settings/navigation.json"
+        fields:
+          - { label: "Brand Logo Text", name: "brand_logo_text", widget: "string" }
+          - { label: "Brand Subtitle", name: "brand_logo_sub", widget: "string" }
+          - label: "Navigation Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Link Label", name: "label", widget: "string" }
+              - { label: "Destination URL", name: "url", widget: "string" }
+
+      - name: "footer"
+        label: "Footer & Lead Banner"
+        file: "content/settings/footer.json"
+        fields:
+          - { label: "Lead Capture Heading", name: "heading", widget: "string" }
+          - { label: "Lead Capture Subheading", name: "subheading", widget: "text" }
+          - { label: "Badge Label", name: "badge_text", widget: "string" }
+          - { label: "Banner Background Image", name: "bg_image", widget: "image" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Contact Phone", name: "phone", widget: "string" }
+          - { label: "Copyright Notice", name: "copyright", widget: "string" }
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Platform Name", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
