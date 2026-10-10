@@ -4906,33 +4906,92 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 
 @media (max-width: 640px) {
   .projects-hero-section {
-    padding-top: 100px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
   .projects-hero-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .projects-crosshairs-row {
-    display: none;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin-bottom: 28px;
+    width: 100%;
+  }
+  .projects-crosshair-cell:nth-child(3) {
+    display: block !important;
   }
   .projects-hero-content {
-    margin-bottom: 44px;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-bottom: 40px;
+  }
+  .projects-hero-title {
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    line-height: 52.8px !important;
+    letter-spacing: -1.92px !important;
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
+  }
+  .projects-hero-subtitle {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 25.2px !important;
+    letter-spacing: -0.72px !important;
+    color: #737373 !important;
+    text-align: left !important;
+    margin: 0 0 24px 0 !important;
   }
   .projects-hero-desc {
-    font-size: 15px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 22.4px !important;
+    letter-spacing: -0.48px !important;
+    color: #737373 !important;
+    text-align: left !important;
+    margin: 0 0 32px 0 !important;
+    max-width: 100% !important;
   }
   .projects-masonry-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
     margin-bottom: 60px;
+  }
+  .projects-masonry-col {
+    gap: 36px !important;
   }
   .projects-card-visual.visual-tall,
   .projects-card-visual.visual-short,
   .projects-card-visual.visual-medium,
   .projects-card-visual.visual-semi-tall {
-    height: 380px;
-    border-radius: 16px;
+    height: 440px !important;
+    border-radius: 20px !important;
+  }
+  .projects-card-info {
+    padding: 14px 0 0 0 !important;
+  }
+  .projects-card-title {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 23.4px !important;
+    letter-spacing: -0.72px !important;
+    color: #0a0a0a !important;
+    margin: 0 0 4px 0 !important;
+  }
+  .projects-card-desc {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 22.4px !important;
+    letter-spacing: -0.48px !important;
+    color: #737373 !important;
+    margin: 0 !important;
+  }
+  .projects-tag-pill {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 6px 14px !important;
   }
 }
 
