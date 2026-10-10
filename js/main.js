@@ -181,9 +181,12 @@ function initHeaderScroll() {
 
   let lastScrollY = window.scrollY;
   let ticking = false;
+  const scrollThreshold = 80;
+  const deltaMin = 4;
 
   function updateNavbar() {
     const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
 
     // At top of page (hero fold)
     if (currentScrollY <= 40) {
@@ -194,12 +197,18 @@ function initHeaderScroll() {
       return;
     }
 
-    // Scrolling DOWN past hero -> hide smoothly
-    if (currentScrollY > lastScrollY && currentScrollY > 120) {
+    // Ignore micro-scroll jitter and iOS rubber-band bounces
+    if (Math.abs(delta) < deltaMin) {
+      ticking = false;
+      return;
+    }
+
+    // Scrolling DOWN past threshold -> slide up smoothly
+    if (delta > 0 && currentScrollY > scrollThreshold) {
       navbar.classList.add('nav-hidden');
     } 
-    // Scrolling UP -> reveal with frosted light background
-    else if (currentScrollY < lastScrollY) {
+    // Scrolling UP -> reveal smoothly with frosted glass background
+    else if (delta < 0) {
       navbar.classList.remove('nav-hidden');
       navbar.classList.add('nav-scrolled');
     }

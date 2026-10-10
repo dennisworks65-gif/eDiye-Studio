@@ -4389,7 +4389,10 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 
 @media (max-width: 768px) {
   .navbar-wrapper {
-    padding: 16px 20px;
+    padding: 14px 16px;
+  }
+  .navbar-wrapper.nav-scrolled {
+    padding: 14px 16px !important;
   }
   .nav-pills-group {
     display: none;
