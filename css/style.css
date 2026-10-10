@@ -4311,7 +4311,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .hero-project-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 100%;
   }
   .statement-3col-grid,
   .statement-cards-3col-grid,
@@ -4326,6 +4326,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   .pricing-header-grid,
   .pricing-cards-3col-grid,
   .faq-grid-layout,
+  .faq-2col-layout,
   .faq-header-grid,
   .insights-3col-grid,
   .contact-header-3col-grid,
@@ -4362,12 +4363,15 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     position: static;
   }
   .benefits-cards-grid {
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
   }
   .benefit-card {
-    width: 100%;
-    max-width: 368px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
   }
   .case-studies-masonry {
     grid-template-columns: 1fr;
@@ -4458,6 +4462,17 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     text-align: center;
     padding: 24px 20px;
   }
+  .pricing-card-clean,
+  .pricing-card-photo {
+    height: auto !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  .btn-carousel-nav {
+    min-height: 44px;
+    height: 44px;
+    min-width: 48px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4477,6 +4492,19 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .section-hero-title {
     font-size: 34px;
+  }
+  .hero-content {
+    padding: 0 20px;
+  }
+  .hero-left-copy .btn-primary {
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+    justify-content: center;
+  }
+  .process-logos-row {
+    gap: 24px;
+    justify-content: center;
   }
 }
 
