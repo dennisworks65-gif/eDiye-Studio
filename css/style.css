@@ -4441,11 +4441,14 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     grid-template-columns: 1fr;
   }
   .about-metric-cards-grid,
-  .about-team-grid,
   .shopify-features-grid,
   .insights-articles-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .about-team-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
   }
   .footer-3col-layout {
     grid-template-columns: 1fr;
@@ -4477,16 +4480,26 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     min-width: 48px;
   }
   .team-member-card {
-    height: 300px !important;
-    border-radius: 18px !important;
+    height: 280px !important;
+    border-radius: 24px !important;
   }
   .about-metric-card {
-    min-height: 220px !important;
-    padding: 24px 20px !important;
+    height: 240px !important;
+    min-height: 240px !important;
+    padding: 24px !important;
+    border-radius: 12px !important;
+  }
+  .about-metric-card .metric-card-number {
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    line-height: 52.8px !important;
+    letter-spacing: -2.88px !important;
   }
   .about-testimonial-quote {
-    font-size: clamp(24px, 5.5vw, 36px) !important;
-    line-height: 1.25 !important;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+    letter-spacing: -1.6px !important;
     margin-bottom: 24px !important;
   }
   .team-subtext-nav-row {
@@ -4538,8 +4551,30 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     justify-content: center;
   }
   .about-hero-container {
-    padding: 110px 20px 48px !important;
-    gap: 28px !important;
+    padding: 120px 16px 48px !important;
+    gap: 24px !important;
+  }
+  .about-hero-title {
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    line-height: 52.8px !important;
+    letter-spacing: -1.92px !important;
+  }
+  .about-statement-heading {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 36.4px !important;
+    letter-spacing: -1.4px !important;
+  }
+  .about-hero-desc,
+  .about-statement-subtext {
+    font-size: 16px !important;
+    line-height: 22.4px !important;
+    letter-spacing: -0.48px !important;
+  }
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   .about-hero-content-stack {
     gap: 36px !important;
