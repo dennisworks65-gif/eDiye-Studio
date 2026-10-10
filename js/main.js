@@ -219,99 +219,114 @@ function initHeaderScroll() {
 // --- 4. Mobile Navigation Toggle ---
 function initMobileNav() {
   const toggleBtn = document.querySelector('.nav-mobile-toggle');
-  const navLinks = document.querySelector('.nav-pills-group');
-  const navbarWrapper = document.querySelector('.navbar-wrapper');
-
-  if (!toggleBtn || !navLinks) return;
+  if (!toggleBtn) return;
 
   toggleBtn.setAttribute('aria-expanded', 'false');
   toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
-  navLinks.setAttribute('role', 'navigation');
-  navLinks.setAttribute('aria-label', 'Mobile Navigation Links');
 
-  // Apple Spring Easing curve
-  navLinks.style.transition = 'opacity 180ms ease-out, transform 260ms cubic-bezier(0.16, 1, 0.3, 1)';
-  navLinks.style.transformOrigin = 'top right';
+  // Detect current directory level for relative link resolution
+  const path = window.location.pathname;
+  const isSubdir = path.includes('/works/') || path.includes('/services/') || path.includes('/articles/');
+  const prefix = isSubdir ? '../' : '';
 
-  const isLightTheme = () => {
-    return (navbarWrapper && navbarWrapper.classList.contains('theme-light')) ||
-           (document.querySelector('.navbar-inner') && document.querySelector('.navbar-inner').classList.contains('theme-light'));
-  };
+  // Create or retrieve the fullscreen overlay element
+  let overlay = document.getElementById('mobile-nav-fullscreen');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'mobile-nav-fullscreen';
+    overlay.className = 'mobile-nav-fullscreen';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Mobile Navigation');
+
+    overlay.innerHTML = `
+      <div class="mobile-nav-inner">
+        <div class="mobile-nav-topbar">
+          <a href="${prefix}index.html" class="brand-logo" style="text-decoration: none;">
+            <div class="logo-text" style="color: #000000; font-size: 28px; font-weight: 700; letter-spacing: -0.04em; line-height: 1;">eDiye<span class="reg" style="font-size: 14px;">®</span></div>
+            <div class="logo-sub" style="color: #737373; font-size: 13px; font-weight: 500; margin-top: 4px;">Clarity over clutter.</div>
+          </a>
+          <button type="button" class="mobile-nav-close-btn" id="mobile-nav-close" aria-label="Close Menu">
+            <span>✕</span>
+            <span>MENU</span>
+          </button>
+        </div>
+
+        <nav class="mobile-nav-links-list">
+          <a href="${prefix}index.html" class="mobile-nav-link">Home</a>
+          <a href="${prefix}about.html" class="mobile-nav-link">About</a>
+          <a href="${prefix}works.html" class="mobile-nav-link">Projects</a>
+          <a href="${prefix}shopify.html" class="mobile-nav-link">Services</a>
+          <a href="${prefix}articles.html" class="mobile-nav-link">Articles</a>
+          <a href="${prefix}contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+
+        <div class="mobile-nav-social-wrap">
+          <div class="mobile-nav-social-label">Social</div>
+          <div class="mobile-nav-social-list">
+            <a href="https://x.com" target="_blank" rel="noopener" class="mobile-nav-social-item">
+              <span>Twitter</span>
+              <span class="mobile-nav-social-arrow">→</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="mobile-nav-social-item">
+              <span>Instagram</span>
+              <span class="mobile-nav-social-arrow">→</span>
+            </a>
+            <a href="https://behance.com" target="_blank" rel="noopener" class="mobile-nav-social-item">
+              <span>Behance</span>
+              <span class="mobile-nav-social-arrow">→</span>
+            </a>
+            <a href="https://dribbble.com" target="_blank" rel="noopener" class="mobile-nav-social-item">
+              <span>Dribbble</span>
+              <span class="mobile-nav-social-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+  }
+
+  const closeBtn = document.getElementById('mobile-nav-close');
 
   const closeMenu = () => {
-    navLinks.style.opacity = '0';
-    navLinks.style.transform = 'scale(0.96) translateY(-8px)';
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
-    setTimeout(() => {
-      navLinks.style.display = 'none';
-    }, 180);
   };
 
   const openMenu = () => {
-    const light = isLightTheme();
-    navLinks.style.display = 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '72px';
-    navLinks.style.right = '20px';
-    navLinks.style.minWidth = '220px';
-    navLinks.style.background = light ? 'rgba(255, 255, 255, 0.94)' : 'rgba(18, 18, 18, 0.94)';
-    navLinks.style.backdropFilter = 'blur(24px) saturate(180%)';
-    navLinks.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
-    navLinks.style.border = light ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.12)';
-    navLinks.style.padding = '12px';
-    navLinks.style.borderRadius = '20px';
-    navLinks.style.gap = '6px';
-    navLinks.style.boxShadow = light ? '0 20px 48px rgba(0, 0, 0, 0.12)' : '0 24px 56px rgba(0, 0, 0, 0.55)';
-    navLinks.style.opacity = '0';
-    navLinks.style.transform = 'scale(0.96) translateY(-8px)';
-    navLinks.style.zIndex = '9999';
-
-    // Ensure links have 44pt touch targets and correct text contrast
-    navLinks.querySelectorAll('.nav-pill-btn').forEach(btn => {
-      btn.style.color = light ? '#000000' : '#ffffff';
-      btn.style.minHeight = '44px';
-      btn.style.display = 'flex';
-      btn.style.alignItems = 'center';
-      btn.style.padding = '10px 16px';
-      btn.style.borderRadius = '12px';
-      btn.style.fontSize = '15px';
-      btn.style.fontWeight = '600';
-      btn.style.width = '100%';
-      btn.style.boxSizing = 'border-box';
-    });
-
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
     toggleBtn.setAttribute('aria-expanded', 'true');
     toggleBtn.setAttribute('aria-label', 'Close Navigation Menu');
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        navLinks.style.opacity = '1';
-        navLinks.style.transform = 'scale(1) translateY(0)';
-      });
-    });
+    if (closeBtn) closeBtn.focus();
   };
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    openMenu();
   });
 
-  document.addEventListener('click', (e) => {
-    if (toggleBtn.getAttribute('aria-expanded') === 'true' && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       closeMenu();
-    }
+    });
+  }
+
+  // Close when tapping any navigation link
+  overlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
   });
 
   // Apple Escape Key Dismissal
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
       closeMenu();
       toggleBtn.focus();
     }

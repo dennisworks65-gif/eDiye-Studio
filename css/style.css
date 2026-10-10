@@ -4395,7 +4395,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     display: none;
   }
   .nav-mobile-toggle {
-    display: block;
+    display: inline-flex !important;
   }
   .container {
     padding-left: 16px;
@@ -7475,6 +7475,162 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     padding: 22px 18px !important;
     border-radius: 14px !important;
   }
+}
+
+/* ==========================================================================
+   FULLSCREEN MOBILE NAVIGATION (1-to-1 Live Framer Architecture)
+   ========================================================================== */
+
+.mobile-nav-fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  background: #ffffff;
+  color: #0a0a0a;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 220ms ease-out, transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.mobile-nav-fullscreen.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 24px 20px 40px 20px;
+  max-width: 540px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile-nav-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.mobile-nav-close-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #000000;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.mobile-nav-close-btn span:first-child {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.mobile-nav-links-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 16px 0 36px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #0a0a0a !important;
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  transition: padding-left 0.15s ease, color 0.15s ease;
+}
+
+.mobile-nav-link:active {
+  color: #666666 !important;
+  padding-left: 4px;
+}
+
+.mobile-nav-social-wrap {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.mobile-nav-social-label {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.mobile-nav-social-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobile-nav-social-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  color: #0a0a0a !important;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.mobile-nav-social-arrow {
+  font-size: 16px;
+  color: #0a0a0a;
+}
+
+/* Trigger button styling matching = MENU */
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-mobile-toggle::before {
+  content: '=';
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .service-hero-actions {
