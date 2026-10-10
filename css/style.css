@@ -4741,6 +4741,12 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   z-index: 20;
 }
 
+@media (max-width: 768px) {
+  .works-navbar-wrapper {
+    padding: 16px 16px 0 !important;
+  }
+}
+
 .works-page-logo {
   font-family: var(--font-main);
   font-size: clamp(56px, 7vw, 100px);
@@ -5787,47 +5793,62 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
 
 @media (max-width: 900px) {
   .case-study-navbar {
-    padding: 24px 20px 16px;
+    padding: 20px 16px 14px !important;
   }
   .cs-hero-section {
-    padding: 120px 20px 0;
+    padding: 100px 16px 0 !important;
   }
   .cs-hero-grid,
   .cs-content-block {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
   .cs-meta-col {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 24px 36px;
+    gap: 16px 28px;
   }
   .cs-hero-title {
-    font-size: 40px;
+    font-size: clamp(32px, 7vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+  .cs-hero-banner {
+    margin: 36px auto 0 !important;
   }
   .cs-content-section,
   .cs-discover-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   .cs-gallery-row-2col {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
   .cs-gallery-row-2col img {
-    height: 380px;
+    height: auto !important;
+    max-height: 340px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
   .cs-gallery-img-bottom {
-    height: 420px;
+    height: auto !important;
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .cs-discover-section {
+    padding: 60px 0 80px !important;
   }
   .cs-discover-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .footer-bottom-bar {
     flex-direction: column;
     gap: 16px;
     text-align: center;
-    padding: 28px 20px;
+    padding: 24px 16px;
   }
 }
 
