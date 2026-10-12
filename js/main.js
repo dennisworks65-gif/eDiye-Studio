@@ -49,12 +49,12 @@ function initFramerScrollEnter() {
     });
 
     elements.forEach(el => observer.observe(el));
+  } else {
+    // Fallback only when IntersectionObserver is not supported
+    checkVisibility();
+    window.addEventListener('scroll', checkVisibility, { passive: true });
+    window.addEventListener('resize', checkVisibility, { passive: true });
   }
-
-  // Run immediate check and listen on scroll/resize as fallback
-  checkVisibility();
-  window.addEventListener('scroll', checkVisibility, { passive: true });
-  window.addEventListener('resize', checkVisibility, { passive: true });
 }
 
 // --- 1. Interactive Pricing Calculator Slider ---
@@ -599,9 +599,19 @@ function initScrollReveal() {
       });
     });
   }
+  let revealTicking = false;
+  function onScrollReveal() {
+    if (!revealTicking) {
+      window.requestAnimationFrame(() => {
+        updateReveal();
+        revealTicking = false;
+      });
+      revealTicking = true;
+    }
+  }
 
-  window.addEventListener('scroll', updateReveal, { passive: true });
-  window.addEventListener('resize', updateReveal, { passive: true });
+  window.addEventListener('scroll', onScrollReveal, { passive: true });
+  window.addEventListener('resize', onScrollReveal, { passive: true });
   updateReveal(); // Trigger once on load
 }
 
@@ -907,8 +917,12 @@ function initAnalyticsTelemetry() {
       document.body.classList.contains('article-detail-page')) {
     const milestones = [25, 50, 75, 100];
     const passed = new Set();
-    
+    let lastScrollTime = 0;
     window.addEventListener('scroll', () => {
+      const now = performance.now();
+      if (now - lastScrollTime < 150) return; // Throttle to 150ms
+      lastScrollTime = now;
+
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (maxScroll <= 0) return;
       const percent = Math.round((window.scrollY / maxScroll) * 100);

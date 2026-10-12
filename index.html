@@ -31,27 +31,111 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "eDiye® Studio",
-    "url": "https://www.ediyestudio.com.ng",
-    "logo": "https://www.ediyestudio.com.ng/assets/images/01wZKGsvUERhUCxI4O4yUHPcns.png",
-    "image": "https://www.ediyestudio.com.ng/assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png",
-    "description": "We build brands, design interfaces, and develop fast, functional websites that help growing teams stand out and convert.",
-    "email": "hello@diye.studio",
-    "telephone": "+234-906-517-5674",
-    "priceRange": "$$$$",
-    "sameAs": [
-      "https://x.com/jakke_dea",
-      "https://instagram.com",
-      "https://behance.net"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.ediyestudio.com.ng/#website",
+        "url": "https://www.ediyestudio.com.ng/",
+        "name": "eDiye® Studio",
+        "description": "Independent design and engineering studio partnering with ambitious brands across SaaS, tech, fashion, and commerce.",
+        "publisher": {
+          "@id": "https://www.ediyestudio.com.ng/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": ["ProfessionalService", "Organization"],
+        "@id": "https://www.ediyestudio.com.ng/#organization",
+        "name": "eDiye® Studio",
+        "url": "https://www.ediyestudio.com.ng/",
+        "logo": "https://www.ediyestudio.com.ng/assets/images/01wZKGsvUERhUCxI4O4yUHPcns.png",
+        "image": "https://www.ediyestudio.com.ng/assets/images/LMnLAUtHBsiEcqfMmuJIhYwbxFg.png",
+        "description": "We build brands, design interfaces, and develop fast, functional websites that help growing teams stand out and convert.",
+        "email": "hello@diye.studio",
+        "telephone": "+234-906-517-5674",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "NG"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+234-906-517-5674",
+            "contactType": "customer service",
+            "email": "hello@diye.studio",
+            "availableLanguage": ["English"]
+          }
+        ],
+        "sameAs": [
+          "https://x.com/jakke_dea",
+          "https://instagram.com",
+          "https://behance.net"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Design & Engineering Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Shopify & E-Commerce Development",
+                "url": "https://www.ediyestudio.com.ng/services/shopify-ecommerce-development.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Brand Strategy & Identity",
+                "url": "https://www.ediyestudio.com.ng/services/brand-strategy-identity.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UI/UX & Design Systems",
+                "url": "https://www.ediyestudio.com.ng/services/ui-ux-design-systems.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Web Engineering",
+                "url": "https://www.ediyestudio.com.ng/services/custom-web-engineering.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Conversion Rate Optimisation",
+                "url": "https://www.ediyestudio.com.ng/services/conversion-rate-optimisation.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Ongoing Growth Retainers",
+                "url": "https://www.ediyestudio.com.ng/services/ongoing-growth-retainers.html"
+              }
+            }
+          ]
+        }
+      }
     ]
   }
   </script>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -78,7 +162,7 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-background-media">
-      <img src="assets/images/hero-neon-portrait.jpg" alt="eDiye Studio Atmosphere" class="hero-bg-img">
+      <img src="assets/images/hero-neon-portrait.jpg" alt="eDiye Studio Atmosphere" class="hero-bg-img" fetchpriority="high" decoding="async">
       <div class="hero-gradient-overlay"></div>
     </div>
 
@@ -100,7 +184,7 @@
         </div>
         <a href="works/hectic.html" class="hero-project-card">
           <div class="hero-card-img-wrap">
-            <img src="assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg" alt="Hectic x eDiye®">
+            <img src="assets/images/XpqOEbLvwhsdNbTBSPWvm0nEhk.jpg" alt="Hectic x eDiye®" loading="lazy" decoding="async">
             <div class="hero-card-overlay-info">
               <div class="hero-card-client">Hectic x eDiye®</div>
               <div class="hero-card-desc">A brand built to grow</div>
@@ -150,7 +234,7 @@
               </p>
             </div>
             <div class="author-row-ref">
-              <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="Ayo Ogun" class="author-avatar-ref">
+              <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="Ayo Ogun" class="author-avatar-ref" loading="lazy" decoding="async">
               <div>
                 <div class="author-name-ref">Ayo Ogun</div>
                 <div class="author-role-ref">CEO at Oni-ile</div>
@@ -163,7 +247,7 @@
           <a href="works/hectic.html" class="hectic-card-ref framer-scroll-enter">
             <div class="hectic-card-top">
               <span class="grid-crosshair-card">+</span>
-              <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="Hectic Artwork" class="hectic-card-thumb">
+              <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="Hectic Artwork" class="hectic-card-thumb" loading="lazy" decoding="async">
             </div>
             <div class="hectic-card-bottom">
               <div>
@@ -266,7 +350,7 @@
               <div class="time-sub">Time to complete</div>
               <div class="time-hours">24<span class="sub-hours">-36h</span></div>
             </div>
-            <img src="assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png" alt="Fast Turnaround Watch Dial" class="clock-dial-graphic">
+            <img src="assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png" alt="Fast Turnaround Watch Dial" class="clock-dial-graphic" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -313,10 +397,10 @@
               <span class="project-pill-tag">Design</span>
             </div>
             <div class="project-card-logo-overlay">
-              <img src="assets/images/PBh88trWOmWr8RAEoO4hY72f16w.png" alt="Korten" class="card-center-logo">
+              <img src="assets/images/PBh88trWOmWr8RAEoO4hY72f16w.png" alt="Korten" class="card-center-logo" loading="lazy" decoding="async">
             </div>
             <div class="project-card-dark-overlay"></div>
-            <img src="assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png" alt="Korten Case Study" class="project-card-main-img" loading="lazy">
+            <img src="assets/images/ebE1g0CCkMFT7vzYCOuVa5plS18.png" alt="Korten Case Study" class="project-card-main-img" loading="lazy" decoding="async">
           </div>
           <div class="project-text-container">
             <h3 class="project-title">Korten</h3>
@@ -332,10 +416,10 @@
               <span class="project-pill-tag">Developement</span>
             </div>
             <div class="project-card-logo-overlay">
-              <img src="assets/images/rGog9b2uFXzfm5fRwtimMS7Vc.png" alt="Everly" class="card-center-logo">
+              <img src="assets/images/rGog9b2uFXzfm5fRwtimMS7Vc.png" alt="Everly" class="card-center-logo" loading="lazy" decoding="async">
             </div>
             <div class="project-card-dark-overlay"></div>
-            <img src="assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png" alt="Everly Case Study" class="project-card-main-img" loading="lazy">
+            <img src="assets/images/ejqvwZIM69Z14ftv5MqoGMG8s.png" alt="Everly Case Study" class="project-card-main-img" loading="lazy" decoding="async">
           </div>
           <div class="project-text-container">
             <h3 class="project-title">Everly</h3>
@@ -351,10 +435,10 @@
               <span class="project-pill-tag">Developement</span>
             </div>
             <div class="project-card-logo-overlay">
-              <img src="assets/images/8JLHGtVKo9B6VUGfd2I8ZayZOs.png" alt="Peni" class="card-center-logo">
+              <img src="assets/images/8JLHGtVKo9B6VUGfd2I8ZayZOs.png" alt="Peni" class="card-center-logo" loading="lazy" decoding="async">
             </div>
             <div class="project-card-dark-overlay"></div>
-            <img src="assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png" alt="Peni Case Study" class="project-card-main-img" loading="lazy">
+            <img src="assets/images/e7zJqy3stkqxClgAaHzUHLyb3Z8.png" alt="Peni Case Study" class="project-card-main-img" loading="lazy" decoding="async">
           </div>
           <div class="project-text-container">
             <h3 class="project-title">Peni</h3>
@@ -370,7 +454,7 @@
               <span class="project-pill-tag">Web3</span>
             </div>
             <div class="project-card-dark-overlay"></div>
-            <img src="assets/images/projects/xtoken.webp" alt="xToken Case Study" class="project-card-main-img" loading="lazy">
+            <img src="assets/images/projects/xtoken.webp" alt="xToken Case Study" class="project-card-main-img" loading="lazy" decoding="async">
           </div>
           <div class="project-text-container">
             <h3 class="project-title">xToken</h3>
@@ -386,7 +470,7 @@
               <span class="project-pill-tag">SaaS</span>
             </div>
             <div class="project-card-dark-overlay"></div>
-            <img src="assets/images/projects/seed.webp" alt="Seed Case Study" class="project-card-main-img" loading="lazy">
+            <img src="assets/images/projects/seed.webp" alt="Seed Case Study" class="project-card-main-img" loading="lazy" decoding="async">
           </div>
           <div class="project-text-container">
             <h3 class="project-title">Seed</h3>
@@ -445,11 +529,11 @@
 
           <!-- Client Logos Row (Matching Reference) -->
           <div class="process-logos-row">
-            <div class="client-logo-item"><img src="assets/images/00q6Mf60dQ92OC36PL7TzWMuPD4.png" alt="Brand Logo 1"></div>
-            <div class="client-logo-item"><img src="assets/images/2QwXSHgmouhAG707Aj6Ue0D7ZBg.png" alt="Brand Logo 2"></div>
-            <div class="client-logo-item"><img src="assets/images/55HjH9XG8NWU4PlFkwfAWkgjx8.png" alt="Brand Logo 3"></div>
-            <div class="client-logo-item"><img src="assets/images/5tAZhtoiPbXqrhHVkcsA1Aw3jj4.png" alt="Brand Logo 4"></div>
-            <div class="client-logo-item"><img src="assets/images/6AuO2VxB23UZBZkmU3CQM7mpaU.png" alt="Brand Logo 5"></div>
+            <div class="client-logo-item"><img src="assets/images/00q6Mf60dQ92OC36PL7TzWMuPD4.png" alt="Brand Logo 1" loading="lazy" decoding="async"></div>
+            <div class="client-logo-item"><img src="assets/images/2QwXSHgmouhAG707Aj6Ue0D7ZBg.png" alt="Brand Logo 2" loading="lazy" decoding="async"></div>
+            <div class="client-logo-item"><img src="assets/images/55HjH9XG8NWU4PlFkwfAWkgjx8.png" alt="Brand Logo 3" loading="lazy" decoding="async"></div>
+            <div class="client-logo-item"><img src="assets/images/5tAZhtoiPbXqrhHVkcsA1Aw3jj4.png" alt="Brand Logo 4" loading="lazy" decoding="async"></div>
+            <div class="client-logo-item"><img src="assets/images/6AuO2VxB23UZBZkmU3CQM7mpaU.png" alt="Brand Logo 5" loading="lazy" decoding="async"></div>
           </div>
         </div>
       </div>
@@ -532,7 +616,7 @@
   <section class="section-showreel-dark" id="showreel">
     <div class="container">
       <div class="showreel-card">
-        <img src="assets/images/GsziVHwO9WqO73ygs6zszQUCgXo.jpg" alt="eDiye Studio Showreel" class="showreel-bg-image">
+        <img src="assets/images/GsziVHwO9WqO73ygs6zszQUCgXo.jpg" alt="eDiye Studio Showreel" class="showreel-bg-image" loading="lazy" decoding="async">
         <div class="showreel-overlay"></div>
         
         <div class="showreel-center-content">
@@ -583,11 +667,11 @@
             <span class="grid-crosshair-sm left-crosshair">+</span>
             <div class="stats-avatars-center">
               <div class="overlapping-avatars-row">
-                <img src="assets/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png" alt="Client Avatar 1" class="avatar-circle">
-                <img src="assets/images/k7KmzGiIv5imu1RceeORMjil5Q0.png" alt="Client Avatar 2" class="avatar-circle">
-                <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="Client Avatar 3" class="avatar-circle">
-                <img src="assets/images/yHXd1YWnHqY9lUHubvUS7Yh3Exs.png" alt="Client Avatar 4" class="avatar-circle">
-                <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Client Avatar 5" class="avatar-circle">
+                <img src="assets/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png" alt="Client Avatar 1" class="avatar-circle" loading="lazy" decoding="async">
+                <img src="assets/images/k7KmzGiIv5imu1RceeORMjil5Q0.png" alt="Client Avatar 2" class="avatar-circle" loading="lazy" decoding="async">
+                <img src="assets/images/Ot8hE4Ji3qEmQb2AVwGOBjGAQ.jpg" alt="Client Avatar 3" class="avatar-circle" loading="lazy" decoding="async">
+                <img src="assets/images/yHXd1YWnHqY9lUHubvUS7Yh3Exs.png" alt="Client Avatar 4" class="avatar-circle" loading="lazy" decoding="async">
+                <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Client Avatar 5" class="avatar-circle" loading="lazy" decoding="async">
               </div>
               <div class="stats-avatars-label">Trusted by 30+ teams</div>
             </div>
@@ -612,7 +696,7 @@
             </blockquote>
 
             <div class="testimonial-author-row">
-              <img src="assets/images/S7Ignt0wJYmWyuZXN39Yfz8s.jpeg" alt="Frankie Brooks" class="testimonial-author-avatar" id="testimonial-author-avatar">
+              <img src="assets/images/S7Ignt0wJYmWyuZXN39Yfz8s.jpeg" alt="Frankie Brooks" class="testimonial-author-avatar" id="testimonial-author-avatar" loading="lazy" decoding="async">
               <div class="testimonial-author-info">
                 <div class="testimonial-author-name" id="testimonial-author-name">Frankie Brooks</div>
                 <div class="testimonial-author-role" id="testimonial-author-role">Co-founder at Peni</div>
@@ -758,7 +842,7 @@
         <!-- Card 3: A La Carte (Full Photo Background Card) -->
         <div class="pricing-card-photo">
           <div class="pricing-photo-bg-wrap">
-            <img src="assets/images/pricing-alacarte-bg.png" alt="A La Carte Project" class="pricing-photo-bg">
+            <img src="assets/images/pricing-alacarte-bg.png" alt="A La Carte Project" class="pricing-photo-bg" loading="lazy" decoding="async">
             <div class="pricing-photo-overlay"></div>
           </div>
 
@@ -815,7 +899,7 @@
               Reach out anytime. We're happy to answer any questions before you commit to working together.
             </p>
             <div class="faq-author-row">
-              <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Sophie Turner" class="faq-author-avatar">
+              <img src="assets/images/dZ3qW2jJj4hP7FSiFFZzXwCOTqI.png" alt="Sophie Turner" class="faq-author-avatar" loading="lazy" decoding="async">
               <div class="faq-author-info">
                 <div class="faq-author-name">Sophie Turner</div>
                 <div class="faq-author-role">Brand Strategist at eDiye</div>
@@ -958,7 +1042,7 @@
             <article class="blog-article-card">
               <a href="articles/why-your-brand-identity-matters-more-than-your-logo.html" class="blog-img-link">
                 <div class="blog-img-wrap tall-card">
-                  <img src="assets/images/H7pmHxrsHkVjHKJY8oD7Oy6ck.png" alt="Why Your Brand Identity Matters More Than Your Logo" class="blog-card-img" loading="lazy">
+                  <img src="assets/images/H7pmHxrsHkVjHKJY8oD7Oy6ck.png" alt="Why Your Brand Identity Matters More Than Your Logo" class="blog-card-img" loading="lazy" decoding="async">
                 </div>
               </a>
               <h3 class="blog-card-title">
@@ -970,7 +1054,7 @@
             <article class="blog-article-card">
               <a href="articles/the-power-of-storytelling-in-branding.html" class="blog-img-link">
                 <div class="blog-img-wrap square-card">
-                  <img src="assets/images/WLXVB4pWpJwh51oTL3zjz6VJyA.png" alt="The Power of Storytelling in Branding" class="blog-card-img" loading="lazy">
+                  <img src="assets/images/WLXVB4pWpJwh51oTL3zjz6VJyA.png" alt="The Power of Storytelling in Branding" class="blog-card-img" loading="lazy" decoding="async">
                 </div>
               </a>
               <h3 class="blog-card-title">
@@ -988,7 +1072,7 @@
   <!-- Dark Lead Capture / Contact Section (1-to-1 Framer Architecture) -->
   <section class="section-contact-dark" id="contact">
     <div class="contact-dark-bg">
-      <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="eDiye Studio Contact" class="contact-dark-img">
+      <img src="assets/images/B3AqMP8LTdk3qr2VSTWOk3IDN0M.jpg" alt="eDiye Studio Contact" class="contact-dark-img" loading="lazy" decoding="async">
       <div class="contact-dark-overlay"></div>
     </div>
 
