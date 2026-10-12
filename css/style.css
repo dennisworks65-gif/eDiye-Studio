@@ -5444,7 +5444,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   width: 100%;
   max-width: 1520px;
   margin: 0 auto;
-  padding: 80px 40px 0;
+  padding: 120px 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
 }
 
@@ -5559,7 +5560,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   width: 100%;
   max-width: 1520px;
   margin: 0 auto;
-  padding: 80px 40px 0;
+  padding: 120px 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
 }
 
@@ -5942,7 +5944,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .cs-hero-section,
   .cs-hero-container {
-    padding: 100px 16px 0 !important;
+    padding: 110px 16px 40px !important;
   }
   .cs-hero-grid {
     display: flex !important;
@@ -5992,9 +5994,9 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .cs-hero-banner,
   .cs-hero-showcase {
-    margin: 32px auto 48px !important;
+    margin: 36px auto 68px !important;
     border-radius: 16px !important;
-    padding: 0 16px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
   .cs-hero-banner img,
@@ -6003,8 +6005,9 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .cs-content-section,
   .cs-section-block {
-    padding: 48px 16px 0 !important;
-    margin-bottom: 40px !important;
+    padding: 68px 16px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 0 !important;
   }
   .cs-section-grid,
   .cs-content-block {
@@ -6029,7 +6032,7 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
   }
   .cs-image-full-wrap,
   .cs-content-img-full {
-    margin-top: 24px !important;
+    margin-top: 36px !important;
     border-radius: 12px !important;
   }
   .cs-content-section,
@@ -6054,7 +6057,8 @@ button:active, .btn-primary:active, .btn-dark-pill:active, .btn-pricing-book:act
     object-fit: cover;
   }
   .cs-discover-section {
-    padding: 60px 0 80px !important;
+    padding: 80px 0 90px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
   }
   .cs-discover-grid {
     grid-template-columns: 1fr;
