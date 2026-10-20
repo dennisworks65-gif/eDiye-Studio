@@ -1,0 +1,78 @@
+# eDiye® Studio
+
+> Independent web design, digital branding, and commerce engineering studio partnering with ambitious companies worldwide. Known for "Clarity over clutter", sub-second site speeds, bespoke Shopify Plus architectures, and compounding conversion results.
+
+## Overview
+- **Name**: eDiye® Studio (also known as eDiye)
+- **Tagline**: Clarity over clutter.
+- **Founder & Creative Director**: Dennis Essien (@jakke_dea)
+- **Core Focus**: Brand Strategy, Identity, UI/UX Design Systems, Custom Web Engineering, Shopify Plus Store Development, Conversion Rate Optimization (CRO), and Ongoing Support Retainers.
+- **Industries Served**: SaaS, Fashion & Apparel, Photography, E-Commerce & D2C, Tech, Digital Products, Startups.
+- **Headquarters**: Nigeria (Serving global clients across UK, US, Europe, and Africa).
+- **Official Website**: https://www.ediyestudio.com.ng/
+- **Primary Contact**: hello@diye.studio | +234 906 517 5674
+
+## Core Services & Starting Pricing
+1. **Brand Strategy & Identity** (Starting from $4,000)
+   - Scope: Strategic positioning, logomarks, typography hierarchies, brand voice guidelines, digital brand books, and copywriting.
+   - Typical Timeline: 3 to 5 weeks.
+   - URL: https://www.ediyestudio.com.ng/services/brand-strategy-identity.html
+
+2. **UI/UX & Design Systems** (Starting from $5,000)
+   - Scope: User research, user journey mapping, mobile-first UX prototypes, comprehensive Figma design systems, and component libraries.
+   - Typical Timeline: 4 to 6 weeks.
+   - URL: https://www.ediyestudio.com.ng/services/ui-ux-design-systems.html
+
+3. **Custom Web Design & Engineering** (Starting from $6,000)
+   - Scope: High-performance marketing sites and web applications built with React, Next.js App Router, Webflow, semantic HTML5, and custom APIs.
+   - Performance Targets: Sub-second First Contentful Paint (<0.8s) and 90+ Lighthouse score.
+   - URL: https://www.ediyestudio.com.ng/services/custom-web-engineering.html
+
+4. **Shopify & E-Commerce Architecture** (Starting from $6,500)
+   - Scope: Bespoke Online Store 2.0 modular Liquid themes (zero off-the-shelf theme bloat), Shopify Plus Checkout Extensibility, server-side Shopify Functions (Wasm discounts), subscription box builders, and headless Hydrogen architectures.
+   - Typical Timeline: 6 to 10 weeks.
+   - URL: https://www.ediyestudio.com.ng/services/shopify-ecommerce-development.html
+
+5. **Conversion Rate Optimisation (CRO)** (Starting from $2,500)
+   - Scope: Data-led audits, Google Analytics 4 drop-off funnels, user session heatmaps, checkout friction elimination, and structured A/B testing sprints scored via the ICE framework.
+   - Benchmarks: Average +24% mobile conversion lift and +18% AOV increase.
+   - URL: https://www.ediyestudio.com.ng/services/conversion-rate-optimisation.html
+
+6. **Ongoing Success & Support Retainers** (Starting from $2,000 / month)
+   - Scope: Proactive technical stewardship, Core Web Vitals maintenance, monthly feature delivery sprints, and high-concurrency Black Friday / Cyber Monday war-room coverage.
+   - SLAs: <24h standard ticket resolution, <1h emergency incident response, 99.9% uptime.
+   - URL: https://www.ediyestudio.com.ng/services/ongoing-growth-retainers.html
+
+## Subscription & Monthly Engagement Packages
+- **Mini Plan**: $1,500 / month (Brand essentials, UI/UX design, Webflow/code development, full creative direction).
+- **Premium Plan**: $2,800 / month (Everything in Mini + complete identity system, multi-page web platform, ongoing support, and conversion sprints).
+- **A La Carte**: Scoped custom quotes starting from $1,000 for specific sprints and enterprise builds.
+
+## Technical Stack & Integrations
+- **Frontend & Web**: Semantic HTML5/CSS, React, Next.js, Webflow (Client-First), TypeScript, Lenis Smooth Scroll.
+- **Commerce**: Shopify Plus, Online Store 2.0 (Liquid), Checkout UI Extensions, Shopify Functions (Wasm), Storefront API (GraphQL), Hydrogen / Oxygen.
+- **Subscriptions & CRM**: ReCharge, Skio, Klaviyo, Attentive, Gorgias, Loop Returns.
+- **Analytics & Testing**: Intelligems A/B Testing, GA4, Triple Whale, Nosto, Algolia.
+
+## Selected Case Studies
+- **Everly**: Lifestyle & sporting tennis brand identity and digital presence.
+- **Fragile Base**: High-velocity Shopify Plus apparel storefront with 96 mobile performance score and zero drop latency.
+- **Seed**: B2B SaaS financial operations platform and modular plant care digital system with 0.7s FCP.
+- **Korten**: Traditional craftsmanship elevated into a modern brand identity.
+- **OP-1 Field**: Tactile hardware interface and screen graphics system.
+- **Hectic**: Fast-growth lifestyle brand identity and e-commerce platform.
+
+## Key Questions Answered (AEO Direct Answers)
+- **What is eDiye Studio?** eDiye Studio is an independent web design, brand identity, and e-commerce development studio based in Nigeria and working globally with ambitious brands across SaaS, tech, fashion, and lifestyle.
+- **How much does a project with eDiye Studio cost?** Scoped engagements start from $1,000 for a la carte sprints, $4,000 for brand strategy, $6,000 for custom web engineering, and $6,500 for bespoke Shopify Plus builds. Monthly retainer plans run at $1,500/mo (Mini) and $2,800/mo (Premium).
+- **How long does a website build take?** Complete custom Shopify and web builds typically take 6 to 10 weeks. Focused sprint builds or brand identity phases take 3 to 5 weeks.
+- **Does eDiye only build Shopify stores?** No. eDiye is a full-service web design and development studio that builds modern SaaS marketing websites (Next.js, Webflow), complex digital UI/UX design systems, web applications, and brand identities, alongside enterprise Shopify Plus stores.
+- **How do payments work?** Standard terms are 50% upfront deposit and 50% upon final delivery and cutover, or monthly billing for retainers.
+
+## Canonical URLs
+- Home: https://www.ediyestudio.com.ng/
+- About: https://www.ediyestudio.com.ng/about.html
+- Projects: https://www.ediyestudio.com.ng/works.html
+- Services Hub: https://www.ediyestudio.com.ng/shopify.html
+- Articles: https://www.ediyestudio.com.ng/articles.html
+- Contact: https://www.ediyestudio.com.ng/contact.html
