@@ -67,8 +67,8 @@ function initPricingSlider() {
   const priceSubVal = document.getElementById('price-sub-val');
   if (!sliderInput) return;
 
-  let currentAnimatedPrice = 2500;
-  let targetPrice = 2500;
+  let currentAnimatedPrice = 1000;
+  let targetPrice = 1000;
   let animationFrameId = null;
 
   function animatePrice() {
@@ -109,7 +109,7 @@ function initPricingSlider() {
     if (sliderThumb) sliderThumb.style.left = `${percent}%`;
 
     // Calculate dynamic price based on scope slider ($2,500 to $8,500)
-    const basePrice = 2500;
+    const basePrice = 1000;
     const maxPrice = 8500;
     targetPrice = Math.round(basePrice + ((maxPrice - basePrice) * (percent / 100)) / 100) * 100;
 
