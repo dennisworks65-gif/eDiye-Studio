@@ -5,7 +5,11 @@
 ## Overview
 - **Name**: eDiye® Studio (also known as eDiye)
 - **Tagline**: Clarity over clutter.
-- **Founder & Creative Director**: Dennis Essien (@jakke_dea)
+- **Core Leadership & Team**:
+  - **Dennis Essien**: Founder & Creative Director (@jakke_dea)
+  - **Bobby Salau**: Head of Development & Partner
+  - **Eddie Ime**: Brand Strategist
+  - **Liam Hayes**: Lead Developer
 - **Core Focus**: Brand Strategy, Identity, UI/UX Design Systems, Custom Web Engineering, Shopify Plus Store Development, Conversion Rate Optimization (CRO), and Ongoing Support Retainers.
 - **Industries Served**: SaaS, Fashion & Apparel, Photography, E-Commerce & D2C, Tech, Digital Products, Startups.
 - **Headquarters**: Nigeria (Serving global clients across UK, US, Europe, and Africa).

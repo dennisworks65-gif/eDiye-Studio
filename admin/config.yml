@@ -123,8 +123,8 @@ collections:
       - { label: "Reading Time", name: "read_time", widget: "string", default: "4 min read" }
       - { label: "Tags", name: "tags", widget: "list", default: ["Strategy", "Design"] }
 
-      - { label: "Author Name", name: "author", widget: "string", default: "Sophie Turner" }
-      - { label: "Author Role", name: "author_role", widget: "string", default: "Brand Strategist at Noora" }
+      - { label: "Author Name", name: "author", widget: "string", default: "Eddie Ime" }
+      - { label: "Author Role", name: "author_role", widget: "string", default: "Brand Strategist at eDiye" }
       - { label: "Author Avatar Image", name: "author_avatar", widget: "image", default: "assets/images/sophie-turner-ref.png" }
 
       - { label: "Lead Subtitle / Excerpt", name: "lead_subtitle", widget: "text" }
